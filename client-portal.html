@@ -23,13 +23,13 @@ a{text-decoration:none}
 .vw-logo-btn img{height:48px;width:auto}
 #vw-desktopnav{display:none;align-items:center;gap:40px}
 @media(min-width:1024px){#vw-desktopnav{display:flex}}
-.vw-navlink{background:none;border:none;cursor:pointer;color:var(--navy);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;transition:color .3s;padding:4px 0;position:relative}
+.vw-navlink{background:none;border:none;cursor:pointer;color:var(--navy);font-size:10px;font-weight:700;letter-spacing:.04em;transition:color .3s;padding:4px 0;position:relative}
 .vw-navlink:hover,.vw-navlink.active{color:var(--gold)}
 .vw-navlink.active::after{content:'';position:absolute;bottom:-4px;left:0;width:100%;height:2px;background:var(--gold)}
 .vw-nav-actions{display:flex;gap:16px;padding-left:24px;border-left:1px solid #e2e8f0}
-.vw-btn-meet{background:var(--gold);color:var(--navy);padding:10px 24px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:all .3s;display:inline-block}
+.vw-btn-meet{background:var(--gold);color:var(--navy);padding:10px 24px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.04em;text-decoration:none;transition:all .3s;display:inline-block}
 .vw-btn-meet:hover{background:var(--navy);color:#fff}
-.vw-btn-portal{background:var(--navy);color:#fff;border:none;cursor:pointer;padding:10px 24px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;transition:all .3s}
+.vw-btn-portal{background:var(--navy);color:#fff;border:none;cursor:pointer;padding:10px 24px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.04em;transition:all .3s}
 .vw-btn-portal.active,.vw-btn-portal:hover{background:var(--gold);color:var(--navy)}
 .vw-hamburger{display:flex;background:none;border:none;cursor:pointer;color:var(--navy);padding:8px}
 @media(min-width:1024px){.vw-hamburger{display:none}}
@@ -37,7 +37,7 @@ a{text-decoration:none}
 #vw-mobile-menu.open{display:flex}
 #vw-mobile-menu .vw-navlink{text-align:left;font-size:11px}
 .mob-actions{display:flex;flex-direction:column;gap:16px;padding-top:24px;border-top:1px solid #f1f5f9}
-.mob-actions a,.mob-actions button{display:block;padding:16px;border-radius:2px;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-align:center;transition:all .3s;width:100%}
+.mob-actions a,.mob-actions button{display:block;padding:16px;border-radius:2px;font-weight:700;font-size:11px;letter-spacing:.04em;text-align:center;transition:all .3s;width:100%}
 .mob-actions a{background:var(--gold);color:var(--navy);text-decoration:none}
 .mob-actions button{background:var(--navy);color:#fff;border:none;cursor:pointer}
 /* ── DROPDOWN ── */
@@ -46,12 +46,12 @@ a{text-decoration:none}
 .vw-dropdown-btn{display:flex!important;align-items:center;gap:5px}
 .vw-dropdown-menu{display:none;position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px;min-width:180px;box-shadow:0 8px 24px rgba(0,0,0,.12);z-index:200;white-space:nowrap}
 .vw-dropdown:hover .vw-dropdown-menu{display:block}
-.vw-dropdown-menu a{display:block;padding:10px 16px;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--navy);border-radius:4px;transition:background .2s;text-decoration:none}
+.vw-dropdown-menu a{display:block;padding:10px 16px;font-size:10px;font-weight:700;letter-spacing:.04em;color:var(--navy);border-radius:4px;transition:background .2s;text-decoration:none}
 .vw-dropdown-menu a:hover{background:var(--gold)}
 .vw-dropdown-menu::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #e2e8f0}
 .vw-dropdown-menu::after{content:'';position:absolute;top:-5px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #fff}
 .mob-quiz-links{display:flex;flex-direction:column;gap:8px;padding-left:16px;border-left:2px solid var(--gold)}
-.mob-quiz-links a{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#475569;text-decoration:none;transition:color .2s}
+.mob-quiz-links a{font-size:10px;font-weight:700;letter-spacing:.04em;color:#475569;text-decoration:none;transition:color .2s}
 .mob-quiz-links a:hover{color:var(--gold)}
 
 /* ── HERO ── */
@@ -59,22 +59,22 @@ a{text-decoration:none}
 #hero::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:rgba(253,187,59,.05);pointer-events:none}
 #hero::after{content:'';position:absolute;bottom:-150px;left:-80px;width:400px;height:400px;border-radius:50%;background:rgba(253,187,59,.04);pointer-events:none}
 #hero .hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:10;text-align:center}
-.hero-eyebrow{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.4em;color:var(--gold);margin-bottom:20px;display:block}
+.hero-eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.04em;color:var(--gold);margin-bottom:20px;display:block}
 #hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-.04em;margin-bottom:16px}
 #hero h1 span{color:var(--gold)}
 #hero .hero-sub{font-size:1.05rem;color:rgba(255,255,255,.65);font-weight:300;line-height:1.9;max-width:620px;margin:0 auto 56px}
 
 /* Video block */
 .video-block{position:relative;max-width:800px;margin:0 auto}
-.video-label{display:inline-block;background:var(--gold);color:var(--navy);font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:6px 18px;border-radius:2px;margin-bottom:16px}
+.video-label{display:inline-block;background:var(--gold);color:var(--navy);font-size:9px;font-weight:700;letter-spacing:.04em;padding:6px 18px;border-radius:2px;margin-bottom:16px}
 .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;box-shadow:0 32px 80px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.1)}
 .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}
 
 /* Login / Register buttons under video */
 .portal-cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:40px}
-.btn-login{background:var(--gold);color:var(--navy);padding:18px 52px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.25em;text-transform:uppercase;text-decoration:none;transition:all .3s;display:inline-block}
+.btn-login{background:var(--gold);color:var(--navy);padding:18px 52px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.04em;text-decoration:none;transition:all .3s;display:inline-block}
 .btn-login:hover{background:#fff;color:var(--navy)}
-.btn-register{background:transparent;border:2px solid rgba(255,255,255,.4);color:#fff;padding:18px 52px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.25em;text-transform:uppercase;text-decoration:none;transition:all .3s;display:inline-block}
+.btn-register{background:transparent;border:2px solid rgba(255,255,255,.4);color:#fff;padding:18px 52px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.04em;text-decoration:none;transition:all .3s;display:inline-block}
 .btn-register:hover{background:#fff;color:var(--navy);border-color:#fff}
 
 /* ── APP SECTION ── */
@@ -86,12 +86,12 @@ a{text-decoration:none}
 .phone-frame::before{content:'';position:absolute;top:14px;left:50%;transform:translateX(-50%);width:60px;height:6px;background:#1a3a52;border-radius:3px}
 .phone-frame .phone-icon{color:var(--gold);margin-bottom:8px}
 .phone-frame h4{font-size:.875rem;font-weight:700;color:#fff;letter-spacing:-.01em}
-.phone-frame p{font-size:.7rem;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+.phone-frame p{font-size:.7rem;color:rgba(255,255,255,.5);letter-spacing:.1em;font-weight:500}
 .download-badges{display:flex;flex-direction:column;gap:12px;align-items:center}
 .download-badges a{transition:opacity .2s;opacity:.9}
 .download-badges a:hover{opacity:1}
 .download-badges img{height:40px;width:auto}
-.security-right .eyebrow{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.35em;color:var(--gold);margin-bottom:16px;display:block}
+.security-right .eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.04em;color:var(--gold);margin-bottom:16px;display:block}
 .security-right h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.04em;margin-bottom:12px}
 .security-right .gold-bar{width:48px;height:4px;background:var(--gold);display:block;margin-bottom:40px}
 .security-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -116,20 +116,20 @@ a{text-decoration:none}
 #vw-footer .socials a{width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #e2e8f0;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06);transition:background .3s}
 #vw-footer .socials a:hover{background:var(--gold)}
 #vw-footer .socials a svg{width:16px;height:16px;color:var(--navy)}
-#vw-footer h4{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);padding-bottom:12px;border-bottom:1px solid #f1f5f9;margin-bottom:16px}
+#vw-footer h4{font-size:10px;font-weight:700;letter-spacing:.04em;color:var(--gold);padding-bottom:12px;border-bottom:1px solid #f1f5f9;margin-bottom:16px}
 #vw-footer ul.foot-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
 #vw-footer ul.foot-list li,#vw-footer ul.foot-list button{font-size:.875rem;color:#475569;font-weight:500;background:none;border:none;cursor:pointer;text-align:left;padding:0;transition:color .3s;line-height:1.6}
 #vw-footer ul.foot-list li:hover,#vw-footer ul.foot-list button:hover{color:var(--gold)}
-#vw-footer .btn-portal-foot{width:100%;margin-top:32px;background:var(--navy);color:#fff;border:none;cursor:pointer;padding:12px 24px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;transition:all .3s}
+#vw-footer .btn-portal-foot{width:100%;margin-top:32px;background:var(--navy);color:#fff;border:none;cursor:pointer;padding:12px 24px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.04em;transition:all .3s}
 #vw-footer .btn-portal-foot:hover{background:var(--gold);color:var(--navy)}
 #vw-footer .foot-bottom{padding-top:48px;display:flex;flex-direction:column;gap:32px}
-#vw-footer .foot-legal-row{display:flex;flex-direction:column;gap:16px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#94a3b8}
+#vw-footer .foot-legal-row{display:flex;flex-direction:column;gap:16px;font-size:10px;font-weight:700;letter-spacing:.1em;color:#94a3b8}
 @media(min-width:768px){#vw-footer .foot-legal-row{flex-direction:row;align-items:center;justify-content:space-between}}
 #vw-footer .foot-legal-row a{color:#94a3b8;text-decoration:underline;text-decoration-color:#e2e8f0;text-underline-offset:4px;transition:color .3s}
 #vw-footer .foot-legal-row a:hover{color:var(--gold)}
 #vw-footer .foot-policy-links{display:flex;gap:32px;flex-wrap:wrap}
 #vw-footer .compliance-box{background:#fff;padding:24px 32px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.04);display:flex;flex-direction:column;gap:16px}
-#vw-footer .comp-abn{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#94a3b8}
+#vw-footer .comp-abn{font-size:10px;font-weight:700;letter-spacing:.1em;color:#94a3b8}
 #vw-footer .comp-ack{font-size:9px;color:#94a3b8;font-style:italic;border-top:1px solid #f1f5f9;padding-top:16px;line-height:1.6}
 </style>
 </head>
@@ -141,14 +141,14 @@ a{text-decoration:none}
       <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth"/>
     </button>
     <div id="vw-desktopnav">
-      <button class="vw-navlink" onclick="window.location.href='what-we-do.html'">What We Do</button>
-      <button class="vw-navlink" onclick="window.location.href='how-we-do.html'">How We Do</button>
-      <button class="vw-navlink" onclick="window.location.href='who-we-are.html'">Who We Are</button>
+      <button class="vw-navlink" onclick="window.location.href='what-we-do.html'">What we do</button>
+      <button class="vw-navlink" onclick="window.location.href='how-we-do.html'">How we do</button>
+      <button class="vw-navlink" onclick="window.location.href='who-we-are.html'">Who we are</button>
       <div class="vw-dropdown">
         <button class="vw-navlink vw-dropdown-btn">Tools <svg width="8" height="5" viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l3 3 3-3"/></svg></button>
         <div class="vw-dropdown-menu">
-          <a href="https://moiz-o9tnljz7.scoreapp.com/" target="_blank" rel="noopener">Wealth Quiz ↗</a>
-          <a href="https://moiz-sqlq8z9y.scoreapp.com/" target="_blank" rel="noopener">Insurance Quiz ↗</a>
+          <a href="https://moiz-o9tnljz7.scoreapp.com/" target="_blank" rel="noopener">Wealth quiz ↗</a>
+          <a href="https://moiz-sqlq8z9y.scoreapp.com/" target="_blank" rel="noopener">Insurance quiz ↗</a>
         </div>
       </div>
       <div class="vw-nav-actions">
@@ -162,14 +162,14 @@ a{text-decoration:none}
     </button>
   </div>
   <div id="vw-mobile-menu">
-    <button class="vw-navlink" onclick="window.location.href='what-we-do.html'">What We Do</button>
-    <button class="vw-navlink" onclick="window.location.href='how-we-do.html'">How We Do</button>
-    <button class="vw-navlink" onclick="window.location.href='who-we-are.html'">Who We Are</button>
+    <button class="vw-navlink" onclick="window.location.href='what-we-do.html'">What we do</button>
+    <button class="vw-navlink" onclick="window.location.href='how-we-do.html'">How we do</button>
+    <button class="vw-navlink" onclick="window.location.href='who-we-are.html'">Who we are</button>
     <div>
       <p class="vw-navlink" style="cursor:default;color:#94a3b8;margin-bottom:10px">Tools</p>
       <div class="mob-quiz-links">
-        <a href="https://moiz-o9tnljz7.scoreapp.com/" target="_blank" rel="noopener">Wealth Quiz ↗</a>
-        <a href="https://moiz-sqlq8z9y.scoreapp.com/" target="_blank" rel="noopener">Insurance Quiz ↗</a>
+        <a href="https://moiz-o9tnljz7.scoreapp.com/" target="_blank" rel="noopener">Wealth quiz ↗</a>
+        <a href="https://moiz-sqlq8z9y.scoreapp.com/" target="_blank" rel="noopener">Insurance quiz ↗</a>
       </div>
     </div>
     <div class="mob-actions">
@@ -272,7 +272,7 @@ a{text-decoration:none}
     <div class="foot-grid">
       <div>
         <a href="index.html"><img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" class="foot-logo"/></a>
-        <p style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Connect with us</p>
+        <p style="font-size:.7rem;font-weight:700;letter-spacing:.04em;color:var(--gold);margin-bottom:8px">Connect with us</p>
         <div style="display:flex;align-items:center;gap:12px;font-size:.9rem;color:#475569;margin-bottom:16px">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           03 5959 1922
@@ -286,19 +286,19 @@ a{text-decoration:none}
         <h4>Menu</h4>
         <ul class="foot-list">
               <li><button onclick="window.location.href='index.html'">Home</button></li>
-              <li><button onclick="window.location.href='what-we-do.html'">What We Do</button></li>
-              <li><button onclick="window.location.href='how-we-do.html'">How We Do</button></li>
-              <li><button onclick="window.location.href='who-we-are.html'">Who We Are</button></li>
+              <li><button onclick="window.location.href='what-we-do.html'">What we do</button></li>
+              <li><button onclick="window.location.href='how-we-do.html'">How we do</button></li>
+              <li><button onclick="window.location.href='who-we-are.html'">Who we are</button></li>
               <li><button onclick="window.location.href='index.html#discovery'">Tools</button></li>
             </ul>
-        <button class="btn-portal-foot" onclick="window.location.href='client-portal.html'">Client Portal Login</button>
+        <button class="btn-portal-foot" onclick="window.location.href='client-portal.html'">Client portal login</button>
       </div>
       <div>
-        <h4>Our Clients</h4>
+        <h4>Our clients</h4>
         <ul class="foot-list">
-          <li>Young Professionals</li>
-          <li>Small Business Owners</li>
-          <li>Planning to Retire</li>
+          <li>Young professionals</li>
+          <li>Small business owners</li>
+          <li>Planning to retire</li>
         </ul>
       </div>
       <div>
@@ -312,8 +312,8 @@ a{text-decoration:none}
       <div>
         <h4>Tools</h4>
         <ul class="foot-list">
-          <li><button onclick="window.open('https://moiz-o9tnljz7.scoreapp.com/','_blank')">Wealth Quiz ↗</button></li>
-          <li><button onclick="window.open('https://moiz-sqlq8z9y.scoreapp.com/','_blank')">Insurance Quiz ↗</button></li>
+          <li><button onclick="window.open('https://moiz-o9tnljz7.scoreapp.com/','_blank')">Wealth quiz ↗</button></li>
+          <li><button onclick="window.open('https://moiz-sqlq8z9y.scoreapp.com/','_blank')">Insurance quiz ↗</button></li>
         </ul>
       </div>
     </div>
