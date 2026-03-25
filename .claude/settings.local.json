@@ -22,7 +22,10 @@
       "Bash(python scripts/office/unpack.py \"/Users/rajhussainkanani/Downloads/Change 04.docx\" /tmp/change04_unpacked/)",
       "Bash(python3 -c \":*)",
       "Read(//private/tmp/change04_unpacked/word/media/**)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "mcp__2c9e362c-1c24-4101-85ba-e8efe234aa3b__deploy_to_vercel",
+      "mcp__2c9e362c-1c24-4101-85ba-e8efe234aa3b__list_projects",
+      "mcp__2c9e362c-1c24-4101-85ba-e8efe234aa3b__list_deployments"
     ]
   }
 }
