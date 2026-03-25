@@ -160,7 +160,7 @@ a{text-decoration:none}
 #vw-footer .foot-inner{max-width:1280px;margin:0 auto;padding:0 24px}
 #vw-footer .foot-grid{display:grid;grid-template-columns:1fr;gap:48px;padding-bottom:64px;border-bottom:1px solid #e2e8f0}
 @media(min-width:768px){#vw-footer .foot-grid{grid-template-columns:1fr 1fr}}
-@media(min-width:1024px){#vw-footer .foot-grid{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr}}
+@media(min-width:1024px){#vw-footer .foot-grid{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr auto}}
 #vw-footer .foot-logo{height:64px;width:auto;margin-bottom:24px}
 #vw-footer .foot-contact{list-style:none;display:flex;flex-direction:column;gap:16px;margin-bottom:24px;padding:0}
 #vw-footer .foot-contact li{display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#475569}
@@ -183,7 +183,7 @@ a{text-decoration:none}
 #vw-footer .foot-policy-links{display:flex;gap:32px;flex-wrap:wrap}
 #vw-footer .compliance-box{background:#fff;padding:24px 32px;border-radius:12px;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:16px}
 #vw-footer .comp-abn{font-size:10px;font-weight:700;letter-spacing:.1em;color:#94a3b8}
-#vw-footer .comp-ack{font-size:9px;color:#94a3b8;font-style:italic;border-top:1px solid #f1f5f9;padding-top:16px;line-height:1.6}
+#vw-footer .comp-ack{font-size:13px;color:#94a3b8;font-style:italic;border-top:1px solid #f1f5f9;padding-top:16px;line-height:1.6}
 </style>
 </head>
 <body>
@@ -423,7 +423,6 @@ a{text-decoration:none}
               <li><button>Who we are</button></li>
               <li><button onclick="window.location.href='index.html#discovery'">Tools</button></li>
             </ul>
-        <button class="btn-portal-foot" onclick="window.location.href='client-portal.html'">Client portal login</button>
       </div>
       <div>
         <h4>Our clients</h4>
@@ -447,6 +446,10 @@ a{text-decoration:none}
           <li><button onclick="window.open('https://moiz-o9tnljz7.scoreapp.com/','_blank')">Wealth Quiz &#8599;</button></li>
           <li><button onclick="window.open('https://moiz-sqlq8z9y.scoreapp.com/','_blank')">Insurance Quiz &#8599;</button></li>
         </ul>
+      </div>
+      <div>
+        <h4>Client portal</h4>
+        <button class="btn-portal-foot" onclick="window.location.href='client-portal.html'">Client portal login</button>
       </div>
     </div>
     <div class="foot-bottom">
