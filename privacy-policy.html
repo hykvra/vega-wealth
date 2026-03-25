@@ -66,7 +66,7 @@ a{text-decoration:none}
 #vw-footer .foot-inner{max-width:1280px;margin:0 auto;padding:0 24px}
 #vw-footer .foot-grid{display:grid;grid-template-columns:1fr;gap:48px;padding-bottom:64px;border-bottom:1px solid #e2e8f0}
 @media(min-width:768px){#vw-footer .foot-grid{grid-template-columns:1fr 1fr}}
-@media(min-width:1024px){#vw-footer .foot-grid{grid-template-columns:1fr 1fr 1fr 1fr}}
+@media(min-width:1024px){#vw-footer .foot-grid{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr}}
 #vw-footer .foot-logo{height:64px;width:auto;margin-bottom:24px}
 #vw-footer .foot-contact{list-style:none;display:flex;flex-direction:column;gap:16px;margin-bottom:24px;padding:0}
 #vw-footer .foot-contact li{display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#475569}
@@ -216,40 +216,35 @@ a{text-decoration:none}
   <div class="foot-inner">
     <div class="foot-grid">
       <div>
-        <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" class="foot-logo"/>
+        <a href="index.html"><img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" class="foot-logo"/></a>
         <ul class="foot-contact">
-          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>03 8652 1445</li>
           <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Suite 10, 1 Main Street,<br/>Box Hill, VIC 3128</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>hello@vegawealth.com.au</li>
         </ul>
-        <div class="socials">
-          <a href="#" aria-label="Facebook"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="https://www.linkedin.com/in/moiz-mandani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <p style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Connect with us</p>
+        <div style="display:flex;align-items:center;gap:12px;font-size:.9rem;color:#475569">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          03 5959 1922
         </div>
       </div>
       <div>
-        <div style="display:flex;gap:48px;flex-wrap:wrap">
-          <div style="flex:1;min-width:120px">
-            <h4>Menu</h4>
-            <ul class="foot-list">
+        <h4>Menu</h4>
+        <ul class="foot-list">
               <li><button onclick="window.location.href='index.html'">Home</button></li>
               <li><button onclick="window.location.href='what-we-do.html'">What We Do</button></li>
               <li><button onclick="window.location.href='how-we-do.html'">How We Do</button></li>
               <li><button onclick="window.location.href='who-we-are.html'">Who We Are</button></li>
               <li><button onclick="window.location.href='index.html#discovery'">Tools</button></li>
             </ul>
-          </div>
-          <div style="flex:1;min-width:140px">
-            <h4>Our Clients</h4>
-            <ul class="foot-list">
-              <li>Young Professionals</li>
-              <li>Small Business Owners</li>
-              <li>Planning to Retire</li>
-              <li>High-Net-Worth Individuals</li>
-            </ul>
-          </div>
-        </div>
         <button class="btn-portal-foot" onclick="window.location.href='client-portal.html'">Client Portal Login</button>
+      </div>
+      <div>
+        <h4>Our Clients</h4>
+        <ul class="foot-list">
+          <li>Young Professionals</li>
+          <li>Small Business Owners</li>
+          <li>Planning to Retire</li>
+        </ul>
       </div>
       <div>
         <h4>Services</h4>
