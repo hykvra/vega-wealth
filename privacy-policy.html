@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Privacy Policy | Vega Wealth</title>
+<meta name="description" content="Learn how Vega Wealth collects, handles and protects your personal information, and our professional indemnity insurance commitments."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:#062743;background:#fff;overflow-x:hidden;padding-top:80px}
+::selection{background:#FDBB3B4d;color:#062743}
+a{text-decoration:none}
+:root{--gold:#FDBB3B;--navy:#062743;--green:#045234}
+
+/* ── NAV ── */
+#vw-nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #f1f5f9;box-shadow:0 1px 8px rgba(0,0,0,.06)}
+#vw-nav .vw-nav-inner{max-width:1280px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+.vw-logo-btn{background:none;border:none;cursor:pointer;padding:0;transition:transform .3s}
+.vw-logo-btn:hover{transform:scale(1.05)}
+.vw-logo-btn img{height:48px;width:auto}
+#vw-desktopnav{display:none;align-items:center;gap:40px}
+@media(min-width:1024px){#vw-desktopnav{display:flex}}
+.vw-navlink{background:none;border:none;cursor:pointer;color:var(--navy);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;transition:color .3s;padding:4px 0;position:relative}
+.vw-navlink:hover,.vw-navlink.active{color:var(--gold)}
+.vw-navlink.active::after{content:'';position:absolute;bottom:-4px;left:0;width:100%;height:2px;background:var(--gold)}
+.vw-nav-actions{display:flex;gap:16px;padding-left:24px;border-left:1px solid #e2e8f0}
+.vw-btn-meet{background:var(--gold);color:var(--navy);padding:10px 24px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:all .3s;display:inline-block}
+.vw-btn-meet:hover{background:var(--navy);color:#fff}
+.vw-btn-portal{background:var(--navy);color:#fff;border:none;cursor:pointer;padding:10px 24px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;transition:all .3s}
+.vw-btn-portal:hover{background:var(--gold);color:var(--navy)}
+.vw-hamburger{display:flex;background:none;border:none;cursor:pointer;color:var(--navy);padding:8px}
+@media(min-width:1024px){.vw-hamburger{display:none}}
+#vw-mobile-menu{display:none;background:#fff;border-top:1px solid #f1f5f9;padding:40px 24px;flex-direction:column;gap:32px;box-shadow:0 20px 40px rgba(0,0,0,.1)}
+#vw-mobile-menu.open{display:flex}
+#vw-mobile-menu .vw-navlink{text-align:left;font-size:11px}
+.mob-actions{display:flex;flex-direction:column;gap:16px;padding-top:24px;border-top:1px solid #f1f5f9}
+.mob-actions a,.mob-actions button{display:block;padding:16px;border-radius:2px;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-align:center;transition:all .3s;width:100%}
+.mob-actions a{background:var(--gold);color:var(--navy);text-decoration:none}
+.mob-actions button{background:var(--navy);color:#fff;border:none;cursor:pointer}
+
+/* ── HERO ── */
+#hero{padding:80px 24px 64px;background:#fff;border-bottom:1px solid #f1f5f9;position:relative;overflow:hidden}
+#hero::after{content:'';position:absolute;top:0;right:0;width:33%;height:100%;background:#FDBB3B08;transform:skewX(-12deg) translateX(50%)}
+#hero .hero-inner{max-width:800px;margin:0 auto;position:relative;z-index:10}
+#hero .eyebrow{font-size:.875rem;font-weight:600;text-transform:uppercase;letter-spacing:.3em;color:#475569;border-left:3px solid var(--gold);padding-left:16px;margin-bottom:24px}
+#hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.03em;margin-bottom:16px}
+#hero .subtitle{font-size:1rem;color:#475569;font-weight:300;line-height:1.7;max-width:600px}
+
+/* ── CONTENT ── */
+#content{padding:80px 24px;background:#fff}
+#content .content-inner{max-width:800px;margin:0 auto}
+.section-block{margin-bottom:56px}
+.section-block h2{font-size:1.4rem;font-weight:700;color:var(--navy);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--gold);display:inline-block}
+.section-block p{font-size:.95rem;color:#475569;line-height:1.85;font-weight:400;margin-bottom:16px}
+.section-block ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:16px}
+.section-block ul li{font-size:.95rem;color:#475569;line-height:1.8;padding-left:20px;position:relative}
+.section-block ul li::before{content:'•';color:var(--gold);font-weight:900;position:absolute;left:0;top:0}
+.info-box{background:#f8fafc;border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:24px 28px;margin-bottom:24px}
+.info-box p{margin-bottom:0;font-style:italic}
+
+/* ── FOOTER ── */
+#vw-footer{background:#f8fafc;border-top:1px solid #e2e8f0;padding:80px 0 48px;color:var(--navy)}
+#vw-footer .foot-inner{max-width:1280px;margin:0 auto;padding:0 24px}
+#vw-footer .foot-grid{display:grid;grid-template-columns:1fr;gap:48px;padding-bottom:64px;border-bottom:1px solid #e2e8f0}
+@media(min-width:768px){#vw-footer .foot-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){#vw-footer .foot-grid{grid-template-columns:1fr 1fr 1fr 1fr}}
+#vw-footer .foot-logo{height:64px;width:auto;margin-bottom:24px}
+#vw-footer .foot-contact{list-style:none;display:flex;flex-direction:column;gap:16px;margin-bottom:24px;padding:0}
+#vw-footer .foot-contact li{display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#475569}
+#vw-footer .foot-contact li svg{width:20px;height:20px;color:var(--gold);flex-shrink:0;margin-top:2px}
+#vw-footer .socials{display:flex;gap:12px}
+#vw-footer .socials a{width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #e2e8f0;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06);transition:background .3s}
+#vw-footer .socials a:hover{background:var(--gold)}
+#vw-footer .socials a svg{width:16px;height:16px;color:var(--navy)}
+#vw-footer h4{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);padding-bottom:12px;border-bottom:1px solid #f1f5f9;margin-bottom:16px}
+#vw-footer ul.foot-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
+#vw-footer ul.foot-list li,#vw-footer ul.foot-list button{font-size:.875rem;color:#475569;font-weight:500;background:none;border:none;cursor:pointer;text-align:left;padding:0;transition:color .3s;line-height:1.6}
+#vw-footer ul.foot-list li:hover,#vw-footer ul.foot-list button:hover{color:var(--gold)}
+#vw-footer .btn-portal-foot{width:100%;margin-top:32px;background:var(--navy);color:#fff;border:none;cursor:pointer;padding:12px 24px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;transition:all .3s}
+#vw-footer .btn-portal-foot:hover{background:var(--gold);color:var(--navy)}
+#vw-footer .foot-bottom{padding-top:48px;display:flex;flex-direction:column;gap:32px}
+#vw-footer .foot-legal-row{display:flex;flex-direction:column;gap:16px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#94a3b8}
+@media(min-width:768px){#vw-footer .foot-legal-row{flex-direction:row;align-items:center;justify-content:space-between}}
+#vw-footer .foot-legal-row a{color:#94a3b8;text-decoration:underline;text-decoration-color:#e2e8f0;text-underline-offset:4px;transition:color .3s}
+#vw-footer .foot-legal-row a:hover{color:var(--gold)}
+#vw-footer .foot-policy-links{display:flex;gap:32px;flex-wrap:wrap}
+#vw-footer .compliance-box{background:#fff;padding:24px 32px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.04);display:flex;flex-direction:column;gap:16px}
+#vw-footer .comp-abn{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#94a3b8}
+#vw-footer .comp-ack{font-size:9px;color:#94a3b8;font-style:italic;border-top:1px solid #f1f5f9;padding-top:16px;line-height:1.6}
+/* ── DROPDOWN ── */
+.vw-dropdown{position:relative}
+.vw-dropdown::after{content:'';position:absolute;top:100%;left:-8px;right:-8px;height:16px}
+.vw-dropdown-btn{display:flex!important;align-items:center;gap:5px}
+.vw-dropdown-menu{display:none;position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px;min-width:180px;box-shadow:0 8px 24px rgba(0,0,0,.12);z-index:200;white-space:nowrap}
+.vw-dropdown:hover .vw-dropdown-menu{display:block}
+.vw-dropdown-menu a{display:block;padding:10px 16px;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--navy);border-radius:4px;transition:background .2s;text-decoration:none}
+.vw-dropdown-menu a:hover{background:var(--gold)}
+.vw-dropdown-menu::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #e2e8f0}
+.vw-dropdown-menu::after{content:'';position:absolute;top:-5px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #fff}
+.mob-quiz-links{display:flex;flex-direction:column;gap:8px;padding-left:16px;border-left:2px solid var(--gold)}
+.mob-quiz-links a{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#475569;text-decoration:none;transition:color .2s}
+.mob-quiz-links a:hover{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<nav id="vw-nav">
+  <div class="vw-nav-inner">
+    <button class="vw-logo-btn" onclick="window.location.href='index.html'" aria-label="Vega Wealth Home">
+      <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth"/>
+    </button>
+    <div id="vw-desktopnav">
+      <button class="vw-navlink" onclick="window.location.href='what-we-do.html'">What We Do</button>
+      <button class="vw-navlink" onclick="window.location.href='how-we-do.html'">How We Do</button>
+      <button class="vw-navlink" onclick="window.location.href='who-we-are.html'">Who We Are</button>
+      <div class="vw-dropdown">
+        <button class="vw-navlink vw-dropdown-btn">Tools <svg width="8" height="5" viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l3 3 3-3"/></svg></button>
+        <div class="vw-dropdown-menu">
+          <a href="https://moiz-o9tnljz7.scoreapp.com/" target="_blank" rel="noopener">Wealth Quiz ↗</a>
+          <a href="https://moiz-sqlq8z9y.scoreapp.com/" target="_blank" rel="noopener">Insurance Quiz ↗</a>
+        </div>
+      </div>
+      <div class="vw-nav-actions">
+        <a href="https://calendly.com/financial--adviser/connect-call" target="_blank" rel="noopener" class="vw-btn-meet">Meet an adviser</a>
+        <button class="vw-btn-portal" onclick="window.location.href='client-portal.html'">Client login</button>
+      </div>
+    </div>
+    <button class="vw-hamburger" id="vw-hamburgerBtn" onclick="vwToggleMenu()" aria-label="Menu">
+      <svg id="vw-iconMenu" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="vw-iconClose" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="vw-mobile-menu">
+    <button class="vw-navlink" onclick="window.location.href='what-we-do.html'">What We Do</button>
+    <button class="vw-navlink" onclick="window.location.href='how-we-do.html'">How We Do</button>
+    <button class="vw-navlink" onclick="window.location.href='who-we-are.html'">Who We Are</button>
+    <div>
+      <p class="vw-navlink" style="cursor:default;color:#94a3b8;margin-bottom:10px">Tools</p>
+      <div class="mob-quiz-links">
+        <a href="https://moiz-o9tnljz7.scoreapp.com/" target="_blank" rel="noopener">Wealth Quiz ↗</a>
+        <a href="https://moiz-sqlq8z9y.scoreapp.com/" target="_blank" rel="noopener">Insurance Quiz ↗</a>
+      </div>
+    </div>
+    <div class="mob-actions">
+      <a href="https://calendly.com/financial--adviser/connect-call" target="_blank" rel="noopener">Meet an adviser</a>
+      <button onclick="window.location.href='client-portal.html'">Client login</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Legal &amp; Compliance</p>
+    <h1>Privacy &amp; Disclosure</h1>
+    <p class="subtitle">Your privacy is important to us. Learn how we collect, handle and protect your personal information.</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section id="content">
+  <div class="content-inner">
+
+    <div class="section-block">
+      <h2>Your Privacy</h2>
+      <p>Your privacy is important to us. To learn more about our collection and handling of your personal information and for details on how to access our Privacy Policy, please refer below.</p>
+      <p>Another financial adviser may be appointed to you if your financial adviser leaves Advice Evolution or if your financial adviser is unable to attend to your needs due to an extended absence from the business. In these circumstances, Advice Evolution will write to you advising of the change. Your personal information will be passed on to the new financial adviser.</p>
+      <p>If you choose to appoint a new financial adviser, your new adviser will be provided access to your policy information. They will be responsible for providing you with annual or ongoing advice relating to those policies and all future advice fees deducted from the policy/(ies) will be paid to your new adviser.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>Collection of Information</h2>
+      <p>As part of the financial planning process, we need to collect information about you. Where possible we will obtain that information directly from you, but if authorised by you we may also obtain it from other sources such as your employer or accountant. If that information is incomplete or inaccurate, this could affect our ability to fully or properly analyse your needs, objectives and financial situation, so our recommendations may not be completely appropriate or suitable for you.</p>
+      <p>We are also required under the Anti-Money-Laundering and Counter-Terrorism Financing Act (AML/CTF) 2006 to implement client identification processes. We will need you to present identification documents such as passports and driver's licences in order to meet our obligations.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>How We Use Your Information</h2>
+      <p>We keep your personal information confidential, and only use it in accordance with our Privacy Policy. Some of the ways we may use this information are set out below:</p>
+      <ul>
+        <li>Your financial adviser and Advice Evolution may have access to this information when providing financial advice or services to you.</li>
+        <li>Your financial adviser may, in the future, disclose information to other financial advisers, brokers and those who are authorised by Advice Evolution to review customers' needs and circumstances from time to time.</li>
+        <li>Your information is only disclosed to other parties as are necessary for us to provide our services to you. Other parties may include fund managers, life companies, other Licensees and related parties who provide services to us.</li>
+        <li>Your information may be used to provide ongoing information about opportunities that may be useful or relevant to your financial needs through direct marketing (subject to your ability to opt-out as set out in the Advice Evolution Privacy Policy).</li>
+        <li>Your information may be disclosed as required or authorised by law and to anyone authorised by you.</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <h2>Overseas Disclosure</h2>
+      <p>In certain situations, some of the parties that we share information with may be in, or have operations in, other countries. This means that your information might end up stored or accessed in overseas countries.</p>
+      <p>When we send your personal information to overseas recipients, we make sure appropriate data handling and security arrangements are in place. In all such cases, we commit to making reasonable enquiries to ensure that these organisations comply with their local privacy legislation where such legislation is comparable to the Australian legislation and to comply with the key components of Australian Privacy legislation in cases where their local legislation is considered inadequate or non-existent. In addition, we will disclose your information where we are required to by law.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>Protecting Your Information</h2>
+      <p>Your financial adviser and Advice Evolution will continue to take reasonable steps to protect your information from misuse, loss, and unauthorised access, modification or improper disclosure. You can request access to the information your adviser or Licensee holds about you at any time to correct or update it as set out in the Advice Evolution Privacy Policy.</p>
+      <div class="info-box">
+        <p>The Advice Evolution Privacy Policy also contains information about how to make a complaint about a breach of the Australian Privacy Principles. For a copy of Advice Evolution's Privacy Policy visit <strong>www.adviceevolution.com.au</strong> or you can contact us.</p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h2>Professional Indemnity Insurance</h2>
+      <p>Professional indemnity insurance is maintained by Advice Evolution Pty Ltd to cover advice, actions and recommendations which have been authorised by Advice Evolution Pty Ltd and provided by your adviser. The insurance satisfies the requirements imposed by the Corporations Act 2001 and financial services regulations.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="vw-footer">
+  <div class="foot-inner">
+    <div class="foot-grid">
+      <div>
+        <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" class="foot-logo"/>
+        <ul class="foot-contact">
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>03 8652 1445</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Suite 10, 1 Main Street,<br/>Box Hill, VIC 3128</li>
+        </ul>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://www.linkedin.com/in/moiz-mandani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;gap:48px;flex-wrap:wrap">
+          <div style="flex:1;min-width:120px">
+            <h4>Menu</h4>
+            <ul class="foot-list">
+              <li><button onclick="window.location.href='index.html'">Home</button></li>
+              <li><button onclick="window.location.href='what-we-do.html'">What We Do</button></li>
+              <li><button onclick="window.location.href='how-we-do.html'">How We Do</button></li>
+              <li><button onclick="window.location.href='who-we-are.html'">Who We Are</button></li>
+              <li><button onclick="window.location.href='index.html#discovery'">Tools</button></li>
+            </ul>
+          </div>
+          <div style="flex:1;min-width:140px">
+            <h4>Our Clients</h4>
+            <ul class="foot-list">
+              <li>Young Professionals</li>
+              <li>Small Business Owners</li>
+              <li>Planning to Retire</li>
+              <li>High-Net-Worth Individuals</li>
+            </ul>
+          </div>
+        </div>
+        <button class="btn-portal-foot" onclick="window.location.href='client-portal.html'">Client Portal Login</button>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul class="foot-list">
+          <li>Money Management</li><li>Strategy &amp; Financial Modelling</li><li>Retirement Planning</li>
+          <li>Investment Management</li><li>Investment Structures</li><li>Tax Planning</li>
+          <li>Superannuation</li><li>Planning for Your Children</li><li>Personal Insurance</li><li>Estate Planning</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <ul class="foot-list">
+          <li><button onclick="window.open('https://moiz-o9tnljz7.scoreapp.com','_blank')">Wealth Quiz ↗</button></li>
+          <li><button onclick="window.open('https://moiz-sqlq8z9y.scoreapp.com','_blank')">Insurance Quiz ↗</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-legal-row">
+        <p>&copy; 2026 Vega Wealth Advisers. All Rights Reserved.</p>
+        <div class="foot-policy-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="complaints.html">Complaints</a>
+          <a href="website-disclosure-information.html">Website Disclosure Information</a>
+        </div>
+      </div>
+      <div class="compliance-box">
+        <div class="comp-abn">Advice Evolution Pty Ltd &nbsp;|&nbsp; AFSL: 342880 &nbsp;|&nbsp; ABN: 66 137 858 023 &nbsp;|&nbsp; CAR: 001320118</div>
+        <div class="comp-ack">Vega Wealth Advisers acknowledges the Traditional Owners and Custodians of the lands on which we meet, live and work. We pay our respects to the people, the cultures and the Elders past and present.</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function vwToggleMenu(){
+  const m=document.getElementById('vw-mobile-menu');
+  const open=m.classList.toggle('open');
+  document.getElementById('vw-iconMenu').style.display=open?'none':'block';
+  document.getElementById('vw-iconClose').style.display=open?'block':'none';
+}
+</script>
+</body>
+</html>

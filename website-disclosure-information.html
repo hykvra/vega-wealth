@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Website Disclosure Information | Vega Wealth</title>
+<meta name="description" content="A guide to the services we provide and how Vega Wealth will work with you to achieve your goals. Includes fees, adviser profile, and your rights."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:#062743;background:#fff;overflow-x:hidden;padding-top:80px}
+::selection{background:#FDBB3B4d;color:#062743}
+a{text-decoration:none}
+:root{--gold:#FDBB3B;--navy:#062743;--green:#045234}
+
+/* ── NAV ── */
+#vw-nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #f1f5f9;box-shadow:0 1px 8px rgba(0,0,0,.06)}
+#vw-nav .vw-nav-inner{max-width:1280px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+.vw-logo-btn{background:none;border:none;cursor:pointer;padding:0;transition:transform .3s}
+.vw-logo-btn:hover{transform:scale(1.05)}
+.vw-logo-btn img{height:48px;width:auto}
+#vw-desktopnav{display:none;align-items:center;gap:40px}
+@media(min-width:1024px){#vw-desktopnav{display:flex}}
+.vw-navlink{background:none;border:none;cursor:pointer;color:var(--navy);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;transition:color .3s;padding:4px 0;position:relative}
+.vw-navlink:hover,.vw-navlink.active{color:var(--gold)}
+.vw-navlink.active::after{content:'';position:absolute;bottom:-4px;left:0;width:100%;height:2px;background:var(--gold)}
+.vw-nav-actions{display:flex;gap:16px;padding-left:24px;border-left:1px solid #e2e8f0}
+.vw-btn-meet{background:var(--gold);color:var(--navy);padding:10px 24px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:all .3s;display:inline-block}
+.vw-btn-meet:hover{background:var(--navy);color:#fff}
+.vw-btn-portal{background:var(--navy);color:#fff;border:none;cursor:pointer;padding:10px 24px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;transition:all .3s}
+.vw-btn-portal:hover{background:var(--gold);color:var(--navy)}
+.vw-hamburger{display:flex;background:none;border:none;cursor:pointer;color:var(--navy);padding:8px}
+@media(min-width:1024px){.vw-hamburger{display:none}}
+#vw-mobile-menu{display:none;background:#fff;border-top:1px solid #f1f5f9;padding:40px 24px;flex-direction:column;gap:32px;box-shadow:0 20px 40px rgba(0,0,0,.1)}
+#vw-mobile-menu.open{display:flex}
+#vw-mobile-menu .vw-navlink{text-align:left;font-size:11px}
+.mob-actions{display:flex;flex-direction:column;gap:16px;padding-top:24px;border-top:1px solid #f1f5f9}
+.mob-actions a,.mob-actions button{display:block;padding:16px;border-radius:2px;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-align:center;transition:all .3s;width:100%}
+.mob-actions a{background:var(--gold);color:var(--navy);text-decoration:none}
+.mob-actions button{background:var(--navy);color:#fff;border:none;cursor:pointer}
+
+/* ── HERO ── */
+#hero{padding:80px 24px 64px;background:#fff;border-bottom:1px solid #f1f5f9;position:relative;overflow:hidden}
+#hero::after{content:'';position:absolute;top:0;right:0;width:33%;height:100%;background:#FDBB3B08;transform:skewX(-12deg) translateX(50%)}
+#hero .hero-inner{max-width:800px;margin:0 auto;position:relative;z-index:10}
+#hero .eyebrow{font-size:.875rem;font-weight:600;text-transform:uppercase;letter-spacing:.3em;color:#475569;border-left:3px solid var(--gold);padding-left:16px;margin-bottom:24px}
+#hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.03em;margin-bottom:16px}
+#hero .subtitle{font-size:1rem;color:#475569;font-weight:300;line-height:1.7;max-width:600px}
+#hero .meta-row{display:flex;gap:32px;flex-wrap:wrap;margin-top:28px}
+#hero .meta-item{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;color:#94a3b8}
+#hero .meta-item span{color:var(--navy)}
+
+/* ── CONTENT ── */
+#content{padding:80px 24px;background:#fff}
+#content .content-inner{max-width:800px;margin:0 auto}
+.section-block{margin-bottom:56px}
+.section-block h2{font-size:1.4rem;font-weight:700;color:var(--navy);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--gold);display:inline-block}
+.section-block h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:12px;margin-top:28px}
+.section-block p{font-size:.95rem;color:#475569;line-height:1.85;font-weight:400;margin-bottom:16px}
+.section-block ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:16px}
+.section-block ul li{font-size:.95rem;color:#475569;line-height:1.8;padding-left:20px;position:relative}
+.section-block ul li::before{content:'•';color:var(--gold);font-weight:900;position:absolute;left:0;top:0}
+.info-box{background:#f8fafc;border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:24px 28px;margin-bottom:24px}
+.info-box p{margin-bottom:0;font-style:italic}
+.contact-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:28px 32px;margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.contact-card p{font-size:.9rem;color:#475569;margin-bottom:0;line-height:1.7}
+.contact-card a{color:var(--navy);font-weight:600;transition:color .3s}
+.contact-card a:hover{color:var(--gold)}
+.fee-table{width:100%;border-collapse:collapse;margin:16px 0 24px}
+.fee-table th{background:var(--navy);color:#fff;padding:12px 16px;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-align:left}
+.fee-table td{padding:12px 16px;font-size:.875rem;color:#475569;border-bottom:1px solid #f1f5f9;vertical-align:top;line-height:1.7}
+.fee-table tr:last-child td{border-bottom:none}
+.fee-table tr:nth-child(even) td{background:#f8fafc}
+.adviser-card{background:linear-gradient(135deg,var(--navy) 0%,#0a3a5c 100%);border-radius:12px;padding:40px;color:#fff;margin-bottom:32px}
+.adviser-card .adv-name{font-size:1.5rem;font-weight:900;margin-bottom:4px}
+.adviser-card .adv-title{font-size:.8rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+.adviser-card .adv-asic{font-size:.8rem;color:rgba(255,255,255,.6);margin-bottom:24px}
+.adviser-card .adv-email{font-size:.875rem;color:var(--gold)}
+.qual-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+@media(max-width:600px){.qual-grid{grid-template-columns:1fr}}
+.qual-item{background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;padding:12px 16px;font-size:.875rem;color:#475569;font-weight:500}
+.step-list{display:flex;flex-direction:column;gap:24px;margin-top:16px}
+.step{display:flex;gap:20px;align-items:flex-start}
+.step-num{background:var(--gold);color:var(--navy);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.875rem;flex-shrink:0;margin-top:2px}
+.step-body h3{margin-top:0}
+.step-body p{margin-bottom:0}
+.independence-notice{background:#fff8e1;border:1px solid #FDBB3B;border-radius:8px;padding:20px 24px;margin-bottom:24px}
+.independence-notice p{font-size:.875rem;color:#4a3800;margin-bottom:0;line-height:1.7}
+.independence-notice strong{color:#062743}
+
+/* ── FOOTER ── */
+#vw-footer{background:#f8fafc;border-top:1px solid #e2e8f0;padding:80px 0 48px;color:var(--navy)}
+#vw-footer .foot-inner{max-width:1280px;margin:0 auto;padding:0 24px}
+#vw-footer .foot-grid{display:grid;grid-template-columns:1fr;gap:48px;padding-bottom:64px;border-bottom:1px solid #e2e8f0}
+@media(min-width:768px){#vw-footer .foot-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){#vw-footer .foot-grid{grid-template-columns:1fr 1fr 1fr 1fr}}
+#vw-footer .foot-logo{height:64px;width:auto;margin-bottom:24px}
+#vw-footer .foot-contact{list-style:none;display:flex;flex-direction:column;gap:16px;margin-bottom:24px;padding:0}
+#vw-footer .foot-contact li{display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#475569}
+#vw-footer .foot-contact li svg{width:20px;height:20px;color:var(--gold);flex-shrink:0;margin-top:2px}
+#vw-footer .socials{display:flex;gap:12px}
+#vw-footer .socials a{width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #e2e8f0;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06);transition:background .3s}
+#vw-footer .socials a:hover{background:var(--gold)}
+#vw-footer .socials a svg{width:16px;height:16px;color:var(--navy)}
+#vw-footer h4{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);padding-bottom:12px;border-bottom:1px solid #f1f5f9;margin-bottom:16px}
+#vw-footer ul.foot-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
+#vw-footer ul.foot-list li,#vw-footer ul.foot-list button{font-size:.875rem;color:#475569;font-weight:500;background:none;border:none;cursor:pointer;text-align:left;padding:0;transition:color .3s;line-height:1.6}
+#vw-footer ul.foot-list li:hover,#vw-footer ul.foot-list button:hover{color:var(--gold)}
+#vw-footer .btn-portal-foot{width:100%;margin-top:32px;background:var(--navy);color:#fff;border:none;cursor:pointer;padding:12px 24px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;transition:all .3s}
+#vw-footer .btn-portal-foot:hover{background:var(--gold);color:var(--navy)}
+#vw-footer .foot-bottom{padding-top:48px;display:flex;flex-direction:column;gap:32px}
+#vw-footer .foot-legal-row{display:flex;flex-direction:column;gap:16px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#94a3b8}
+@media(min-width:768px){#vw-footer .foot-legal-row{flex-direction:row;align-items:center;justify-content:space-between}}
+#vw-footer .foot-legal-row a{color:#94a3b8;text-decoration:underline;text-decoration-color:#e2e8f0;text-underline-offset:4px;transition:color .3s}
+#vw-footer .foot-legal-row a:hover{color:var(--gold)}
+#vw-footer .foot-policy-links{display:flex;gap:32px;flex-wrap:wrap}
+#vw-footer .compliance-box{background:#fff;padding:24px 32px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.04);display:flex;flex-direction:column;gap:16px}
+#vw-footer .comp-abn{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#94a3b8}
+#vw-footer .comp-ack{font-size:9px;color:#94a3b8;font-style:italic;border-top:1px solid #f1f5f9;padding-top:16px;line-height:1.6}
+/* ── DROPDOWN ── */
+.vw-dropdown{position:relative}
+.vw-dropdown::after{content:'';position:absolute;top:100%;left:-8px;right:-8px;height:16px}
+.vw-dropdown-btn{display:flex!important;align-items:center;gap:5px}
+.vw-dropdown-menu{display:none;position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px;min-width:180px;box-shadow:0 8px 24px rgba(0,0,0,.12);z-index:200;white-space:nowrap}
+.vw-dropdown:hover .vw-dropdown-menu{display:block}
+.vw-dropdown-menu a{display:block;padding:10px 16px;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--navy);border-radius:4px;transition:background .2s;text-decoration:none}
+.vw-dropdown-menu a:hover{background:var(--gold)}
+.vw-dropdown-menu::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #e2e8f0}
+.vw-dropdown-menu::after{content:'';position:absolute;top:-5px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #fff}
+.mob-quiz-links{display:flex;flex-direction:column;gap:8px;padding-left:16px;border-left:2px solid var(--gold)}
+.mob-quiz-links a{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#475569;text-decoration:none;transition:color .2s}
+.mob-quiz-links a:hover{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<nav id="vw-nav">
+  <div class="vw-nav-inner">
+    <button class="vw-logo-btn" onclick="window.location.href='index.html'" aria-label="Vega Wealth Home">
+      <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth"/>
+    </button>
+    <div id="vw-desktopnav">
+      <button class="vw-navlink" onclick="window.location.href='what-we-do.html'">What We Do</button>
+      <button class="vw-navlink" onclick="window.location.href='how-we-do.html'">How We Do</button>
+      <button class="vw-navlink" onclick="window.location.href='who-we-are.html'">Who We Are</button>
+      <div class="vw-dropdown">
+        <button class="vw-navlink vw-dropdown-btn">Tools <svg width="8" height="5" viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l3 3 3-3"/></svg></button>
+        <div class="vw-dropdown-menu">
+          <a href="https://moiz-o9tnljz7.scoreapp.com/" target="_blank" rel="noopener">Wealth Quiz ↗</a>
+          <a href="https://moiz-sqlq8z9y.scoreapp.com/" target="_blank" rel="noopener">Insurance Quiz ↗</a>
+        </div>
+      </div>
+      <div class="vw-nav-actions">
+        <a href="https://calendly.com/financial--adviser/connect-call" target="_blank" rel="noopener" class="vw-btn-meet">Meet an adviser</a>
+        <button class="vw-btn-portal" onclick="window.location.href='client-portal.html'">Client login</button>
+      </div>
+    </div>
+    <button class="vw-hamburger" id="vw-hamburgerBtn" onclick="vwToggleMenu()" aria-label="Menu">
+      <svg id="vw-iconMenu" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="vw-iconClose" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="vw-mobile-menu">
+    <button class="vw-navlink" onclick="window.location.href='what-we-do.html'">What We Do</button>
+    <button class="vw-navlink" onclick="window.location.href='how-we-do.html'">How We Do</button>
+    <button class="vw-navlink" onclick="window.location.href='who-we-are.html'">Who We Are</button>
+    <div>
+      <p class="vw-navlink" style="cursor:default;color:#94a3b8;margin-bottom:10px">Tools</p>
+      <div class="mob-quiz-links">
+        <a href="https://moiz-o9tnljz7.scoreapp.com/" target="_blank" rel="noopener">Wealth Quiz ↗</a>
+        <a href="https://moiz-sqlq8z9y.scoreapp.com/" target="_blank" rel="noopener">Insurance Quiz ↗</a>
+      </div>
+    </div>
+    <div class="mob-actions">
+      <a href="https://calendly.com/financial--adviser/connect-call" target="_blank" rel="noopener">Meet an adviser</a>
+      <button onclick="window.location.href='client-portal.html'">Client login</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Legal &amp; Compliance</p>
+    <h1>Website Disclosure Information</h1>
+    <p class="subtitle">A guide to the services we provide and how we will work with you to achieve your goals.</p>
+    <div class="meta-row">
+      <div class="meta-item">Version <span>WDI 1.0</span></div>
+      <div class="meta-item">Issue Date <span>March 2026</span></div>
+      <div class="meta-item">Adviser <span>Moiz Mandani</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section id="content">
+  <div class="content-inner">
+
+    <!-- IMPORTANT NOTICE -->
+    <div class="section-block">
+      <h2>Important Notice</h2>
+      <p>Before we provide you with financial advice, you should read this Website Disclosure Information (WDI). It contains the following important information to help you decide whether to use our services:</p>
+      <ul>
+        <li>Who we are</li>
+        <li>Advice we provide</li>
+        <li>How we are paid</li>
+        <li>Who to contact if you have a complaint</li>
+      </ul>
+      <div class="independence-notice">
+        <p><strong>Lack of Independence Disclosure:</strong> Advice Evolution is owned by advisers and has an open approved products list, however, as we continue to be paid commissions for life insurance products and receive fees based on the asset value of some investments, we must disclose this lack of independence.</p>
+      </div>
+    </div>
+
+    <!-- ABOUT OUR PRACTICE -->
+    <div class="section-block">
+      <h2>About Our Practice</h2>
+      <p>Vega Wealth Advisers Pty Ltd, corporate authorised representative (CAR), number 1320118, trading as Vega Wealth Advisers, is authorised to provide financial services on behalf of Advice Evolution Pty Ltd.</p>
+      <p>Our business was established by Moiz Mandani in 2026, and we have an office in Box Hill. We offer comprehensive financial planning advice to assist clients develop a structured financial plan that helps them achieve their lifetime goals. We will provide you with strategies that allow you to take control of your own financial future and build relationships with you and your family to secure each generation's financial well-being.</p>
+      <div class="contact-card">
+        <p><strong>Practice:</strong> Vega Wealth Advisers</p>
+        <p><strong>Address:</strong> Suite 10, 1 Main Street Box Hill VIC 3128</p>
+        <p><strong>Phone:</strong> <a href="tel:0359591922">03 5959 1922</a></p>
+        <p><strong>Email:</strong> <a href="mailto:hello@vegawealth.com.au">hello@vegawealth.com.au</a></p>
+        <p><strong>Web:</strong> <a href="https://vegawealth.com.au" target="_blank" rel="noopener">vegawealth.com.au</a></p>
+      </div>
+    </div>
+
+    <!-- WHY CHOOSE US -->
+    <div class="section-block">
+      <h2>Why Choose Us</h2>
+      <p>We aim to provide personalised and responsible advice suited to your objectives, and believe that sound advice and planning is the key to improving your financial position.</p>
+      <ul>
+        <li>We undertake continuous professional development to keep us up to date with all applicable legislative, strategy and product changes.</li>
+        <li>We have access to technical, risk and investment research professionals who provide additional analysis on strategies and products.</li>
+        <li>We will help you determine your goals and weigh up different investment strategies to achieve them.</li>
+        <li>We turn your thoughts into action — no secret formulas, just a solid plan to achieve your goals over time.</li>
+      </ul>
+      <p>Advice Evolution Pty Ltd maintains a broad approved product list containing investment and insurance products that have been researched by at least 2 research houses.</p>
+    </div>
+
+    <!-- DOCUMENTS YOU MAY RECEIVE -->
+    <div class="section-block">
+      <h2>Documents You May Receive</h2>
+      <p>Our advice will be provided to you in a financial plan, known as a <strong>Statement of Advice (SOA)</strong>. The financial plan contains a summary of your goals, our strategies and financial product recommendations to achieve your goals. It also provides detailed information about the fees, costs and other benefits we will receive as a result of the advice provided.</p>
+      <p>You will also receive a <strong>Product Disclosure Statement (PDS)</strong> if we have recommended you invest in or purchase a financial product. The PDS contains key features of the recommended product, significant benefits, risks and the fees you pay the product provider.</p>
+      <p>You may also receive an ongoing or <strong>Annual Agreement</strong> which will outline how we monitor your strategy and portfolio to ensure they remain the best available to achieve your goals.</p>
+    </div>
+
+    <!-- FINANCIAL PLANNING PROCESS -->
+    <div class="section-block">
+      <h2>Our Financial Planning Process</h2>
+      <p>Everyone has different circumstances, needs and goals. We treat everyone as an individual, but follow a defined process to make sure you know what to expect from us.</p>
+      <div class="step-list">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>Identifying Where You Want to Be</h3>
+            <p>We help you identify your financial and lifestyle goals and explain the services we offer. The type of advice you need could depend on your life stage, the amount of money you want to invest and the complexity of your affairs.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>Considering Opportunities and Risks</h3>
+            <p>Good personal advice starts with understanding your current situation. We take a close look at your assets, debts, income, expenses and insurance, and explore the options to reach your goals.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>Bridging the Gap</h3>
+            <p>Based on our research, we will recommend a strategy to bridge the gap between where you are now and where you want to be.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h3>Bringing Your Plan to Life</h3>
+            <p>We work closely with you to implement your financial plan. We help you complete any necessary paperwork and are available to attend meetings with your accountant, solicitor and general insurer.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <h3>Staying On Track with Ongoing Advice</h3>
+            <p>Circumstances change over time. The final step in our process ensures your financial plan remains on track through regular ongoing or annual advice. We will design a service program so your plan remains current and up to date.</p>
+          </div>
+        </div>
+      </div>
+      <div class="info-box" style="margin-top:32px">
+        <p><strong>Transaction Services:</strong> If you would like us to help you complete a particular transaction without our advice, we can take your instructions and arrange for the transaction to be completed. In these circumstances we will generally ask you to confirm your instructions in writing and to sign a letter acknowledging you have declined our offer of advice and understand the risks involved.</p>
+      </div>
+    </div>
+
+    <!-- FEES -->
+    <div class="section-block">
+      <h2>Fees</h2>
+      <p>The fees charged for our advice are designed to be fair and clear. Your advice fees will be calculated at the time we provide you with personal advice and will be outlined in your SOA or Advice Agreement, inclusive of GST.</p>
+
+      <table class="fee-table">
+        <thead>
+          <tr><th>Fee Type</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Consultation Fee</strong></td><td>Up to $330 for a consultation.</td></tr>
+          <tr><td><strong>Advice Fee</strong></td><td>Covers the cost of researching and preparing your financial plan. Can be a flat fee with an additional performance or risk margin depending on size and complexity.</td></tr>
+          <tr><td><strong>Advice Implementation Fee</strong></td><td>Covers the administrative time spent implementing recommended strategies and products. Calculated on estimated time to complete the task.</td></tr>
+          <tr><td><strong>Admin Fee</strong></td><td>Charged for any other admin services provided.</td></tr>
+          <tr><td><strong>Hourly Rate</strong></td><td>Adviser time: $330/h &nbsp;|&nbsp; Admin staff: $110/h</td></tr>
+          <tr><td><strong>Annual / Ongoing Advice</strong></td><td>Covers keeping your strategy and investments current, up to date, and any services provided by the practice. Detailed in a separate document at the time of advice.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Life Insurance Payments</h3>
+      <p>Advice Evolution Pty Ltd will receive commission directly from the product provider based on a percentage of the insurance premium paid. Commissions are deducted from the premium by the product provider and are not paid directly by you.</p>
+      <ul>
+        <li><strong>Initial commission:</strong> A one-off commission paid at the inception of an insurance policy, ranging from 11% to 66% of the initial premium paid.</li>
+        <li><strong>Ongoing commission:</strong> Part of the product provider's ongoing charges, paid every year that the insurance policy is retained.</li>
+      </ul>
+
+      <h3>Payment Methods</h3>
+      <ul>
+        <li>BPay, direct debit (credit card or savings), cheque</li>
+        <li>Deduction from your investment</li>
+        <li>Ongoing fees may be deducted annually, monthly, or quarterly</li>
+        <li>Annual or ongoing advice fees may increase each year in line with CPI or by a fixed amount or percentage as agreed</li>
+      </ul>
+    </div>
+
+    <!-- ABOUT ADVICE EVOLUTION -->
+    <div class="section-block">
+      <h2>About Advice Evolution Pty Ltd</h2>
+      <div class="contact-card">
+        <p><strong>Advice Evolution Pty Ltd</strong></p>
+        <p>ABN: 66 137 858 023 &nbsp;|&nbsp; Australian Financial Services Licence: 342880</p>
+        <p>Suite 302, 20 Bungan Street, MONA VALE NSW 2103</p>
+        <p><a href="https://www.adviceevolution.com.au" target="_blank" rel="noopener">www.adviceevolution.com.au</a></p>
+      </div>
+      <p style="margin-top:16px">Advice Evolution Pty Ltd has approved the distribution of this Website Disclosure Information.</p>
+    </div>
+
+    <!-- PRIVACY AND DISCLOSURE -->
+    <div class="section-block">
+      <h2>Privacy &amp; Disclosure</h2>
+      <p>Your privacy is important to us. As part of the financial planning process, we need to collect information about you. Where possible we will obtain that information directly from you, but if authorised by you we may also obtain it from other sources such as your employer or accountant.</p>
+      <p>We are also required under the Anti-Money-Laundering and Counter-Terrorism Financing Act (AML/CTF) 2006 to implement client identification processes. We will need you to present identification documents such as passports and driver's licences in order to meet our obligations.</p>
+      <p>We keep your personal information confidential and only use it in accordance with our Privacy Policy. Some of the ways we may use this information:</p>
+      <ul>
+        <li>Your financial adviser and Advice Evolution may have access to this information when providing financial advice or services to you.</li>
+        <li>Your information is only disclosed to other parties as are necessary for us to provide our services, including fund managers, life companies, other Licensees and related parties.</li>
+        <li>In certain situations, some parties we share information with may be in, or have operations in, other countries. Appropriate data handling and security arrangements will be in place.</li>
+        <li>Your information may be used to provide ongoing information about opportunities relevant to your financial needs through direct marketing (subject to your ability to opt-out).</li>
+        <li>Your information may be disclosed as required or authorised by law and to anyone authorised by you.</li>
+      </ul>
+      <div class="info-box">
+        <p>For a copy of Advice Evolution's Privacy Policy visit <strong>www.adviceevolution.com.au</strong> or contact us. The policy contains information about how to make a complaint about a breach of the Australian Privacy Principles.</p>
+      </div>
+    </div>
+
+    <!-- PROFESSIONAL INDEMNITY -->
+    <div class="section-block">
+      <h2>Professional Indemnity Insurance</h2>
+      <p>Professional indemnity insurance is maintained by Advice Evolution Pty Ltd to cover advice, actions and recommendations which have been authorised by Advice Evolution Pty Ltd and provided by your adviser. The insurance satisfies the requirements imposed by the Corporations Act 2001 and financial services regulations.</p>
+    </div>
+
+    <!-- COMPLAINTS -->
+    <div class="section-block">
+      <h2>Complaints</h2>
+      <p>If you have any complaints about the services provided to you, please follow these steps:</p>
+      <ul>
+        <li>Contact your financial adviser and tell them about your complaint.</li>
+        <li>If not satisfactorily resolved within three days, contact Advice Evolution Pty Ltd on <strong>042 622 8737</strong> or email <strong>admin@adviceevolution.com.au</strong>.</li>
+        <li>Advice Evolution will acknowledge your complaint and provide a formal written response within a <strong>30-day period</strong>.</li>
+        <li>If still unresolved, you may lodge a complaint with AFCA — website: <a href="https://www.afca.org.au" target="_blank" rel="noopener">www.afca.org.au</a>, phone: <a href="tel:1800931678">1800 931 678</a> (free call).</li>
+      </ul>
+      <p>For full details, see our <a href="complaints.html" style="color:var(--navy);font-weight:600;text-decoration:underline">Complaints page</a>.</p>
+    </div>
+
+    <!-- ADVISER PROFILE -->
+    <div class="section-block">
+      <h2>Adviser Profile</h2>
+      <p style="font-size:.8rem;color:#94a3b8;margin-bottom:24px">Version 1.0 &nbsp;|&nbsp; Date Issued: 16 March 2026 &nbsp;|&nbsp; This profile is only complete when the business profile is attached.</p>
+
+      <div class="adviser-card">
+        <div class="adv-name">Moiz Mandani</div>
+        <div class="adv-title">Financial Adviser</div>
+        <div class="adv-asic">ASIC Number: 001244853 &nbsp;|&nbsp; Authorised Representative of Advice Evolution Pty Ltd</div>
+        <div class="adv-email">moiz@vegawealth.com.au</div>
+      </div>
+
+      <h3>Education &amp; Qualifications</h3>
+      <div class="qual-grid">
+        <div class="qual-item">Bachelor of Commerce (Accounting &amp; Finance) — Swinburne University</div>
+        <div class="qual-item">Chartered Financial Analyst (CFA) Level 1, Passed</div>
+        <div class="qual-item">SMSF Specialist Advisor™ / SSA®</div>
+        <div class="qual-item">Certified Financial Planner®</div>
+      </div>
+
+      <h3>Experience</h3>
+      <p>Moiz has over twelve years of experience in the Financial Services industry, with the last ten years as a Financial Adviser with NAB Financial Planning, MLC Advice, and Bridges Financial Services. He has helped hundreds of Australians achieve their goals and be on the journey to their ideal life.</p>
+
+      <h3>Memberships</h3>
+      <p>Moiz is a Certified Financial Planner® practitioner and a member of the Financial Planning Association of Australia. He is also an SMSF Association SMSF Specialist Advisor.</p>
+
+      <h3>Advice Your Adviser Can Provide</h3>
+      <p>Moiz can provide strategic advice and arrange the following types of financial products and strategies:</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:16px">
+        <div>
+          <h3 style="color:var(--gold);font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px">Strategies</h3>
+          <ul>
+            <li>Aged care accommodation</li>
+            <li>Centrelink planning</li>
+            <li>Investment planning</li>
+            <li>Superannuation planning</li>
+            <li>Pre-retirement &amp; retirement planning</li>
+            <li>Estate planning considerations</li>
+            <li>Risk and insurance analysis</li>
+            <li>Business succession planning</li>
+            <li>Salary packaging advice</li>
+            <li>Gearing strategies</li>
+            <li>Savings and wealth creation strategies</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="color:var(--gold);font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px">Products</h3>
+          <ul>
+            <li>Self-managed super funds</li>
+            <li>Direct shares</li>
+            <li>Cash management trusts</li>
+            <li>Retirement income streams</li>
+            <li>Retail &amp; wholesale managed investment schemes</li>
+            <li>Master trust products</li>
+            <li>Superannuation products</li>
+            <li>Personal and group insurance</li>
+            <li>Business succession insurance</li>
+            <li>Margin lending facilities</li>
+            <li>Socially responsible investments</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="margin-top:32px">How the Adviser is Paid</h3>
+      <p>Advice Evolution Pty Ltd will retain 2% of the gross revenue received for recommended financial services and/or products. Advice Evolution Pty Ltd will pay Vega Wealth Advisers Pty Ltd 98% of the gross revenue received. Moiz has equity in Vega Wealth Advisers Pty Ltd and may receive capital and profit related benefits.</p>
+      <p>Vega Wealth Advisers Pty Ltd maintains a register of any non-monetary benefits received between $100–$300. If you would like a copy of either benefits register, please ask your adviser.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="vw-footer">
+  <div class="foot-inner">
+    <div class="foot-grid">
+      <div>
+        <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" class="foot-logo"/>
+        <ul class="foot-contact">
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>03 8652 1445</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Suite 10, 1 Main Street,<br/>Box Hill, VIC 3128</li>
+        </ul>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://www.linkedin.com/in/moiz-mandani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;gap:48px;flex-wrap:wrap">
+          <div style="flex:1;min-width:120px">
+            <h4>Menu</h4>
+            <ul class="foot-list">
+              <li><button onclick="window.location.href='index.html'">Home</button></li>
+              <li><button onclick="window.location.href='what-we-do.html'">What We Do</button></li>
+              <li><button onclick="window.location.href='how-we-do.html'">How We Do</button></li>
+              <li><button onclick="window.location.href='who-we-are.html'">Who We Are</button></li>
+              <li><button onclick="window.location.href='index.html#discovery'">Tools</button></li>
+            </ul>
+          </div>
+          <div style="flex:1;min-width:140px">
+            <h4>Our Clients</h4>
+            <ul class="foot-list">
+              <li>Young Professionals</li>
+              <li>Small Business Owners</li>
+              <li>Planning to Retire</li>
+              <li>High-Net-Worth Individuals</li>
+            </ul>
+          </div>
+        </div>
+        <button class="btn-portal-foot" onclick="window.location.href='client-portal.html'">Client Portal Login</button>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul class="foot-list">
+          <li>Money Management</li><li>Strategy &amp; Financial Modelling</li><li>Retirement Planning</li>
+          <li>Investment Management</li><li>Investment Structures</li><li>Tax Planning</li>
+          <li>Superannuation</li><li>Planning for Your Children</li><li>Personal Insurance</li><li>Estate Planning</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <ul class="foot-list">
+          <li><button onclick="window.open('https://moiz-o9tnljz7.scoreapp.com','_blank')">Wealth Quiz ↗</button></li>
+          <li><button onclick="window.open('https://moiz-sqlq8z9y.scoreapp.com','_blank')">Insurance Quiz ↗</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-legal-row">
+        <p>&copy; 2026 Vega Wealth Advisers. All Rights Reserved.</p>
+        <div class="foot-policy-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="complaints.html">Complaints</a>
+          <a href="website-disclosure-information.html">Website Disclosure Information</a>
+        </div>
+      </div>
+      <div class="compliance-box">
+        <div class="comp-abn">Advice Evolution Pty Ltd &nbsp;|&nbsp; AFSL: 342880 &nbsp;|&nbsp; ABN: 66 137 858 023 &nbsp;|&nbsp; CAR: 001320118</div>
+        <div class="comp-ack">Vega Wealth Advisers acknowledges the Traditional Owners and Custodians of the lands on which we meet, live and work. We pay our respects to the people, the cultures and the Elders past and present.</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function vwToggleMenu(){
+  const m=document.getElementById('vw-mobile-menu');
+  const open=m.classList.toggle('open');
+  document.getElementById('vw-iconMenu').style.display=open?'none':'block';
+  document.getElementById('vw-iconClose').style.display=open?'block':'none';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Vega Wealth | Dream with Confidence. Live with Clarity.</title>
+<meta name="description" content="Financial advice that helps you build passive income, retire with confidence, and live life on your terms."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:#062743;background:#fff;overflow-x:hidden;padding-top:80px}
+::selection{background:#FDBB3B4d;color:#062743}
+img{max-width:100%;display:block}
+a{text-decoration:none}
+:root{--gold:#FDBB3B;--navy:#062743}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeInRight{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+@keyframes popUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scaleIn{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(calc(-382px * 20))}}
+.anim-right{animation:fadeInRight .8s ease-out forwards}
+.anim-popup{opacity:0;animation:popUp .8s cubic-bezier(.16,1,.3,1) forwards}
+.anim-scale{transform-origin:left;animation:scaleIn .6s ease-out forwards}
+
+/* ── LAYOUT UTILS ── */
+.container{max-width:1280px;margin:0 auto;padding:0 24px}
+.container-md{max-width:1152px;margin:0 auto;padding:0 24px}
+.flex{display:flex}.grid{display:grid}
+.items-center{align-items:center}.justify-center{justify-content:center}
+.text-center{text-align:center}.text-left{text-align:left}
+.relative{position:relative}.absolute{position:absolute}
+.overflow-hidden{overflow:hidden}.z0{z-index:0}.z10{z-index:10}
+
+/* ── GOLD BAR ── */
+.gold-bar{width:48px;height:4px;background:var(--gold);display:block}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 28px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;border:none;transition:all .3s}
+.btn-primary{background:var(--gold);color:var(--navy)}.btn-primary:hover{background:var(--navy);color:#fff}
+.btn-outline{background:transparent;border:2px solid var(--gold);color:var(--navy)}.btn-outline:hover{background:#FDBB3B0d}
+.btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:var(--gold);color:var(--navy)}
+.btn-lg{padding:20px 48px;font-size:10px}
+
+/* ── HAND-DRAWN CIRCLE (SVG overlay) ── */
+.hd-wrap{position:relative;display:inline-block}
+.hd-wrap svg{position:absolute;left:-10%;top:-5%;width:120%;height:115%;pointer-events:none;z-index:0}
+.hd-wrap span{position:relative;z-index:1}
+
+/* ── HIGHLIGHT (gold underline block) ── */
+.hl{position:relative;display:inline-block}
+.hl span{position:relative;z-index:1;padding:0 4px}
+.hl::after{content:'';position:absolute;bottom:4px;left:0;width:100%;height:40%;background:var(--gold);z-index:0;opacity:.8}
+
+/* ══════════════════════════════════════
+   SECTION 1 – HERO
+══════════════════════════════════════ */
+#hero{position:relative;min-height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;background:#fff;overflow:hidden}
+#hero .hero-bg{position:absolute;inset:0;z-index:0}
+#hero .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.12}
+#hero .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,#fff,rgba(255,255,255,.4),#fff)}
+#hero .hero-inner{position:relative;z-index:10;max-width:900px;margin:0 auto;padding:0 24px}
+#hero h1{font-size:clamp(2.4rem,7vw,4.5rem);font-weight:900;color:var(--navy);line-height:1.1;margin-bottom:32px;letter-spacing:-.03em}
+#hero h1 .gold{color:var(--gold)}
+#hero p{font-size:clamp(1rem,2vw,1.2rem);color:#64748b;font-weight:300;line-height:1.75;max-width:500px;margin:0 auto 40px}
+#hero p strong{color:var(--navy);font-weight:700;display:block;margin-top:8px}
+#hero .hero-btns{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+
+/* ══════════════════════════════════════
+   SECTION 2 – TERMS
+══════════════════════════════════════ */
+#terms{position:relative;min-height:100vh;display:flex;align-items:center;background:#fff;overflow:hidden}
+#terms .terms-bg{position:absolute;inset:0;z-index:0}
+#terms .glow1{position:absolute;top:80px;right:-10%;width:500px;height:500px;background:#FDBB3B0d;border-radius:50%;filter:blur(120px)}
+#terms .glow2{position:absolute;bottom:-10%;left:-5%;width:384px;height:384px;background:#FDBB3B19;border-radius:50%;filter:blur(100px)}
+#terms .terms-inner{max-width:1280px;margin:0 auto;padding:96px 48px;position:relative;z-index:10;width:100%}
+#terms .terms-grid{display:grid;grid-template-columns:1fr;gap:48px}
+@media(min-width:1024px){#terms .terms-grid{grid-template-columns:1fr 380px;align-items:center;gap:96px}}
+#terms header{margin-bottom:40px}
+#terms h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;color:var(--navy);line-height:1.05;letter-spacing:-.04em}
+#terms h1 .gold{color:var(--gold);display:inline-block;margin-top:8px}
+#terms .lead{font-size:clamp(1.1rem,2vw,1.5rem);color:#94a3b8;font-weight:300;line-height:1.7;margin-bottom:48px}
+#terms .lead .dark{color:var(--navy)}
+#terms .stacked{position:relative;margin-bottom:48px}
+#terms .stacked .bar{position:absolute;left:-16px;top:0;bottom:0;width:4px;background:var(--gold)}
+#terms .stacked p{font-size:clamp(1.3rem,2.5vw,2rem);font-weight:700;letter-spacing:-.02em}
+#terms .stacked .s1{color:var(--navy)}
+#terms .stacked .s2{color:#94a3b8}
+#terms .stacked .s3{color:var(--gold);text-decoration:underline;text-underline-offset:10px;text-decoration-thickness:4px}
+#terms .body-text{font-size:1.05rem;color:#475569;line-height:1.75;max-width:680px;margin-bottom:48px}
+#terms .body-text .accent{font-weight:800;color:var(--gold);font-size:1.15rem}
+#terms .terms-btns{display:flex;flex-wrap:wrap;gap:24px}
+
+/* Feature cards (right column) */
+.feat-cards{display:flex;flex-direction:column;gap:32px;align-items:flex-end}
+.feat-card{background:#fff;padding:32px;color:var(--navy);border-left:4px solid var(--gold);box-shadow:0 20px 60px rgba(0,0,0,.1);border-radius:2px;max-width:360px;width:100%;transition:transform .3s}
+.feat-card:hover{transform:translateY(-8px)}
+.feat-card .icon{width:32px;height:32px;color:var(--gold);margin-bottom:16px}
+.feat-card h3{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#94a3b8;margin-bottom:8px}
+.feat-card p{font-size:.875rem;color:#475569;line-height:1.7;font-weight:500}
+@media(max-width:1023px){.feat-cards{display:none}}
+
+/* ══════════════════════════════════════
+   SECTION 3 – WHAT WE DO
+══════════════════════════════════════ */
+#services{padding:96px 0;background:#fff}
+#services .svc-grid{display:grid;grid-template-columns:1fr;gap:40px}
+@media(min-width:768px){#services .svc-grid{grid-template-columns:1fr 1fr}}
+#services .col-left{display:flex;flex-direction:column;gap:40px}
+#services .col-right{display:flex;flex-direction:column;gap:40px}
+@media(min-width:768px){#services .col-right{margin-top:96px}}
+#services h1{font-size:clamp(2rem,5vw,4rem);font-weight:900;color:var(--navy);text-transform:uppercase;letter-spacing:-.03em;line-height:1.1;margin-bottom:40px}
+.svc-card{background:#F8FAFC;padding:64px 48px;border-radius:24px;border:1px solid #f1f5f9;transition:transform .3s;max-width:480px;margin:0 auto;width:100%;min-height:400px;display:flex;flex-direction:column;justify-content:center}
+.svc-card:hover{transform:scale(1.02)}
+.svc-icon-wrap{width:56px;height:56px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;border:1px solid #f1f5f9;margin-bottom:32px;transition:transform .3s}
+.svc-card:hover .svc-icon-wrap{transform:scale(1.05)}
+.svc-card h2{font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:-.02em;color:var(--navy);margin-bottom:16px}
+.svc-card p{font-size:.9rem;color:#475569;line-height:1.75;font-weight:300;margin-bottom:40px;flex-grow:1}
+.svc-link{display:inline-flex;align-items:center;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--navy);border-bottom:2px solid transparent;transition:border-color .3s}
+.svc-link:hover{border-color:var(--gold)}
+.svc-link svg{margin-left:8px;color:var(--gold);transition:transform .3s}
+.svc-link:hover svg{transform:translateX(4px)}
+.svc-card-gold{background:var(--gold);padding:64px 48px;border-radius:24px;box-shadow:0 20px 60px rgba(253,187,59,.3);min-height:250px;display:flex;flex-direction:column;justify-content:center;max-width:480px;margin:0 auto;width:100%;transition:transform .3s}
+.svc-card-gold:hover{transform:scale(1.02)}
+.svc-card-gold h2{font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:-.02em;color:var(--navy);margin-bottom:24px}
+.svc-card-gold a{display:inline-flex;align-items:center;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--navy)}
+.svc-card-gold a svg{margin-left:12px;transition:transform .3s}
+.svc-card-gold:hover a svg{transform:translateX(8px)}
+
+/* ══════════════════════════════════════
+   SECTION 4 – CORE VALUE PROP
+══════════════════════════════════════ */
+#value{padding:80px 0;background:#fff;overflow:hidden}
+#value h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:var(--navy);letter-spacing:-.03em;text-align:center;margin-bottom:64px;line-height:1.25}
+#value .val-grid{display:grid;grid-template-columns:1fr;gap:32px}
+@media(min-width:1024px){#value .val-grid{grid-template-columns:2fr 1fr;align-items:stretch}}
+#value .val-img{position:relative;border-radius:24px;overflow:hidden;min-height:400px;box-shadow:0 25px 50px rgba(0,0,0,.15)}
+@media(min-width:1024px){#value .val-img{min-height:500px}}
+#value .val-img .slide{position:absolute;inset:0;transition:opacity .7s,transform .7s}
+#value .val-img .slide img{width:100%;height:100%;object-fit:cover;transition:transform 2s}
+#value .val-img .slide:hover img{transform:scale(1.1)}
+#value .val-img .slide .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,39,67,.9),rgba(6,39,67,.3),transparent)}
+#value .val-img .slide .caption{position:absolute;bottom:0;left:0;right:0;padding:48px;color:#fff}
+#value .val-img .slide .caption h3{font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;margin-bottom:16px}
+#value .val-img .slide .caption p{font-size:1.1rem;color:#e2e8f0;font-weight:300;line-height:1.7}
+#value .val-img .slide.active{opacity:1}
+#value .val-img .slide.inactive{opacity:0;pointer-events:none}
+#value .val-tabs{display:flex;flex-direction:column;gap:16px}
+.val-tab{display:flex;align-items:center;text-align:left;padding:32px;border-radius:16px;border:2px solid #f1f5f9;cursor:pointer;transition:all .3s;background:#fff;color:var(--navy);width:100%}
+.val-tab h4{font-size:1.1rem;font-weight:700;line-height:1.3;flex:1}
+.val-tab svg.arrow{margin-left:auto;opacity:0;transform:translateX(-16px);transition:all .3s;flex-shrink:0}
+.val-tab.active{background:var(--gold);border-color:var(--gold);box-shadow:0 8px 30px rgba(253,187,59,.3)}
+.val-tab.active svg.arrow{opacity:1;transform:translateX(0)}
+.val-tab:hover:not(.active){border-color:rgba(253,187,59,.3);background:#f8fafc}
+
+/* ══════════════════════════════════════
+   SECTION 5 – WEALTH BUILDING
+══════════════════════════════════════ */
+#wealth{background:#fff;overflow:hidden;padding:80px 0 0}
+#wealth h2{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;color:var(--navy);letter-spacing:-.04em;line-height:1;margin-bottom:80px}
+#wealth .audience-grid{display:grid;grid-template-columns:1fr;gap:48px;margin-bottom:160px}
+@media(min-width:768px){#wealth .audience-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){#wealth .audience-grid{grid-template-columns:repeat(4,1fr)}}
+.aud-card{display:flex;flex-direction:column;transition:transform .5s}
+@media(min-width:1024px){.aud-card:nth-child(2){margin-top:48px}.aud-card:nth-child(3){margin-top:96px}.aud-card:nth-child(4){margin-top:24px}}
+.aud-img{position:relative;border-radius:32px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 25px 50px rgba(0,0,0,.15);margin-bottom:32px}
+.aud-img img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.aud-card:hover .aud-img img{transform:scale(1.1)}
+.aud-img .hover-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,39,67,.8),transparent);opacity:0;transition:opacity .5s;display:flex;align-items:flex-end;padding:32px}
+.aud-card:hover .aud-img .hover-overlay{opacity:1}
+.aud-img .hover-overlay span{color:#fff;font-weight:700;font-size:1.1rem;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:6px;cursor:pointer}
+.aud-info{position:relative;padding-left:8px}
+.aud-info::before{content:'';position:absolute;left:-16px;top:0;width:4px;height:32px;border-radius:99px;background:var(--gold)}
+.aud-info h3{font-size:1.5rem;font-weight:900;text-transform:uppercase;letter-spacing:-.03em;color:var(--navy);margin-bottom:16px}
+.aud-info p{color:#475569;line-height:1.7;font-weight:500}
+#wealth .cta-box{background:var(--navy);border-radius:48px;overflow:hidden;padding:64px 32px;position:relative;text-align:center}
+@media(min-width:768px){#wealth .cta-box{padding:80px}}
+#wealth .cta-box .glow-tl{position:absolute;top:0;right:0;width:384px;height:384px;background:#fff;border-radius:50%;filter:blur(120px);opacity:.1;transform:translate(50%,-50%)}
+#wealth .cta-box .glow-br{position:absolute;bottom:0;left:0;width:384px;height:384px;background:var(--gold);border-radius:50%;filter:blur(120px);opacity:.1;transform:translate(-50%,50%)}
+#wealth .cta-box .cta-inner{position:relative;z-index:1;max-width:800px;margin:0 auto}
+#wealth .cta-box h2{font-size:clamp(1.8rem,4vw,4rem);font-weight:900;color:#fff;line-height:1.25;margin-bottom:32px}
+#wealth .cta-box h3{font-size:clamp(2.5rem,6vw,5rem);font-weight:900;font-style:italic;letter-spacing:-.05em;color:var(--gold)}
+
+/* ══════════════════════════════════════
+   SECTION 6 – DISCOVERY HUB
+══════════════════════════════════════ */
+#discovery{position:relative;padding:96px 0;overflow:hidden;background:#fff}
+#discovery::before{content:'';position:absolute;top:0;right:0;width:33%;height:100%;background:#FDBB3B0d;transform:skewX(-12deg) translateX(50%);z-index:0}
+#discovery .disc-inner{position:relative;z-index:10}
+#discovery .disc-grid{display:grid;grid-template-columns:1fr;gap:64px}
+@media(min-width:1024px){#discovery .disc-grid{grid-template-columns:2fr 1fr;align-items:center}}
+#discovery h2{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;letter-spacing:-.05em;line-height:1;color:var(--navy);margin-bottom:24px}
+#discovery .discover-list{margin-bottom:48px}
+#discovery .discover-list h3{font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:16px}
+#discovery .discover-list ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+#discovery .discover-list li{display:flex;align-items:flex-start;font-size:clamp(.95rem,1.5vw,1.15rem);color:#94a3b8;font-weight:300;line-height:1.6}
+#discovery .discover-list li::before{content:'•';color:var(--gold);font-weight:900;font-size:1.2rem;margin-right:8px;line-height:1.3;flex-shrink:0}
+#discovery .quiz-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:680px}
+@media(max-width:480px){#discovery .quiz-cards{grid-template-columns:1fr}}
+.quiz-card{background:#fff;padding:32px;border-radius:24px;border-left:4px solid var(--gold);box-shadow:0 8px 30px rgba(0,0,0,.08);display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.quiz-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.12)}
+.quiz-card h3{font-size:1.2rem;font-weight:900;color:var(--navy);margin-bottom:16px}
+.quiz-card p{font-size:.875rem;color:#94a3b8;line-height:1.7;flex-grow:1;margin-bottom:32px}
+.quiz-card p strong{color:var(--navy)}
+.quiz-card a{display:block;background:var(--gold);color:var(--navy);font-weight:900;font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:16px;border-radius:2px;text-align:center;transition:all .3s}
+.quiz-card a:hover{background:var(--navy);color:#fff}
+
+/* Phone mockup */
+.phone-wrap{display:flex;justify-content:center}
+@media(min-width:1024px){.phone-wrap{justify-content:flex-end}}
+.phone{position:relative;border:10px solid var(--navy);border-radius:40px;width:280px;height:580px;overflow:hidden;box-shadow:0 25px 50px rgba(0,0,0,.3)}
+.phone .phone-bg{position:absolute;inset:0}
+.phone .phone-bg img{width:100%;height:100%;object-fit:cover}
+.phone .phone-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(6,39,67,.9),rgba(6,39,67,.2),rgba(6,39,67,.2))}
+.phone .phone-content{position:relative;z-index:10;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:24px}
+.phone .phone-header{padding-top:24px;color:#fff}
+.phone .phone-header .eyebrow{font-size:9px;font-weight:700;letter-spacing:.2em;opacity:.8;margin-bottom:4px}
+.phone .phone-header .title{font-size:1.2rem;font-weight:900;text-transform:uppercase;font-style:italic;letter-spacing:-.02em}
+.phone .phone-header .bar{width:32px;height:4px;background:var(--gold);margin-top:8px}
+.phone .phone-bottom{display:flex;flex-direction:column;gap:16px}
+.score-card{background:rgba(255,255,255,.95);backdrop-filter:blur(8px);padding:16px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.1);color:var(--navy)}
+.score-card .top-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.score-card .label{font-size:10px;font-weight:900;text-transform:uppercase}
+.score-card .badge{font-size:10px;font-weight:700;background:var(--gold);padding:2px 8px;border-radius:4px}
+.score-card .num{font-size:2rem;font-weight:900}
+.score-card .sub{font-size:9px;color:#94a3b8;font-weight:500;max-width:120px;text-align:right}
+.score-card .bar-bg{width:100%;height:6px;background:#f1f5f9;border-radius:99px;margin-top:12px;overflow:hidden}
+.score-card .bar-fill{height:100%;width:82%;background:var(--navy);border-radius:99px}
+.next-step{background:var(--navy);padding:16px;border-radius:12px;color:#fff;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.next-step .eyebrow{font-size:10px;font-weight:700;opacity:.6;text-transform:uppercase;letter-spacing:.1em}
+.next-step .label{font-size:.75rem;font-weight:900}
+.next-step .icon{width:28px;height:28px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.next-step .icon svg{width:12px;height:12px;color:var(--navy)}
+
+/* ══════════════════════════════════════
+   SECTION 7 – REVIEWS CAROUSEL
+══════════════════════════════════════ */
+#reviews{padding:80px 0;background:#f8fafc;border-top:1px solid #f1f5f9;border-bottom:1px solid #f1f5f9;overflow:hidden;position:relative;text-align:center}
+#reviews h2{font-size:1.8rem;font-weight:700;color:var(--navy);margin-bottom:16px}
+.carousel-wrap{position:relative;overflow:hidden;mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent)}
+.carousel-track{display:flex;animation:scroll 80s linear infinite}
+.carousel-track:hover{animation-play-state:paused}
+.rev-card{background:#fff;padding:24px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.08);border:1px solid #f1f5f9;display:flex;flex-direction:column;width:350px;height:320px;flex-shrink:0;margin:0 16px;text-align:left}
+.rev-card .stars{display:flex;gap:2px;margin-bottom:16px;color:#fbbf24}
+.rev-card .stars svg{width:14px;height:14px}
+.rev-card .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.rev-card blockquote{font-size:.875rem;color:#374151;font-style:italic;line-height:1.7;font-weight:300;flex-grow:1;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.rev-card .author{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid #f8fafc}
+.rev-card .avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.75rem;flex-shrink:0}
+.rev-card .name{font-size:.875rem;font-weight:700;color:var(--navy)}
+.rev-card .loc{font-size:10px;color:#9ca3af;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(calc(-382px * 20))}}
+@media(max-width:768px){.rev-card{width:280px;margin:0 10px}@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(calc(-300px * 20))}}}
+
+/* ── NAV ── */
+#vw-nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #f1f5f9;box-shadow:0 1px 8px rgba(0,0,0,.06)}
+#vw-nav .vw-nav-inner{max-width:1280px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+.vw-logo-btn{background:none;border:none;cursor:pointer;padding:0;transition:transform .3s}
+.vw-logo-btn:hover{transform:scale(1.05)}
+.vw-logo-btn img{height:48px;width:auto}
+#vw-desktopnav{display:none;align-items:center;gap:40px}
+@media(min-width:1024px){#vw-desktopnav{display:flex}}
+.vw-navlink{background:none;border:none;cursor:pointer;color:var(--navy);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;transition:color .3s;padding:4px 0;position:relative}
+.vw-navlink:hover,.vw-navlink.active{color:var(--gold)}
+.vw-navlink.active::after{content:'';position:absolute;bottom:-4px;left:0;width:100%;height:2px;background:var(--gold)}
+.vw-nav-actions{display:flex;gap:16px;padding-left:24px;border-left:1px solid #e2e8f0}
+.vw-btn-meet{background:var(--gold);color:var(--navy);padding:10px 24px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:all .3s;display:inline-block}
+.vw-btn-meet:hover{background:var(--navy);color:#fff}
+.vw-btn-portal{background:var(--navy);color:#fff;border:none;cursor:pointer;padding:10px 24px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;transition:all .3s}
+.vw-btn-portal:hover{background:var(--gold);color:var(--navy)}
+.vw-hamburger{display:flex;background:none;border:none;cursor:pointer;color:var(--navy);padding:8px}
+@media(min-width:1024px){.vw-hamburger{display:none}}
+#vw-mobile-menu{display:none;background:#fff;border-top:1px solid #f1f5f9;padding:40px 24px;flex-direction:column;gap:32px;box-shadow:0 20px 40px rgba(0,0,0,.1)}
+#vw-mobile-menu.open{display:flex}
+#vw-mobile-menu .vw-navlink{text-align:left;font-size:11px}
+.mob-actions{display:flex;flex-direction:column;gap:16px;padding-top:24px;border-top:1px solid #f1f5f9}
+.mob-actions a,.mob-actions button{display:block;padding:16px;border-radius:2px;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-align:center;transition:all .3s;width:100%}
+.mob-actions a{background:var(--gold);color:var(--navy);text-decoration:none}
+.mob-actions button{background:var(--navy);color:#fff;border:none;cursor:pointer}
+
+/* ══════════ CTA SECTION ══════════ */
+#cta-section{padding:0 24px 48px}
+#cta-section .cta-wrap{max-width:1280px;margin:0 auto}
+#cta-section .cta-card{position:relative;overflow:hidden;background:#f8fafc;border:1px solid #e2e8f0;border-radius:24px;box-shadow:0 2px 12px rgba(0,0,0,.05);padding:96px 24px}
+#cta-section .cta-card .cta-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+#cta-section .cta-card .cta-bg img{width:100%;height:100%;object-fit:cover;opacity:.05;filter:grayscale(1)}
+#cta-section .cta-content{position:relative;z-index:10;max-width:800px;margin:0 auto;text-align:center}
+#cta-section h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:-.03em;margin-bottom:24px}
+#cta-section .cta-divider{width:64px;height:4px;background:var(--gold);margin:0 auto 32px}
+#cta-section p{font-size:1.15rem;color:#475569;line-height:1.8;font-weight:300;max-width:640px;margin:0 auto 40px}
+#cta-section p strong{color:var(--navy);font-weight:400;display:block;margin-top:16px}
+#cta-section .cta-btn{display:inline-flex;align-items:center;gap:12px;background:var(--gold);color:var(--navy);padding:20px 48px;border-radius:6px;font-weight:800;font-size:1.2rem;box-shadow:0 8px 30px rgba(253,187,59,.4);text-decoration:none;transition:all .3s}
+#cta-section .cta-btn:hover{background:var(--navy);color:#fff;transform:scale(1.05)}
+#cta-section .cta-btn svg{transition:transform .3s}
+#cta-section .cta-btn:hover svg{transform:rotate(12deg)}
+
+/* ── DROPDOWN ── */
+.vw-dropdown{position:relative}
+.vw-dropdown::after{content:'';position:absolute;top:100%;left:-8px;right:-8px;height:16px}
+.vw-dropdown-btn{display:flex!important;align-items:center;gap:5px}
+.vw-dropdown-menu{display:none;position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px;min-width:180px;box-shadow:0 8px 24px rgba(0,0,0,.12);z-index:200;white-space:nowrap}
+.vw-dropdown:hover .vw-dropdown-menu{display:block}
+.vw-dropdown-menu a{display:block;padding:10px 16px;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--navy);border-radius:4px;transition:background .2s;text-decoration:none}
+.vw-dropdown-menu a:hover{background:var(--gold)}
+.vw-dropdown-menu::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #e2e8f0}
+.vw-dropdown-menu::after{content:'';position:absolute;top:-5px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #fff}
+.mob-quiz-links{display:flex;flex-direction:column;gap:8px;padding-left:16px;border-left:2px solid var(--gold);margin-top:8px}
+.mob-quiz-links a{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#475569;text-decoration:none;transition:color .2s}
+.mob-quiz-links a:hover{color:var(--gold)}
+
+/* ── FOOTER ── */
+#vw-footer{background:#f8fafc;border-top:1px solid #e2e8f0;padding:80px 0 48px;color:var(--navy)}
+#vw-footer .foot-inner{max-width:1280px;margin:0 auto;padding:0 24px}
+#vw-footer .foot-grid{display:grid;grid-template-columns:1fr;gap:48px;padding-bottom:64px;border-bottom:1px solid #e2e8f0}
+@media(min-width:768px){#vw-footer .foot-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){#vw-footer .foot-grid{grid-template-columns:1fr 1fr 1fr 1fr}}
+#vw-footer .foot-logo{height:64px;width:auto;margin-bottom:24px}
+#vw-footer .foot-contact{list-style:none;display:flex;flex-direction:column;gap:16px;margin-bottom:24px;padding:0}
+#vw-footer .foot-contact li{display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#475569}
+#vw-footer .foot-contact li svg{width:20px;height:20px;color:var(--gold);flex-shrink:0;margin-top:2px}
+#vw-footer .socials{display:flex;gap:12px}
+#vw-footer .socials a{width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #e2e8f0;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06);transition:background .3s}
+#vw-footer .socials a:hover{background:var(--gold)}
+#vw-footer .socials a svg{width:16px;height:16px;color:var(--navy)}
+#vw-footer h4{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);padding-bottom:12px;border-bottom:1px solid #f1f5f9;margin-bottom:16px}
+#vw-footer ul.foot-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
+#vw-footer ul.foot-list li,#vw-footer ul.foot-list button{font-size:.875rem;color:#475569;font-weight:500;background:none;border:none;cursor:pointer;text-align:left;padding:0;transition:color .3s;line-height:1.6}
+#vw-footer ul.foot-list li:hover,#vw-footer ul.foot-list button:hover{color:var(--gold)}
+#vw-footer .btn-portal-foot{width:100%;margin-top:32px;background:var(--navy);color:#fff;border:none;cursor:pointer;padding:12px 24px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;transition:all .3s}
+#vw-footer .btn-portal-foot:hover{background:var(--gold);color:var(--navy)}
+#vw-footer .foot-bottom{padding-top:48px;display:flex;flex-direction:column;gap:32px}
+#vw-footer .foot-legal-row{display:flex;flex-direction:column;gap:16px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#94a3b8}
+@media(min-width:768px){#vw-footer .foot-legal-row{flex-direction:row;align-items:center;justify-content:space-between}}
+#vw-footer .foot-legal-row a{color:#94a3b8;text-decoration:underline;text-decoration-color:#e2e8f0;text-underline-offset:4px;transition:color .3s}
+#vw-footer .foot-legal-row a:hover{color:var(--gold)}
+#vw-footer .foot-policy-links{display:flex;gap:32px;flex-wrap:wrap}
+#vw-footer .compliance-box{background:#fff;padding:24px 32px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.04);display:flex;flex-direction:column;gap:16px}
+#vw-footer .comp-abn{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#94a3b8}
+#vw-footer .comp-ack{font-size:9px;color:#94a3b8;font-style:italic;border-top:1px solid #f1f5f9;padding-top:16px;line-height:1.6}
+
+</style>
+</head>
+<body>
+
+<nav id="vw-nav">
+  <div class="vw-nav-inner">
+    <button class="vw-logo-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Vega Wealth Home">
+      <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth"/>
+    </button>
+    <div id="vw-desktopnav">
+      <button class="vw-navlink" onclick="window.location.href='what-we-do.html'">What We Do</button>
+      <button class="vw-navlink" onclick="window.location.href='how-we-do.html'">How We Do</button>
+      <button class="vw-navlink" onclick="window.location.href='who-we-are.html'">Who We Are</button>
+      <div class="vw-dropdown">
+        <button class="vw-navlink vw-dropdown-btn">Tools <svg width="8" height="5" viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l3 3 3-3"/></svg></button>
+        <div class="vw-dropdown-menu">
+          <a href="https://moiz-o9tnljz7.scoreapp.com/" target="_blank" rel="noopener">Wealth Quiz ↗</a>
+          <a href="https://moiz-sqlq8z9y.scoreapp.com/" target="_blank" rel="noopener">Insurance Quiz ↗</a>
+        </div>
+      </div>
+      <div class="vw-nav-actions">
+        <a href="https://calendly.com/financial--adviser/connect-call" target="_blank" rel="noopener" class="vw-btn-meet">Meet an adviser</a>
+        <button class="vw-btn-portal" onclick="window.location.href='client-portal.html'">Client login</button>
+      </div>
+    </div>
+    <button class="vw-hamburger" id="vw-hamburgerBtn" onclick="vwToggleMenu()" aria-label="Menu">
+      <svg id="vw-iconMenu" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="vw-iconClose" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="vw-mobile-menu">
+    <button class="vw-navlink" onclick="window.location.href='what-we-do.html'">What We Do</button>
+    <button class="vw-navlink" onclick="window.location.href='how-we-do.html'">How We Do</button>
+    <button class="vw-navlink" onclick="window.location.href='who-we-are.html'">Who We Are</button>
+    <div>
+      <p class="vw-navlink" style="cursor:default;color:#94a3b8;margin-bottom:10px">Tools</p>
+      <div class="mob-quiz-links">
+        <a href="https://moiz-o9tnljz7.scoreapp.com/" target="_blank" rel="noopener">Wealth Quiz ↗</a>
+        <a href="https://moiz-sqlq8z9y.scoreapp.com/" target="_blank" rel="noopener">Insurance Quiz ↗</a>
+      </div>
+    </div>
+    <div class="mob-actions">
+      <a href="https://calendly.com/financial--adviser/connect-call" target="_blank" rel="noopener">Meet an adviser</a>
+      <button onclick="window.location.href='client-portal.html'">Client login</button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ══ SECTION 1: HERO ══ -->
+<section id="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" alt="Modern Professional Workspace"/>
+  </div>
+  <div class="hero-inner">
+    <h1>
+      Dream with confidence.<br/>
+      <span class="hd-wrap gold">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M5,50 Q20,5 50,5 T95,50 T50,95 T5,50" fill="none" stroke="#FDBB3B" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+          <path d="M8,45 Q25,10 55,10 T92,45 T55,90 T8,45" fill="none" stroke="#FDBB3B" stroke-width="1" stroke-opacity="0.3" stroke-linecap="round"/>
+        </svg>
+        <span>Live with clarity.</span>
+      </span>
+    </h1>
+    <p>Financial advice is more than money. It's about making smart, confident decisions, enjoying peace of mind, and knowing you're on the right path to your ideal life.<strong>As your life evolves, we're right here with you.</strong></p>
+    <div class="hero-btns">
+      <button class="btn btn-primary">Book a Chat</button>
+      <button class="btn btn-outline">Take the Quiz ⚡</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 2: TERMS ══ -->
+<section id="terms">
+  <div class="terms-bg">
+    <div class="glow1"></div>
+    <div class="glow2"></div>
+  </div>
+  <div class="terms-inner">
+    <div class="terms-grid">
+      <div>
+        <header>
+          <span class="gold-bar" style="margin-bottom:24px"></span>
+          <h1>You want to live life<br/><span class="gold">on your terms.</span></h1>
+        </header>
+        <div class="lead">
+          <p class="dark">But right now? It feels like your money doesn’t have a real plan —</p>
+          <p>Not one that builds <span class="hl"><span>passive income</span></span> or <span class="hl"><span>supports the life you're working toward.</span></span></p>
+        </div>
+        <div class="stacked anim-scale" style="animation-delay:600ms">
+          <div class="bar"></div>
+          <p class="s1 anim-popup" style="animation-delay:1000ms">We understand.</p>
+          <p class="s2 anim-popup" style="animation-delay:1800ms">We've seen it,</p>
+          <p class="s3 anim-popup" style="animation-delay:2600ms">and we've lived it too.</p>
+        </div>
+        <div class="body-text">
+          <p style="margin-bottom:24px">That's why a clear, proactive strategy matters — one that prepares you for life's big moments, turns your ambitions into reality, and keeps you on track for long-term success.</p>
+          <p class="accent">So you can retire on your terms and enjoy the freedom you deserve.</p>
+        </div>
+        <div class="terms-btns">
+          <button class="btn btn-primary btn-lg">Build Your Plan ›</button>
+          <button class="btn btn-outline btn-lg">Our Strategy ›</button>
+        </div>
+      </div>
+      <div class="feat-cards anim-right">
+        <div class="feat-card" style="transform:translateX(0)">
+          <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <h3>Proactive</h3>
+          <p>Designed to prepare you for life's biggest transitions before they happen.</p>
+        </div>
+        <div class="feat-card" style="transform:translateX(-20px)">
+          <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          <h3>Passive Income</h3>
+          <p>Turning your current capital into a self-sustaining freedom engine.</p>
+        </div>
+        <div class="feat-card" style="transform:translateX(-10px)">
+          <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <h3>Retire Your Way</h3>
+          <p>The certainty of knowing you'll never have to compromise on your lifestyle.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 3: WHAT WE DO ══ -->
+<section id="services">
+  <div class="container-md">
+    <div class="svc-grid">
+      <div class="col-left">
+        <div>
+          <p style="font-size:1.1rem;color:#475569;font-weight:300;line-height:1.7;margin-bottom:24px;max-width:480px;">Life is about enjoying a better lifestyle, feeling at ease, and knowing you're on the right track.</p>
+          <h1>How Can<br/>We Help <span class="hd-wrap" style="color:var(--navy)"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:-10%;top:-5%;width:120%;height:115%;pointer-events:none"><path d="M5,50 Q20,5 50,5 T95,50 T50,95 T5,50" fill="none" stroke="#FDBB3B" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/></svg><span>You?</span></span></h1>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon-wrap"><svg width="32" height="32" fill="none" stroke="#045234" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4"/><path d="M3 5v14a2 2 0 002 2h16v-5"/><path d="M18 12a2 2 0 000 4h4v-4z"/></svg></div>
+          <h2>Money Management</h2>
+          <p>Money should work for you, not the other way around. We help you take control by setting achievable goals and strengthening your cash flow.</p>
+          <a href="what-we-do.html" class="svc-link">Manage your money <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon-wrap"><svg width="32" height="32" fill="none" stroke="#062743" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><rect x="2" y="11" width="5" height="11"/><rect x="9" y="7" width="5" height="15"/><rect x="16" y="3" width="5" height="19"/></svg></div>
+          <h2>Retirement Planning</h2>
+          <p>Retire with clarity and control. We help you structure cash flow and secure multiple income streams for long-term stability and peace of mind.</p>
+          <a href="what-we-do.html" class="svc-link">Plan your future <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+      <div class="col-right">
+        <div class="svc-card">
+          <div class="svc-icon-wrap"><svg width="32" height="32" fill="none" stroke="#045234" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+          <h2>Investment Management</h2>
+          <p>Grow, diversify, and thrive. We craft portfolios unique to your risk tolerance, keeping you invested with purpose through every market cycle.</p>
+          <a href="what-we-do.html" class="svc-link">Grow your wealth <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon-wrap"><svg width="32" height="32" fill="none" stroke="#062743" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+          <h2>Tax Planning</h2>
+          <p>Plan smarter, keep more, grow faster. Every dollar saved in tax is a dollar reinvested in your future. Identify the right strategies for your picture.</p>
+          <a href="what-we-do.html" class="svc-link">Start planning <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+        <div class="svc-card-gold">
+          <h2>... and more!</h2>
+          <a href="what-we-do.html">Explore all services <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display:inline;vertical-align:middle;margin-left:8px"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 4: CORE VALUE PROP ══ -->
+<section id="value">
+  <div class="container">
+    <h2>Your life. Powered by the right advice.</h2>
+    <div class="val-grid">
+      <div class="val-img" id="valImg">
+        <div class="slide active" data-tab="0">
+          <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=2000" alt="Feel confident"/>
+          <div class="overlay"></div>
+          <div class="caption"><h3>Feel confident about your money</h3><p>A clear, personalised plan with upfront fees and no hidden costs. Just honest advice that puts you in control.</p></div>
+        </div>
+        <div class="slide inactive" data-tab="1">
+          <img src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&q=80&w=2000" alt="Enjoy life"/>
+          <div class="overlay"></div>
+          <div class="caption"><h3>Enjoy the life you're building</h3><p>Smart strategies that build wealth, create passive income, and give you the freedom to focus on what matters most.</p></div>
+        </div>
+        <div class="slide inactive" data-tab="2">
+          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=2000" alt="Navigate together"/>
+          <div class="overlay"></div>
+          <div class="caption"><h3>Never navigate it alone</h3><p>Life changes and so does your plan. We adapt your strategy as your world evolves, so you're always supported and always on track.</p></div>
+        </div>
+      </div>
+      <div class="val-tabs">
+        <button class="val-tab active" data-idx="0" onclick="setTab(0)">
+          <h4>Feel confident about your money</h4>
+          <svg class="arrow" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <button class="val-tab" data-idx="1" onclick="setTab(1)">
+          <h4>Enjoy the life you're building</h4>
+          <svg class="arrow" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <button class="val-tab" data-idx="2" onclick="setTab(2)">
+          <h4>Never navigate it alone</h4>
+          <svg class="arrow" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 5: WEALTH BUILDING ══ -->
+<section id="wealth">
+  <div class="container" style="position:relative;z-index:10">
+    <div class="gold-bar" style="width:80px;height:8px;margin-bottom:24px"></div>
+    <h2>Whether you are a...</h2>
+    <div class="audience-grid">
+      <div class="aud-card">
+        <div class="aud-img">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Young Professionals"/>
+          <div class="hover-overlay"><span>Explore Strategy</span></div>
+        </div>
+        <div class="aud-info">
+          <h3>Young Professionals</h3>
+          <p>I'm a young professional looking to grow my wealth, eliminate debt, build a nest egg for my children, and create passive income for early retirement.</p>
+        </div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-img">
+          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" alt="Small Business Owners"/>
+          <div class="hover-overlay"><span>Explore Strategy</span></div>
+        </div>
+        <div class="aud-info">
+          <h3>Small Business Owners</h3>
+          <p>I want to build a lasting business legacy while planning for retirement, succession, and financial comfort.</p>
+        </div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-img">
+          <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=800&q=80" alt="Planning to Retire"/>
+          <div class="hover-overlay"><span>Explore Strategy</span></div>
+        </div>
+        <div class="aud-info">
+          <h3>Planning to Retire</h3>
+          <p>I want to retire early with confidence, build reliable income streams, and ensure I have enough to live comfortably without financial stress.</p>
+        </div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-img">
+          <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=800&q=80" alt="High-Net-Worth Individuals"/>
+          <div class="hover-overlay"><span>Explore Strategy</span></div>
+        </div>
+        <div class="aud-info">
+          <h3>High-Net-Worth Individuals &amp; Families</h3>
+          <p>I want to protect my wealth and make it work for me, using specialised strategies to grow my assets and meet my complex financial needs.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cta-box">
+      <div class="glow-tl"></div>
+      <div class="glow-br"></div>
+      <div class="cta-inner">
+        <h2>We've helped people like you build wealth with clarity &mdash; and see success</h2>
+        <h3>so. much. sooner</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 6: DISCOVERY HUB ══ -->
+<section id="discovery">
+  <div class="container disc-inner">
+    <div class="disc-grid">
+      <div>
+        <div class="gold-bar" style="margin-bottom:32px"></div>
+        <h2>Take the <span class="hl"><span>2 Minute</span></span> Quiz.</h2>
+        <div class="discover-list">
+          <h3>Discover:</h3>
+          <ul>
+            <li>Your current financial position and how well it supports your goals</li>
+            <li>The gaps and risks that could impact your wealth and security</li>
+            <li>Clear, personalised next steps to build, protect, and grow your future</li>
+          </ul>
+        </div>
+        <div class="quiz-cards">
+          <div class="quiz-card anim-popup" style="animation-delay:200ms">
+            <h3>Passive Income Readiness</h3>
+            <p>Are you ready to create a passive income so you can <strong>retire early</strong> and <strong>live your ideal life</strong>?</p>
+            <a href="https://moiz-o9tnljz7.scoreapp.com" target="_blank">Take Wealth Quiz →</a>
+          </div>
+          <div class="quiz-card anim-popup" style="animation-delay:400ms">
+            <h3>Insurance Readiness</h3>
+            <p>Life happens. Is your family <strong>protected</strong> if you are unable to work tomorrow?</p>
+            <a href="https://moiz-sqlq8z9y.scoreapp.com" target="_blank">Check Protection →</a>
+          </div>
+        </div>
+      </div>
+      <div class="phone-wrap">
+        <div class="phone anim-right">
+          <div class="phone-bg">
+            <img src="https://images.unsplash.com/photo-1509059852496-f3822ae057bf?auto=format&fit=crop&q=80&w=600" alt="Family Security"/>
+          </div>
+          <div class="phone-content">
+            <div class="phone-header">
+              <div class="eyebrow">Secure Future</div>
+              <div class="title">Personal Report</div>
+              <div class="bar"></div>
+            </div>
+            <div class="phone-bottom">
+              <div class="score-card">
+                <div class="top-row">
+                  <span class="label">Protection Score</span>
+                  <span class="badge">Action Required</span>
+                </div>
+                <div style="display:flex;align-items:flex-end;justify-content:space-between">
+                  <div class="num">82<span style="font-size:.9rem;opacity:.5">%</span></div>
+                  <div class="sub">Based on your assessment.</div>
+                </div>
+                <div class="bar-bg"><div class="bar-fill"></div></div>
+              </div>
+              <div class="next-step">
+                <div>
+                  <div class="eyebrow">Next Step</div>
+                  <div class="label">Download Strategy Guide</div>
+                </div>
+                <div class="icon">
+                  <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 7: REVIEWS ══ -->
+<section id="reviews">
+  <div class="container" style="margin-bottom:48px">
+    <h2>What our clients say</h2>
+    <div class="gold-bar" style="margin:16px auto 0"></div>
+  </div>
+  <div class="carousel-wrap">
+    <div class="carousel-track" id="carousel"></div>
+  </div>
+</section>
+
+
+<!-- ══ CTA SECTION ══ -->
+<section id="cta-section">
+  <div class="cta-wrap">
+    <div class="cta-card">
+      <div class="cta-bg">
+        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=2074&auto=format&fit=crop" alt="Consultation"/>
+      </div>
+      <div class="cta-content">
+        <h2>Let's Connect!</h2>
+        <div class="cta-divider"></div>
+        <p>
+          During our 15-minute call, we'll explore what matters most to you, your personal and financial goals, and how Vega Wealth can help you get there.
+          <strong>We're looking forward to connecting — choose a time that works best for you!</strong>
+        </p>
+        <a href="https://calendly.com/financial--adviser/connect-call" target="_blank" rel="noopener" class="cta-btn">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book a Chat
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ FOOTER ══ -->
+<footer id="vw-footer">
+  <div class="foot-inner">
+    <div class="foot-grid">
+      <div>
+        <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" class="foot-logo"/>
+        <ul class="foot-contact">
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>03 8652 1445</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Suite 10, 1 Main Street,<br/>Box Hill, VIC 3128</li>
+        </ul>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://www.linkedin.com/in/moiz-mandani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;gap:48px;flex-wrap:wrap">
+          <div style="flex:1;min-width:120px">
+            <h4>Menu</h4>
+            <ul class="foot-list">
+              <li><button onclick="window.scrollTo({top:0,behavior:'smooth'})">Home</button></li>
+              <li><button onclick="window.location.href='what-we-do.html'">What We Do</button></li>
+              <li><button onclick="window.location.href='how-we-do.html'">How We Do</button></li>
+              <li><button onclick="window.location.href='who-we-are.html'">Who We Are</button></li>
+              <li><button onclick="window.location.href='#discovery'">Tools</button></li>
+            </ul>
+          </div>
+          <div style="flex:1;min-width:140px">
+            <h4>Our Clients</h4>
+            <ul class="foot-list">
+              <li>Young Professionals</li>
+              <li>Small Business Owners</li>
+              <li>Planning to Retire</li>
+              <li>High-Net-Worth Individuals</li>
+            </ul>
+          </div>
+        </div>
+        <button class="btn-portal-foot" onclick="window.location.href='client-portal.html'">Client Portal Login</button>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul class="foot-list">
+          <li>Money Management</li><li>Strategy &amp; Financial Modelling</li><li>Retirement Planning</li>
+          <li>Investment Management</li><li>Investment Structures</li><li>Tax Planning</li>
+          <li>Superannuation</li><li>Planning for Your Children</li><li>Personal Insurance</li><li>Estate Planning</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <ul class="foot-list">
+          <li><button onclick="window.open('https://moiz-o9tnljz7.scoreapp.com/','_blank')">Wealth Quiz ↗</button></li>
+          <li><button onclick="window.open('https://moiz-sqlq8z9y.scoreapp.com/','_blank')">Insurance Quiz ↗</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-legal-row">
+        <p>&copy; 2026 Vega Wealth Advisers. All Rights Reserved.</p>
+        <div class="foot-policy-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="complaints.html">Complaints</a>
+          <a href="website-disclosure-information.html">Website Disclosure Information</a>
+        </div>
+      </div>
+      <div class="compliance-box">
+        <div class="comp-abn">Advice Evolution Pty Ltd &nbsp;|&nbsp; AFSL: 342880 &nbsp;|&nbsp; ABN: 66 137 858 023 &nbsp;|&nbsp; CAR: 001320118</div>
+        <div class="comp-ack">Vega Wealth Advisers acknowledges the Traditional Owners and Custodians of the lands on which we meet, live and work. We pay our respects to the people, the cultures and the Elders past and present.</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── TAB SWITCHER ──
+function setTab(idx){
+  document.querySelectorAll('.val-tab').forEach((t,i)=>{
+    t.classList.toggle('active',i===idx);
+  });
+  document.querySelectorAll('#valImg .slide').forEach((s,i)=>{
+    s.classList.toggle('active',i===idx);
+    s.classList.toggle('inactive',i!==idx);
+  });
+}
+
+// ── REVIEWS DATA ──
+const reviews=[
+  {n:"Avinash",l:"Pimpama, QLD",c:"AV",bg:"#2563eb",t:"Moiz had lot of patience and explained me everything about the policy... finally got my policy issued after great perseverance."},
+  {n:"Sanya",l:"Vermont, VIC",c:"SA",bg:"#9333ea",t:"Moiz is a great financial planner. He has assisted me with a lot of issues like budgeting, tax, super, etc. Suggested strategies that suit my needs."},
+  {n:"Imran",l:"Burwood, VIC",c:"IM",bg:"#16a34a",t:"Moiz and his team at Nova Wealth made smart investment decisions easy, tailoring everything to my needs and helping me plan with confidence."},
+  {n:"Anwer",l:"Mill Park, VIC",c:"AN",bg:"#ea580c",t:"Extremely pleased with his professionalism and caring attitude... From our initial appointment whole process was smooth and transparent."},
+  {n:"Rizwan",l:"Vermont South, VIC",c:"RI",bg:"#4f46e5",t:"Moiz has been wonderful, he provided guidance specific to the concerns I had in terms of keeping my family safe and covered."},
+  {n:"Siobhan",l:"Darwin, NT",c:"SI",bg:"#0d9488",t:"Using computer graphs and tables, he made it very easy for us to see our future financial position. We are confident in his advice."},
+  {n:"Val",l:"Melbourne, VIC",c:"VA",bg:"#e11d48",t:"A very professional and caring approach to our retirement planning. We feel very secure in our future under his guidance."},
+  {n:"Chelston",l:"Box Hill, VIC",c:"CH",bg:"#0891b2",t:"Excellent knowledge of SMSF and tax strategies. Moiz made complex financial matters very easy to understand for us."},
+  {n:"Kris",l:"Wyndham Vale, VIC",c:"KR",bg:"#4b5563",t:"Great service, highly recommended. The team was very responsive and the advice provided was top notch."},
+  {n:"Abhishek",l:"Vermont South, VIC",c:"AB",bg:"#475569",t:"Excellent guidance on superannuation and wealth creation. Professional approach throughout the process."},
+  {n:"Daniel",l:"Box Hill, VIC",c:"DA",bg:"#059669",t:"Moiz goes above and beyond to ensure you are comfortable with the strategy. Trustworthy and professional."},
+  {n:"Deepa",l:"Sydney, NSW",c:"DE",bg:"#dc2626",t:"Very thorough. Helped with insurance and super consolidation which saved me money and improved coverage."},
+  {n:"Michael",l:"Vermont, VIC",c:"MI",bg:"#1e40af",t:"Moiz and his team are highly efficient. Paperwork was handled perfectly without stress. Highly recommend Nova Wealth."},
+  {n:"Priya",l:"Box Hill North, VIC",c:"PR",bg:"#d97706",t:"Transparent and honest advice. I feel my super is finally working for me and my future goals are achievable."},
+  {n:"James",l:"Melbourne, VIC",c:"JA",bg:"#db2777",t:"Fantastic approach to wealth creation. Moiz simplified everything for our family. Professional and easy to talk to."},
+  {n:"Rebecca",l:"Wheelers Hill, VIC",c:"RE",bg:"#7c3aed",t:"Always available to answer questions. Makes you feel like his only client. I have high trust in Moiz's expertise."},
+  {n:"Steve",l:"Box Hill, VIC",c:"ST",bg:"#65a30d",t:"Deep expertise in SMSF and property investments. A great experience overall working with the whole team."},
+  {n:"Amit",l:"Pimpama, QLD",c:"AM",bg:"#c026d3",t:"Professional, patient, and knowledgeable. Great experience with Nova Wealth and Moiz. Highly recommend."},
+  {n:"John",l:"Vermont, VIC",c:"JO",bg:"#0284c7",t:"The best financial planner I've worked with. Genuinely cares about results for clients and long-term success."},
+  {n:"Karan",l:"Mill Park, VIC",c:"KA",bg:"#3730a3",t:"A life-changing experience. Our wealth is growing and our family is protected. Thank you Moiz for your help."}
+];
+
+const starSVG=`<svg viewBox="0 0 24 24" fill="#fbbf24" width="14" height="14"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>`;
+const arRatings=`<a href="https://www.adviserratings.com.au/adviser/1244853/Moiz-Mandani" target="_blank" rel="noopener"><img src="https://www.adviserratings.com.au/widget/1244853/profilelink/Button_160x40.png" alt="Adviser Ratings" style="height:32px;width:auto;object-fit:contain"/></a>`;
+
+function buildCard(r){
+  return `<div class="rev-card">
+    <div class="top">
+      <div class="stars">${starSVG.repeat(5)}</div>
+      ${arRatings}
+    </div>
+    <blockquote>"${r.t}"</blockquote>
+    <div class="author">
+      <div class="avatar" style="background:${r.bg}">${r.c}</div>
+      <div><div class="name">${r.n}</div><div class="loc">${r.l}</div></div>
+    </div>
+  </div>`;
+}
+
+const track=document.getElementById('carousel');
+const doubled=[...reviews,...reviews];
+track.innerHTML=doubled.map(buildCard).join('');
+
+// ── NAV / MENU ──
+let currentPage = 'home';
+function vwToggleMenu(){
+  const m=document.getElementById('vw-mobile-menu');
+  const open=m.classList.toggle('open');
+  document.getElementById('vw-iconMenu').style.display=open?'none':'block';
+  document.getElementById('vw-iconClose').style.display=open?'block':'none';
+}
+
+</script>
+</body>
+</html>
