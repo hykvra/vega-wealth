@@ -59,7 +59,7 @@ a{text-decoration:none}
 ══════════════════════════════════════ */
 #hero{position:relative;min-height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;background:#fff;overflow:hidden}
 #hero .hero-bg{position:absolute;inset:0;z-index:0}
-#hero .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.12}
+#hero .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.35}
 #hero .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,#fff,rgba(255,255,255,.4),#fff)}
 #hero .hero-inner{position:relative;z-index:10;max-width:900px;margin:0 auto;padding:0 24px}
 #hero h1{font-size:clamp(2.4rem,7vw,4.5rem);font-weight:900;color:var(--navy);line-height:1.1;margin-bottom:32px;letter-spacing:-.03em}
@@ -112,8 +112,12 @@ a{text-decoration:none}
 #services .col-right{display:flex;flex-direction:column;gap:40px}
 @media(min-width:768px){#services .col-right{margin-top:96px}}
 #services h1{font-size:clamp(2rem,5vw,4rem);font-weight:900;color:var(--navy);letter-spacing:-.03em;line-height:1.1;margin-bottom:40px}
-.svc-card{background:#F8FAFC;padding:64px 48px;border-radius:24px;border:1px solid #f1f5f9;transition:transform .3s;max-width:480px;margin:0 auto;width:100%;min-height:400px;display:flex;flex-direction:column;justify-content:center}
+.svc-card{background:#F8FAFC;padding:64px 48px;border-radius:24px;border:1px solid #f1f5f9;transition:transform .3s,background .3s,border-color .3s;max-width:480px;margin:0 auto;width:100%;min-height:400px;display:flex;flex-direction:column;justify-content:center}
 .svc-card:hover{transform:scale(1.02)}
+.svc-card.svc-green:hover{background:#f0fdf4;border-color:#bbf7d0}
+.svc-card.svc-navy:hover{background:#eff6ff;border-color:#bfdbfe}
+.svc-card.svc-teal:hover{background:#f0fdfa;border-color:#99f6e4}
+.svc-card.svc-amber:hover{background:#fffbeb;border-color:#fde68a}
 .svc-icon-wrap{width:56px;height:56px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;border:1px solid #f1f5f9;margin-bottom:32px;transition:transform .3s}
 .svc-card:hover .svc-icon-wrap{transform:scale(1.05)}
 .svc-card h2{font-size:1.2rem;font-weight:700;letter-spacing:-.02em;color:var(--navy);margin-bottom:16px}
@@ -162,9 +166,9 @@ a{text-decoration:none}
 #wealth h2{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;color:var(--navy);letter-spacing:-.04em;line-height:1;margin-bottom:80px}
 #wealth .audience-grid{display:grid;grid-template-columns:1fr;gap:48px;margin-bottom:160px}
 @media(min-width:768px){#wealth .audience-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){#wealth .audience-grid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:1024px){#wealth .audience-grid{grid-template-columns:repeat(3,1fr)}}
 .aud-card{display:flex;flex-direction:column;transition:transform .5s}
-@media(min-width:1024px){.aud-card:nth-child(2){margin-top:48px}.aud-card:nth-child(3){margin-top:96px}.aud-card:nth-child(4){margin-top:24px}}
+@media(min-width:1024px){.aud-card:nth-child(2){margin-top:64px}.aud-card:nth-child(3){margin-top:32px}}
 .aud-img{position:relative;border-radius:32px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 25px 50px rgba(0,0,0,.15);margin-bottom:32px}
 .aud-img img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
 .aud-card:hover .aud-img img{transform:scale(1.1)}
@@ -430,10 +434,10 @@ a{text-decoration:none}
         <span>Live with clarity.</span>
       </span>
     </h1>
-    <p>Financial advice is more than money. It's about making smart, confident decisions, enjoying peace of mind, and knowing you're on the right path to your ideal life.<strong>As your life evolves, we're right here with you.</strong></p>
+    <p>Financial advice is more than money. It's about making smart, confident decisions, enjoying peace of mind, and knowing you're on the right path to your ideal life.</p>
     <div class="hero-btns">
-      <button class="btn btn-primary">Book a chat</button>
-      <button class="btn btn-outline">Take the Quiz ⚡</button>
+      <button class="btn btn-primary" onclick="window.location.href='https://calendly.com/financial--adviser/connect-call'" target="_blank">Start your journey</button>
+      <button class="btn btn-outline" onclick="document.getElementById('discovery').scrollIntoView({behavior:'smooth'})">Take the quiz ⚡</button>
     </div>
   </div>
 </section>
@@ -466,8 +470,8 @@ a{text-decoration:none}
           <p class="accent">So you can retire on your terms and enjoy the freedom you deserve.</p>
         </div>
         <div class="terms-btns">
-          <button class="btn btn-primary btn-lg">Build Your Plan ›</button>
-          <button class="btn btn-outline btn-lg">Our Strategy ›</button>
+          <button class="btn btn-primary btn-lg" onclick="window.open('https://calendly.com/financial--adviser/connect-call','_blank')">Build your plan ›</button>
+          <button class="btn btn-outline btn-lg" onclick="window.location.href='what-we-do.html'">Our strategy ›</button>
         </div>
       </div>
       <div class="feat-cards anim-right">
@@ -497,16 +501,15 @@ a{text-decoration:none}
     <div class="svc-grid">
       <div class="col-left">
         <div>
-          <p style="font-size:1.1rem;color:#475569;font-weight:300;line-height:1.7;margin-bottom:24px;max-width:480px;">Life is about enjoying a better lifestyle, feeling at ease, and knowing you're on the right track.</p>
-          <h1>How Can<br/>We Help <span class="hd-wrap" style="color:var(--navy)"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:-10%;top:-5%;width:120%;height:115%;pointer-events:none"><path d="M5,50 Q20,5 50,5 T95,50 T50,95 T5,50" fill="none" stroke="#FDBB3B" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/></svg><span>You?</span></span></h1>
+          <h1>How can<br/>we help <span class="hd-wrap" style="color:var(--navy)"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:-10%;top:-5%;width:120%;height:115%;pointer-events:none"><path d="M5,50 Q20,5 50,5 T95,50 T50,95 T5,50" fill="none" stroke="#FDBB3B" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/></svg><span>You?</span></span></h1>
         </div>
-        <div class="svc-card">
+        <div class="svc-card svc-green">
           <div class="svc-icon-wrap"><svg width="32" height="32" fill="none" stroke="#045234" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4"/><path d="M3 5v14a2 2 0 002 2h16v-5"/><path d="M18 12a2 2 0 000 4h4v-4z"/></svg></div>
           <h2>Money Management</h2>
           <p>Money should work for you, not the other way around. We help you take control by setting achievable goals and strengthening your cash flow.</p>
           <a href="what-we-do.html" class="svc-link">Manage your money <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
-        <div class="svc-card">
+        <div class="svc-card svc-navy">
           <div class="svc-icon-wrap"><svg width="32" height="32" fill="none" stroke="#062743" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><rect x="2" y="11" width="5" height="11"/><rect x="9" y="7" width="5" height="15"/><rect x="16" y="3" width="5" height="19"/></svg></div>
           <h2>Retirement Planning</h2>
           <p>Retire with clarity and control. We help you structure cash flow and secure multiple income streams for long-term stability and peace of mind.</p>
@@ -514,13 +517,13 @@ a{text-decoration:none}
         </div>
       </div>
       <div class="col-right">
-        <div class="svc-card">
+        <div class="svc-card svc-teal">
           <div class="svc-icon-wrap"><svg width="32" height="32" fill="none" stroke="#045234" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
           <h2>Investment Management</h2>
           <p>Grow, diversify, and thrive. We craft portfolios unique to your risk tolerance, keeping you invested with purpose through every market cycle.</p>
           <a href="what-we-do.html" class="svc-link">Grow your wealth <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
-        <div class="svc-card">
+        <div class="svc-card svc-amber">
           <div class="svc-icon-wrap"><svg width="32" height="32" fill="none" stroke="#062743" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
           <h2>Tax Planning</h2>
           <p>Plan smarter, keep more, grow faster. Every dollar saved in tax is a dollar reinvested in your future. Identify the right strategies for your picture.</p>
@@ -583,42 +586,32 @@ a{text-decoration:none}
     <div class="audience-grid">
       <div class="aud-card">
         <div class="aud-img">
-          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Young Professionals"/>
-          <div class="hover-overlay"><span>Explore Strategy</span></div>
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Young professional"/>
+          <div class="hover-overlay"><span>Explore strategy</span></div>
         </div>
         <div class="aud-info">
-          <h3>Young professionals</h3>
+          <h3>Young professional</h3>
           <p>I'm a young professional looking to grow my wealth, eliminate debt, build a nest egg for my children, and create passive income for early retirement.</p>
         </div>
       </div>
       <div class="aud-card">
         <div class="aud-img">
-          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" alt="Small Business Owners"/>
-          <div class="hover-overlay"><span>Explore Strategy</span></div>
+          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" alt="Small business owner"/>
+          <div class="hover-overlay"><span>Explore strategy</span></div>
         </div>
         <div class="aud-info">
-          <h3>Small business owners</h3>
+          <h3>Small business owner</h3>
           <p>I want to build a lasting business legacy while planning for retirement, succession, and financial comfort.</p>
         </div>
       </div>
       <div class="aud-card">
         <div class="aud-img">
-          <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=800&q=80" alt="Planning to Retire"/>
-          <div class="hover-overlay"><span>Explore Strategy</span></div>
+          <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=800&q=80" alt="Planning to retire"/>
+          <div class="hover-overlay"><span>Explore strategy</span></div>
         </div>
         <div class="aud-info">
           <h3>Planning to retire</h3>
           <p>I want to retire early with confidence, build reliable income streams, and ensure I have enough to live comfortably without financial stress.</p>
-        </div>
-      </div>
-      <div class="aud-card">
-        <div class="aud-img">
-          <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=800&q=80" alt="High-Net-Worth Individuals"/>
-          <div class="hover-overlay"><span>Explore Strategy</span></div>
-        </div>
-        <div class="aud-info">
-          <h3>High-Net-Worth Individuals &amp; Families</h3>
-          <p>I want to protect my wealth and make it work for me, using specialised strategies to grow my assets and meet my complex financial needs.</p>
         </div>
       </div>
     </div>
@@ -639,25 +632,25 @@ a{text-decoration:none}
     <div class="disc-grid">
       <div>
         <div class="gold-bar" style="margin-bottom:32px"></div>
-        <h2>Take the <span class="hl"><span>2 Minute</span></span> Quiz.</h2>
+        <h2>See where you stand in <span class="hl"><span>2 minutes.</span></span></h2>
         <div class="discover-list">
           <h3>Discover:</h3>
           <ul>
-            <li>Your current financial position and how well it supports your goals</li>
-            <li>The gaps and risks that could impact your wealth and security</li>
-            <li>Clear, personalised next steps to build, protect, and grow your future</li>
+            <li>Where your money sits today and whether it's working toward your goals</li>
+            <li>The gaps or blind spots that could be holding you back</li>
+            <li>Practical next steps to build, protect, and grow what matters most</li>
           </ul>
         </div>
         <div class="quiz-cards">
           <div class="quiz-card anim-popup" style="animation-delay:200ms">
             <h3>Passive income readiness</h3>
             <p>Are you ready to create a passive income so you can <strong>retire early</strong> and <strong>live your ideal life</strong>?</p>
-            <a href="https://moiz-o9tnljz7.scoreapp.com" target="_blank">Take Wealth Quiz →</a>
+            <a href="https://moiz-o9tnljz7.scoreapp.com" target="_blank">Take wealth quiz →</a>
           </div>
           <div class="quiz-card anim-popup" style="animation-delay:400ms">
             <h3>Insurance readiness</h3>
             <p>Life happens. Is your family <strong>protected</strong> if you are unable to work tomorrow?</p>
-            <a href="https://moiz-sqlq8z9y.scoreapp.com" target="_blank">Check Protection →</a>
+            <a href="https://moiz-sqlq8z9y.scoreapp.com" target="_blank">Take insurance quiz →</a>
           </div>
         </div>
       </div>
@@ -705,7 +698,12 @@ a{text-decoration:none}
 <section id="reviews">
   <div class="container" style="margin-bottom:48px">
     <h2>What our clients say</h2>
-    <div class="gold-bar" style="margin:16px auto 0"></div>
+    <div class="gold-bar" style="margin:16px auto 24px"></div>
+    <div style="display:flex;justify-content:center;margin-bottom:8px">
+      <a href="https://www.adviserratings.com.au/adviser/1244853/Moiz-Mandani" target="_blank" rel="noopener">
+        <img src="https://www.adviserratings.com.au/widget/1244853/profilelink/Button_234x60.png" alt="Moiz Mandani's Adviser Ratings profile" style="height:48px;width:auto"/>
+      </a>
+    </div>
   </div>
   <div class="carousel-wrap">
     <div class="carousel-track" id="carousel"></div>
@@ -729,7 +727,7 @@ a{text-decoration:none}
         <p><strong>We're looking forward to connecting. Choose a time that works best for you!</strong></p>
         <a href="https://calendly.com/financial--adviser/connect-call" target="_blank" rel="noopener" class="cta-btn">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Book a Chat
+          Book a chat
         </a>
       </div>
     </div>
