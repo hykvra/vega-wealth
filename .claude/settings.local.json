@@ -15,7 +15,14 @@
       "Bash(done)",
       "Skill(commit-commands:commit-push-pr)",
       "Skill(commit-commands:commit-push-pr:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Read(//Users/rajhussainkanani/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/336c2133-0711-4553-86fe-9f80ba37cbe0/cd82a5f9-7fd8-4485-9783-2cfb01f75b1d/skills/docx/**)",
+      "Bash(pandoc \"/Users/rajhussainkanani/Downloads/Change 04.docx\" -o /tmp/change04.md)",
+      "Read(//tmp/**)",
+      "Bash(python scripts/office/unpack.py \"/Users/rajhussainkanani/Downloads/Change 04.docx\" /tmp/change04_unpacked/)",
+      "Bash(python3 -c \":*)",
+      "Read(//private/tmp/change04_unpacked/word/media/**)",
+      "Bash(python3:*)"
     ]
   }
 }
