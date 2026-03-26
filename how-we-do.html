@@ -290,7 +290,7 @@ a{text-decoration:none}
       <h2 id="sd-title">Intro Call</h2>
       <p class="sd-body" id="sd-body">Your journey begins with a simple 15-minute conversation. We'll explore what matters most to you, including your goals, your priorities, and the areas you'd like to focus on. We'll also introduce you to Vega Wealth and walk you through our advice process, so you feel comfortable, informed, and confident from the very start.</p>
       <button class="sd-next" onclick="nextStep()">
-        Discover Next Phase
+        <span id="sd-next-label">Discover Next Phase</span>
         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </button>
     </div>
@@ -476,6 +476,8 @@ function setStep(idx) {
   document.querySelectorAll('.rn-step').forEach((btn, i) => {
     btn.classList.toggle('active', i === idx);
   });
+  const nextIdx = (idx + 1) % STEPS.length;
+  document.getElementById('sd-next-label').textContent = STEPS[nextIdx].title;
 }
 
 function nextStep() {
