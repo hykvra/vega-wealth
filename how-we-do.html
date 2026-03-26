@@ -44,13 +44,17 @@ a{text-decoration:none}
 /* ── HERO ── */
 #hero{padding:96px 24px;background:#fff;position:relative;overflow:hidden;border-bottom:1px solid #f1f5f9}
 #hero .hero-bg{position:absolute;inset:0;z-index:0}
-#hero .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.03}
+#hero .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.04}
 #hero .hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(253,187,59,.05),transparent)}
-#hero .hero-inner{max-width:896px;margin:0 auto;position:relative;z-index:10}
+#hero .hero-inner{max-width:1280px;margin:0 auto;position:relative;z-index:10;display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+@media(min-width:768px){#hero .hero-inner{grid-template-columns:1fr 1fr;gap:64px}}
+#hero .hero-text{}
+#hero .hero-visual{display:flex;justify-content:center;align-items:center}
+#hero .hero-visual svg{width:100%;max-width:420px;height:auto}
 #hero .eyebrow{font-size:.875rem;font-weight:600;letter-spacing:.04em;color:#475569;border-left:3px solid var(--gold);padding-left:16px;margin-bottom:32px}
 #hero h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:700;color:var(--navy);line-height:1.2;letter-spacing:-.03em;margin-bottom:40px}
 #hero h1 em{color:#94a3b8;font-style:italic;font-weight:300}
-#hero .lead{font-size:clamp(1rem,2vw,1.3rem);color:#94a3b8;font-weight:300;line-height:1.8;max-width:768px;margin-bottom:16px}
+#hero .lead{font-size:clamp(1rem,2vw,1.15rem);color:#94a3b8;font-weight:300;line-height:1.8;max-width:600px;margin-bottom:16px}
 #hero .lead strong{color:var(--navy);font-weight:500;display:block;margin-top:16px}
 
 /* ── ROADMAP NAV ── */
@@ -212,12 +216,28 @@ a{text-decoration:none}
     <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" alt=""/>
   </div>
   <div class="hero-inner">
-    <p class="eyebrow">Your Advice Journey</p>
-    <h1>Wealth. <em>It's Personal.</em></h1>
-    <p class="lead">
-      Your life choices are as unique as you are, and so is our approach to financial advice. Our tailored approach is centred on uncovering what truly matters to you, helping you build and preserve wealth while shaping the life experiences that hold the greatest meaning.
-      <strong>We guide you towards clear, confident decisions, giving you the freedom to create and enjoy the life you aspire to. And as your life evolves, we're right here with you — ensuring your strategy keeps pace so you always feel supported, informed, and on the right path.</strong>
-    </p>
+    <div class="hero-text">
+      <p class="eyebrow">Your Advice Journey</p>
+      <h1>Wealth. <em>It's Personal.</em></h1>
+      <p class="lead">
+        Your life choices are as unique as you are, and so is our approach to financial advice. Our tailored approach is centred on uncovering what truly matters to you, helping you build and preserve wealth while shaping the life experiences that hold the greatest meaning.
+        <strong>We guide you towards clear, confident decisions, giving you the freedom to create and enjoy the life you aspire to. And as your life evolves, we're right here with you — ensuring your strategy keeps pace so you always feel supported, informed, and on the right path.</strong>
+      </p>
+    </div>
+    <div class="hero-visual">
+      <svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- left swoosh bracket -->
+        <path d="M60 260 C30 220, 20 160, 50 100 C65 70, 80 55, 90 50" stroke="#4BBDE8" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M90 50 C95 47, 100 45, 105 48" stroke="#4BBDE8" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <!-- right large swoosh arrow -->
+        <path d="M220 80 C260 60, 330 55, 370 90 C395 110, 400 140, 390 165 C375 200, 340 215, 300 210 C265 205, 240 185, 235 160" stroke="#4BBDE8" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <!-- arrowhead -->
+        <path d="M235 160 L220 145 M235 160 L252 148" stroke="#4BBDE8" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <!-- small secondary swoosh -->
+        <path d="M170 200 C185 185, 205 182, 220 192 C232 200, 235 215, 228 228 C220 242, 205 246, 193 240" stroke="#4BBDE8" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <path d="M193 240 L183 232 M193 240 L196 228" stroke="#4BBDE8" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      </svg>
+    </div>
   </div>
 </section>
 
