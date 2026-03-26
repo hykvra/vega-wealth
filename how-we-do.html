@@ -76,9 +76,6 @@ a{text-decoration:none}
 #step-detail .sd-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:64px;align-items:center}
 @media(min-width:768px){#step-detail .sd-inner{grid-template-columns:1fr 1fr}}
 #step-detail .sd-text{}
-.sd-phase{display:inline-flex;align-items:center;gap:12px;margin-bottom:24px}
-.sd-phase span:first-child{width:48px;height:2px;background:var(--gold);border-radius:99px;display:block}
-.sd-phase span:last-child{font-size:.875rem;font-weight:700;letter-spacing:.04em;color:var(--navy)}
 #step-detail h2{font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--navy);line-height:1.2;letter-spacing:-.03em;margin-bottom:32px}
 #step-detail .sd-body{font-size:1.15rem;color:#475569;line-height:1.8;font-weight:300;margin-bottom:40px}
 .sd-next{display:inline-flex;align-items:center;gap:12px;background:none;border:1px solid #e2e8f0;border-radius:99px;padding:12px 24px;cursor:pointer;font-size:.875rem;font-weight:700;color:var(--navy);transition:all .3s}
@@ -290,10 +287,6 @@ a{text-decoration:none}
 <section id="step-detail">
   <div class="sd-inner">
     <div class="sd-text">
-      <div class="sd-phase">
-        <span></span>
-        <span id="sd-phase-label">Phase 01</span>
-      </div>
       <h2 id="sd-title">Intro Call</h2>
       <p class="sd-body" id="sd-body">Your journey begins with a simple 15-minute conversation. We'll explore what matters most to you, including your goals, your priorities, and the areas you'd like to focus on. We'll also introduce you to Vega Wealth and walk you through our advice process, so you feel comfortable, informed, and confident from the very start.</p>
       <button class="sd-next" onclick="nextStep()">
@@ -476,7 +469,6 @@ let currentStep = 0;
 function setStep(idx) {
   currentStep = idx;
   const s = STEPS[idx];
-  document.getElementById('sd-phase-label').textContent = s.phase;
   document.getElementById('sd-title').textContent = s.title;
   document.getElementById('sd-body').textContent = s.body;
   document.getElementById('sd-icon-bg').innerHTML = s.icon;
