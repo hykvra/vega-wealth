@@ -55,32 +55,32 @@ a{text-decoration:none}
 .mob-quiz-links a:hover{color:var(--gold)}
 
 /* ── HERO ── */
-#hero{padding:80px 24px 96px;background:var(--navy);position:relative;overflow:hidden}
-#hero::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:rgba(253,187,59,.05);pointer-events:none}
-#hero::after{content:'';position:absolute;bottom:-150px;left:-80px;width:400px;height:400px;border-radius:50%;background:rgba(253,187,59,.04);pointer-events:none}
-#hero .hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:10;text-align:center}
-.hero-eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.04em;color:var(--gold);margin-bottom:20px;display:block}
-#hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-.04em;margin-bottom:16px}
+#hero{padding:80px 24px 96px;background:#fff;position:relative}
+#hero .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+@media(min-width:900px){#hero .hero-inner{grid-template-columns:1fr 1fr;gap:64px}}
+#hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.04em;margin-bottom:20px}
 #hero h1 span{color:var(--gold)}
-#hero .hero-sub{font-size:1.05rem;color:rgba(255,255,255,.65);font-weight:300;line-height:1.9;max-width:620px;margin:0 auto 56px}
+#hero .hero-sub{font-size:1.05rem;color:#475569;font-weight:300;line-height:1.9;max-width:520px}
 
 /* Video block */
-.video-block{position:relative;max-width:800px;margin:0 auto}
-.video-label{display:inline-block;background:var(--gold);color:var(--navy);font-size:9px;font-weight:700;letter-spacing:.04em;padding:6px 18px;border-radius:2px;margin-bottom:16px}
-.video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;box-shadow:0 32px 80px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.1)}
+.video-block{display:flex;flex-direction:column;gap:24px}
+.video-wrapper{position:relative;padding-bottom:75%;height:0;overflow:hidden;border-radius:16px;box-shadow:0 20px 60px rgba(6,39,67,.12);border:1px solid #f1f5f9}
 .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}
 
 /* Login / Register buttons under video */
-.portal-cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:40px}
-.btn-login{background:var(--gold);color:var(--navy);padding:18px 52px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.04em;text-decoration:none;transition:all .3s;display:inline-block}
-.btn-login:hover{background:#fff;color:var(--navy)}
-.btn-register{background:transparent;border:2px solid rgba(255,255,255,.4);color:#fff;padding:18px 52px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.04em;text-decoration:none;transition:all .3s;display:inline-block}
-.btn-register:hover{background:#fff;color:var(--navy);border-color:#fff}
+.portal-cta-row{display:flex;gap:16px;flex-wrap:wrap}
+.btn-login{background:var(--gold);color:var(--navy);padding:18px 0;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.04em;text-decoration:none;transition:all .3s;display:block;text-align:center;flex:1}
+.btn-login:hover{background:var(--navy);color:#fff}
+.btn-register{background:transparent;border:2px solid var(--navy);color:var(--navy);padding:18px 0;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.04em;text-decoration:none;transition:all .3s;display:block;text-align:center;flex:1}
+.btn-register:hover{background:var(--navy);color:#fff}
 
 /* ── APP SECTION ── */
-#app-section{padding:100px 24px;background:#fff}
+#app-section{padding:100px 24px;background:#f8fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0}
 #app-section .app-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:80px;align-items:center}
 @media(min-width:1024px){#app-section .app-inner{grid-template-columns:1fr 1.6fr}}
+.sec-section-header{text-align:center;margin-bottom:64px}
+.sec-section-header h2{font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--navy);letter-spacing:-.04em;margin-bottom:12px}
+.sec-gold-bar{width:64px;height:4px;background:var(--gold);margin:0 auto}
 .phone-mockup{display:flex;flex-direction:column;align-items:center;gap:32px}
 .phone-frame{width:200px;height:400px;background:var(--navy);border-radius:36px;border:6px solid #1a3a52;box-shadow:0 32px 80px rgba(6,39,67,.2);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:24px;text-align:center}
 .phone-frame::before{content:'';position:absolute;top:14px;left:50%;transform:translateX(-50%);width:60px;height:6px;background:#1a3a52;border-radius:3px}
@@ -179,17 +179,18 @@ a{text-decoration:none}
   </div>
 </nav>
 
-<!-- HERO: dark navy, centered, video + Login/Register below -->
+<!-- HERO: two-column, text left / video+buttons right -->
 <section id="hero">
   <div class="hero-inner">
-    <span class="hero-eyebrow">Secure Access</span>
-    <h1>Vega Wealth<br/><span>Client Portal</span></h1>
-    <p class="hero-sub">Your personal wealth dashboard — a single, secure view of your entire financial world. Track your wealth, manage documents, and collaborate with your adviser in real time.</p>
-
+    <!-- Text left -->
+    <div>
+      <h1>Vega Wealth<br/><span>Client Portal</span></h1>
+      <p class="hero-sub">Welcome to your personal wealth portal. Our secure portal provides a single view of your entire financial world, allowing you to track your wealth, manage documents, and collaborate with our team in real-time.</p>
+    </div>
+    <!-- Video + buttons right -->
     <div class="video-block">
-      <div class="video-label">Portal Walkthrough</div>
       <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/1163829622?h=927947ab5c&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=143476" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Vega Wealth Advisers - Portal"></iframe>
+        <iframe src="https://player.vimeo.com/video/1163829622?h=927947ab5c&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=143476" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" title="Vega Wealth Advisers - Portal"></iframe>
       </div>
       <div class="portal-cta-row">
         <a href="https://myprosperity.com.au:443/accounts/signin?cobrand=novawealthadvisers2" target="_blank" rel="noopener" class="btn-login">Login</a>
@@ -199,8 +200,14 @@ a{text-decoration:none}
   </div>
 </section>
 
-<!-- APP + SECURITY -->
+<!-- TRUST + SECURITY -->
 <section id="app-section">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px 64px">
+    <div class="sec-section-header">
+      <h2>Trust &amp; Security</h2>
+      <div class="sec-gold-bar"></div>
+    </div>
+  </div>
   <div class="app-inner">
 
     <!-- Left: Phone mockup + download badges -->
@@ -222,11 +229,8 @@ a{text-decoration:none}
       </div>
     </div>
 
-    <!-- Right: Trust & Security -->
+    <!-- Right: Security cards -->
     <div class="security-right">
-      <span class="eyebrow">Your Protection</span>
-      <h2>Trust &amp; Security</h2>
-      <span class="gold-bar"></span>
       <div class="security-grid">
 
         <div class="sec-card">
