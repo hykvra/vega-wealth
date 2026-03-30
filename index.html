@@ -107,14 +107,24 @@ a{text-decoration:none}
 a.svc-card{text-decoration:none;color:inherit;cursor:pointer}
 .svc-card{background:#F8FAFC;padding:48px 36px;border-radius:24px;border:1px solid #f1f5f9;transition:transform .3s,background .3s,border-color .3s;max-width:480px;margin:0 auto;width:100%;display:flex;flex-direction:column;justify-content:flex-start}
 @media(min-width:768px){.svc-card{padding:64px 48px}}
-.svc-card:hover{transform:scale(1.02);background:#fdbb3b;border-color:#fdbb3b}
-.svc-card.svc-green:hover,.svc-card.svc-navy:hover,.svc-card.svc-teal:hover,.svc-card.svc-amber:hover{background:#fdbb3b;border-color:#fdbb3b}
-.svc-icon-wrap{width:64px;height:64px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;border:1px solid #f1f5f9;margin-bottom:28px;transition:transform .3s}
-.svc-card.svc-green .svc-icon-wrap{background:#045234;border-color:#045234}
-.svc-card.svc-navy .svc-icon-wrap{background:#062743;border-color:#062743}
-.svc-card.svc-teal .svc-icon-wrap{background:#0a7a6e;border-color:#0a7a6e}
-.svc-card.svc-amber .svc-icon-wrap{background:#FDBB3B;border-color:#FDBB3B}
-.svc-card:hover .svc-icon-wrap{transform:scale(1.05);background:#fff;border-color:#fff}
+.svc-card:hover{transform:scale(1.02)}
+.svc-card.svc-green:hover{background:#045234;border-color:#045234}
+.svc-card.svc-navy:hover{background:#062743;border-color:#062743}
+.svc-card.svc-teal:hover{background:#0a7a6e;border-color:#0a7a6e}
+.svc-card.svc-amber:hover{background:#FDBB3B;border-color:#FDBB3B}
+.svc-icon-wrap{width:64px;height:64px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;border:1px solid #f1f5f9;margin-bottom:28px;transition:transform .3s,background .3s,color .3s}
+.svc-card.svc-green .svc-icon-wrap{background:#045234;border-color:#045234;color:#fff}
+.svc-card.svc-navy .svc-icon-wrap{background:#062743;border-color:#062743;color:#fff}
+.svc-card.svc-teal .svc-icon-wrap{background:#0a7a6e;border-color:#0a7a6e;color:#fff}
+.svc-card.svc-amber .svc-icon-wrap{background:#FDBB3B;border-color:#FDBB3B;color:var(--navy)}
+.svc-card.svc-green:hover .svc-icon-wrap{background:#fff;border-color:#fff;color:#045234;transform:scale(1.05)}
+.svc-card.svc-navy:hover .svc-icon-wrap{background:#fff;border-color:#fff;color:#062743;transform:scale(1.05)}
+.svc-card.svc-teal:hover .svc-icon-wrap{background:#fff;border-color:#fff;color:#0a7a6e;transform:scale(1.05)}
+.svc-card.svc-amber:hover .svc-icon-wrap{background:var(--navy);border-color:var(--navy);color:#fff;transform:scale(1.05)}
+.svc-card.svc-green:hover h2,.svc-card.svc-navy:hover h2,.svc-card.svc-teal:hover h2{color:#fff}
+.svc-card.svc-green:hover p,.svc-card.svc-navy:hover p,.svc-card.svc-teal:hover p{color:rgba(255,255,255,.75)}
+.svc-card.svc-green:hover .svc-link,.svc-card.svc-navy:hover .svc-link,.svc-card.svc-teal:hover .svc-link{color:#fff}
+.svc-card.svc-green:hover .svc-link svg,.svc-card.svc-navy:hover .svc-link svg,.svc-card.svc-teal:hover .svc-link svg{color:#FDBB3B}
 .svc-card h2{font-size:1.4rem;font-weight:700;letter-spacing:-.02em;color:var(--navy);margin-bottom:16px}
 .svc-card p{font-size:1rem;color:#475569;line-height:1.75;font-weight:300;margin-bottom:32px;flex-grow:1}
 .svc-link{display:inline-flex;align-items:center;font-size:14px;font-weight:700;letter-spacing:.02em;color:var(--navy);border-bottom:2px solid transparent;transition:border-color .3s}
@@ -484,13 +494,13 @@ a.svc-card{text-decoration:none;color:inherit;cursor:pointer}
           <h1>How can<br/>we help <span class="hd-wrap" style="color:var(--navy)"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:-10%;top:-5%;width:120%;height:115%;pointer-events:none"><path d="M5,50 Q20,5 50,5 T95,50 T50,95 T5,50" fill="none" stroke="#FDBB3B" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/></svg><span>You?</span></span></h1>
         </div>
         <a href="what-we-do.html#money-management" class="svc-card svc-green">
-          <div class="svc-icon-wrap"><svg width="32" height="32" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4"/><path d="M3 5v14a2 2 0 002 2h16v-5"/><path d="M18 12a2 2 0 000 4h4v-4z"/></svg></div>
+          <div class="svc-icon-wrap"><svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 010-4h14v4"/><path d="M3 5v14a2 2 0 002 2h16v-5"/><path d="M18 12a2 2 0 000 4h4v-4z"/></svg></div>
           <h2>Money Management</h2>
           <p>Money should work for you, not the other way around. We help you take control by setting achievable goals and strengthening your cash flow.</p>
           <span class="svc-link">Manage your money <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </a>
         <a href="what-we-do.html#retirement-planning" class="svc-card svc-navy">
-          <div class="svc-icon-wrap"><svg width="32" height="32" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><rect x="2" y="11" width="5" height="11"/><rect x="9" y="7" width="5" height="15"/><rect x="16" y="3" width="5" height="19"/></svg></div>
+          <div class="svc-icon-wrap"><svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><rect x="2" y="11" width="5" height="11"/><rect x="9" y="7" width="5" height="15"/><rect x="16" y="3" width="5" height="19"/></svg></div>
           <h2>Retirement Planning</h2>
           <p>Retire with clarity and control. We help you structure cash flow and secure multiple income streams for long-term stability and peace of mind.</p>
           <span class="svc-link">Plan your future <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
@@ -498,13 +508,13 @@ a.svc-card{text-decoration:none;color:inherit;cursor:pointer}
       </div>
       <div class="col-right">
         <a href="what-we-do.html#investment-management" class="svc-card svc-teal">
-          <div class="svc-icon-wrap"><svg width="32" height="32" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+          <div class="svc-icon-wrap"><svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
           <h2>Investment Management</h2>
           <p>Grow, diversify, and thrive. We craft portfolios unique to your risk tolerance, keeping you invested with purpose through every market cycle.</p>
           <span class="svc-link">Grow your wealth <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </a>
         <a href="what-we-do.html#tax-planning" class="svc-card svc-amber">
-          <div class="svc-icon-wrap"><svg width="32" height="32" fill="none" stroke="var(--navy)" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+          <div class="svc-icon-wrap"><svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
           <h2>Tax Planning</h2>
           <p>Plan smarter, keep more, grow faster. Every dollar saved in tax is a dollar reinvested in your future. Identify the right strategies for your picture.</p>
           <span class="svc-link">Start planning <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
