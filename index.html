@@ -72,38 +72,42 @@ a{text-decoration:none}
 /* ══════════════════════════════════════
    SECTION 2 – TERMS
 ══════════════════════════════════════ */
-#terms{position:relative;min-height:100vh;display:flex;align-items:center;background:#fff;overflow:hidden}
+#terms{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;background:#fff;overflow:hidden;text-align:center}
 #terms .terms-bg{position:absolute;inset:0;z-index:0}
-#terms .terms-bg img{width:100%;height:100%;object-fit:cover;opacity:.03;transform:scale(1.05)}
-#terms .terms-bg .grad{position:absolute;inset:0;background:linear-gradient(to bottom right,#fff,rgba(255,255,255,.6),rgba(253,187,59,.1))}
-#terms .glow1{position:absolute;top:80px;right:-10%;width:500px;height:500px;background:rgba(253,187,59,.05);border-radius:50%;filter:blur(120px)}
-#terms .glow2{position:absolute;bottom:-10%;left:-5%;width:384px;height:384px;background:rgba(253,187,59,.1);border-radius:50%;filter:blur(100px)}
-#terms .terms-inner{max-width:1280px;margin:0 auto;padding:96px 24px;position:relative;z-index:10;width:100%}
-@media(min-width:1024px){#terms .terms-inner{padding:96px 48px}}
-#terms .terms-grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
-@media(min-width:1024px){#terms .terms-grid{grid-template-columns:2fr 1fr;gap:96px}}
-#terms header{margin-bottom:40px}
-#terms .gold-bar-inline{display:inline-block;height:4px;width:48px;background:var(--gold);margin-bottom:24px}
-#terms h1{font-size:clamp(2.25rem,5vw,4.5rem);font-weight:900;color:var(--navy);line-height:1.05;letter-spacing:-.05em}
-#terms h1 .gold{color:var(--gold);display:inline-block;margin-top:8px}
-#terms .lead{font-size:clamp(1.1rem,2vw,1.5rem);color:#64748b;font-weight:300;line-height:1.625;margin-bottom:48px;padding:8px 0}
-#terms .lead .dark{color:var(--navy);display:block;margin-bottom:12px}
-#terms .stacked{position:relative;margin-bottom:48px}
-#terms .stacked .bar{position:absolute;left:-16px;top:0;bottom:0;width:4px;background:var(--gold)}
-#terms .stacked span{font-size:clamp(1.5rem,2.5vw,1.875rem);font-weight:700;letter-spacing:-.02em;display:block}
-#terms .stacked .s1{color:var(--navy)}
-#terms .stacked .s2{color:#94a3b8}
-#terms .stacked .s3{color:var(--gold);text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:4px}
-#terms .body-text{font-size:1.125rem;color:#475569;line-height:1.625;max-width:672px;margin-bottom:48px}
-#terms .body-text p{margin-bottom:24px}
-#terms .body-text .accent{font-weight:800;color:var(--gold);font-size:1.25rem;margin-bottom:0}
-.terms-right-col{display:flex;flex-direction:column;gap:24px;align-items:center}
-@media(min-width:1024px){.terms-right-col{align-items:flex-start}}
-.btn-plan{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--gold);color:var(--navy);padding:28px 48px;border-radius:2px;font-weight:900;font-size:13px;text-transform:uppercase;letter-spacing:.25em;border:none;cursor:pointer;transition:all .3s;box-shadow:0 20px 50px rgba(253,187,59,.25);width:100%;max-width:384px}
+#terms .terms-bg img{width:100%;height:100%;object-fit:cover;opacity:.2;transition:transform .7s}
+#terms .terms-bg .grad{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,.95),rgba(255,255,255,.8),rgba(255,255,255,.95));backdrop-filter:blur(2px)}
+#terms .glow1{position:absolute;top:40px;right:-10%;width:500px;height:500px;background:rgba(253,187,59,.05);border-radius:50%;filter:blur(100px)}
+#terms .glow2{position:absolute;bottom:-10%;left:-5%;width:384px;height:384px;background:rgba(253,187,59,.1);border-radius:50%;filter:blur(80px)}
+#terms .terms-inner{max-width:1024px;margin:0 auto;padding:0 24px;position:relative;z-index:10;width:100%;display:flex;flex-direction:column;justify-content:center;height:100%}
+#terms .terms-content{display:flex;flex-direction:column;align-items:center}
+#terms header{margin-bottom:24px;width:100%}
+#terms .gold-bar-inline{height:4px;width:48px;background:var(--gold);margin:0 auto 16px}
+#terms h1{font-size:clamp(2.25rem,6vw,4.5rem);font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.05em}
+#terms h1 .gold{color:var(--gold);display:inline-block;margin-top:4px}
+#terms .lead{font-size:clamp(1rem,2vw,1.25rem);color:#64748b;font-weight:300;line-height:1.625;margin-bottom:32px;max-width:896px}
+#terms .lead .dark{color:var(--navy);display:block;margin-bottom:8px}
+#terms .empathy-block{margin-bottom:32px;display:flex;flex-direction:column;align-items:center}
+#terms .empathy-inner{background:rgba(255,241,214,.95);backdrop-filter:blur(12px);padding:32px 64px;box-shadow:0 20px 25px -5px rgba(0,0,0,.1);border-radius:2px;border:1px solid rgba(253,187,59,.1);display:flex;flex-direction:column;gap:12px}
+@media(max-width:767px){#terms .empathy-inner{padding:24px 32px}}
+#terms .empathy-line{display:flex;align-items:center;justify-content:center;gap:16px}
+#terms .empathy-line .sep{height:1px;width:24px;background:rgba(6,39,67,.1)}
+@media(max-width:767px){#terms .empathy-line .sep{display:none}}
+#terms .e1,#terms .e2{font-size:clamp(1.25rem,2.5vw,1.875rem);font-weight:300;color:var(--navy);letter-spacing:-.025em}
+#terms .e3{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:900;color:var(--navy);letter-spacing:-.05em;font-style:italic}
+@keyframes reveal{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+.animate-reveal{opacity:0;animation:reveal 1s cubic-bezier(.19,1,.22,1) forwards}
+#terms .body-text{font-size:clamp(.9rem,1.5vw,1.125rem);color:#475569;line-height:1.625;max-width:896px;margin:0 auto 32px}
+#terms .body-text p{margin-bottom:16px}
+#terms .body-text .accent{font-weight:800;color:var(--gold);font-size:clamp(1rem,1.8vw,1.5rem);margin-bottom:0}
+#terms .terms-btns{display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;margin-top:24px}
+@media(min-width:640px){#terms .terms-btns{flex-direction:row}}
+.btn-plan{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--gold);color:var(--navy);padding:20px 40px;border-radius:2px;font-weight:900;font-size:13px;letter-spacing:.1em;border:none;cursor:pointer;transition:all .3s;box-shadow:0 20px 25px rgba(253,187,59,.2);min-width:220px;width:100%}
+@media(min-width:640px){.btn-plan{width:auto}}
 .btn-plan:hover{background:var(--navy);color:#fff}
 .btn-plan svg,.btn-strategy svg{width:20px;height:20px;flex-shrink:0;transition:transform .3s}
 .btn-plan:hover svg{transform:translateX(4px)}
-.btn-strategy{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:transparent;border:2px solid var(--gold);color:var(--navy);padding:28px 40px;border-radius:2px;font-weight:900;font-size:13px;text-transform:uppercase;letter-spacing:.25em;cursor:pointer;transition:all .3s;width:100%;max-width:384px}
+.btn-strategy{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:transparent;border:2px solid var(--gold);color:var(--navy);padding:20px 32px;border-radius:2px;font-weight:900;font-size:13px;letter-spacing:.1em;cursor:pointer;transition:all .3s;box-shadow:0 1px 2px rgba(0,0,0,.05);min-width:220px;width:100%}
+@media(min-width:640px){.btn-strategy{width:auto}}
 .btn-strategy:hover{background:var(--gold);color:var(--navy)}
 
 /* ══════════════════════════════════════
@@ -465,42 +469,47 @@ a.svc-card{text-decoration:none;color:inherit;cursor:pointer}
 <!-- ══ SECTION 2: TERMS ══ -->
 <section id="terms">
   <div class="terms-bg">
-    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" alt=""/>
+    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2069&auto=format&fit=crop" alt=""/>
     <div class="grad"></div>
     <div class="glow1"></div>
     <div class="glow2"></div>
   </div>
   <div class="terms-inner">
-    <div class="terms-grid">
-      <!-- Left column -->
-      <div>
-        <header>
-          <div class="gold-bar-inline"></div>
-          <h1>You want to live life<br/><span class="gold">on your terms.</span></h1>
-        </header>
-        <div class="lead">
-          <span class="dark" style="white-space:nowrap">But right now? It feels like your money doesn’t have a real plan.</span>
-          <p style="white-space:nowrap;line-height:1.375;margin-top:12px">Not one that builds <strong>passive income</strong> or <strong style="white-space:nowrap">supports the life you’re working toward.</strong></p>
-        </div>
-        <div class="stacked anim-scale" style="animation-delay:600ms">
-          <div class="bar"></div>
-          <span class="s1 anim-popup" style="animation-delay:1000ms">We understand.</span>
-          <span class="s2 anim-popup" style="animation-delay:1800ms">We’ve seen it,</span>
-          <span class="s3 anim-popup" style="animation-delay:2600ms">and we’ve lived it too.</span>
-        </div>
-        <div class="body-text">
-          <p>That’s why a clear, proactive strategy matters — one that prepares you for life’s big moments, turns your ambitions into reality, and keeps you on track for long-term success.</p>
-          <p class="accent">So you can retire on your terms and enjoy the freedom you deserve.</p>
+    <div class="terms-content">
+      <header>
+        <div class="gold-bar-inline"></div>
+        <h1>You want to live life<br/><span class="gold">on your terms.</span></h1>
+      </header>
+      <div class="lead">
+        <span class="dark">But right now? It feels like your money doesn’t have a real plan.</span>
+        <span style="line-height:1.375">Not one that builds <span class="hl"><span>passive income</span></span> or <span class="hl"><span>supports the life you’re working towards.</span></span></span>
+      </div>
+      <div class="empathy-block">
+        <div class="empathy-inner">
+          <div class="animate-reveal" style="animation-delay:200ms">
+            <span class="e1">We understand.</span>
+          </div>
+          <div class="empathy-line animate-reveal" style="animation-delay:600ms">
+            <span class="sep"></span>
+            <span class="e2">We’ve seen it and</span>
+            <span class="sep"></span>
+          </div>
+          <div class="animate-reveal" style="animation-delay:1000ms">
+            <span class="e3">We’ve lived it too.</span>
+          </div>
         </div>
       </div>
-      <!-- Right column: buttons -->
-      <div class="terms-right-col">
+      <div class="body-text">
+        <p>That’s why a clear, proactive strategy matters—one that prepares you for life’s big moments, turns your ambitions into reality, and keeps you on track for long-term success.</p>
+        <p class="accent">So you can retire on your terms and enjoy the freedom you deserve.</p>
+      </div>
+      <div class="terms-btns">
         <button class="btn-plan" onclick="window.open(‘https://calendly.com/financial--adviser/connect-call’,’_blank’)">
-          Build Your Plan
+          Build your plan
           <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
         <button class="btn-strategy" onclick="window.location.href=’what-we-do.html’">
-          Our Strategy
+          Our strategy
           <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="opacity:.5"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
       </div>
