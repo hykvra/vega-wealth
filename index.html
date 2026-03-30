@@ -78,7 +78,6 @@ a{text-decoration:none}
 #terms .glow2{position:absolute;bottom:-10%;left:-5%;width:384px;height:384px;background:#FDBB3B19;border-radius:50%;filter:blur(100px)}
 #terms .terms-inner{max-width:1280px;margin:0 auto;padding:96px 48px;position:relative;z-index:10;width:100%}
 #terms .terms-grid{display:grid;grid-template-columns:1fr;gap:48px}
-@media(min-width:1024px){#terms .terms-grid{grid-template-columns:2fr 1fr;align-items:center;gap:96px}}
 #terms header{margin-bottom:40px}
 #terms h1{font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:900;color:var(--navy);line-height:1.05;letter-spacing:-.04em}
 #terms h1 .gold{color:var(--gold);display:inline-block;margin-top:8px}
@@ -458,20 +457,22 @@ a.svc-card{text-decoration:none;color:inherit;cursor:pointer}
           <p class="dark" style="white-space:nowrap;margin-bottom:16px">But right now? It feels like your money doesn’t have a real plan.</p>
           <p style="white-space:nowrap">Not one that builds <span class="hl"><span>passive income</span></span> or<br/><span class="hl"><span>supports the life you’re working toward.</span></span></p>
         </div>
-        <div class="stacked anim-scale" style="animation-delay:600ms">
-          <div class="bar"></div>
-          <p class="s1 anim-popup" style="animation-delay:1000ms">We understand.</p>
-          <p class="s2 anim-popup" style="animation-delay:1800ms">We've seen it and</p>
-          <p class="s3 anim-popup" style="animation-delay:2600ms">We've lived it too.</p>
+        <div style="display:flex;align-items:flex-start;gap:48px;flex-wrap:wrap;margin-bottom:48px">
+          <div class="stacked anim-scale" style="animation-delay:600ms;margin-bottom:0">
+            <div class="bar"></div>
+            <p class="s1 anim-popup" style="animation-delay:1000ms">We understand.</p>
+            <p class="s2 anim-popup" style="animation-delay:1800ms">We've seen it and</p>
+            <p class="s3 anim-popup" style="animation-delay:2600ms">We've lived it too.</p>
+          </div>
+          <div class="terms-right-col anim-right" style="margin-top:4px">
+            <button class="btn btn-primary" onclick="window.open('https://calendly.com/financial--adviser/connect-call','_blank')">Build Your Plan ›</button>
+            <button class="btn btn-outline" onclick="window.location.href='what-we-do.html'">Our Strategy ›</button>
+          </div>
         </div>
         <div class="body-text">
           <p style="margin-bottom:24px">That's why a clear, proactive strategy matters — one that prepares you for life's big moments, turns your ambitions into reality, and keeps you on track for long-term success.</p>
           <p class="accent">So you can retire on your terms and enjoy the freedom you deserve.</p>
         </div>
-      </div>
-      <div class="terms-right-col anim-right">
-        <button class="btn btn-primary" onclick="window.open('https://calendly.com/financial--adviser/connect-call','_blank')">Build Your Plan ›</button>
-        <button class="btn btn-outline" onclick="window.location.href='what-we-do.html'">Our Strategy ›</button>
       </div>
     </div>
   </div>
