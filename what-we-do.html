@@ -10,13 +10,22 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Poppins',sans-serif;color:#062743;background:#fff;overflow-x:hidden;padding-top:80px}
+body{font-family:'Poppins',sans-serif;color:#062743;background:#fff;overflow-x:hidden;padding-top:120px}
 ::selection{background:#FDBB3B4d;color:#062743}
 a{text-decoration:none}
 :root{--gold:#FDBB3B;--navy:#062743;--green:#045234}
 
 /* ── NAV ── */
-#vw-nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #f1f5f9;box-shadow:0 1px 8px rgba(0,0,0,.06)}
+#vw-topbar{position:fixed;top:0;left:0;right:0;z-index:10000;background:var(--navy);height:40px;display:flex;align-items:center}
+#vw-topbar .topbar-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:flex-end;align-items:center;gap:24px;width:100%}
+#vw-topbar .topbar-phone{display:flex;align-items:center;gap:8px;color:#fff;font-size:12px;font-weight:600;text-decoration:none;transition:color .2s}
+#vw-topbar .topbar-phone:hover{color:var(--gold)}
+#vw-topbar .topbar-phone svg{width:14px;height:14px;color:var(--gold);flex-shrink:0}
+#vw-topbar .topbar-sep{width:1px;height:16px;background:rgba(255,255,255,.25)}
+#vw-topbar .topbar-login{display:flex;align-items:center;gap:8px;color:#fff;font-size:12px;font-weight:600;text-decoration:none;cursor:pointer;background:none;border:none;transition:color .2s;padding:0}
+#vw-topbar .topbar-login:hover{color:var(--gold)}
+#vw-topbar .topbar-login svg{width:14px;height:14px;color:var(--gold);flex-shrink:0}
+#vw-nav{position:fixed;top:40px;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #f1f5f9;box-shadow:0 1px 8px rgba(0,0,0,.06)}
 #vw-nav .vw-nav-inner{max-width:1280px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
 .vw-logo-btn{background:none;border:none;cursor:pointer;padding:0;transition:transform .3s}
 .vw-logo-btn:hover{transform:scale(1.05)}
@@ -153,6 +162,21 @@ a{text-decoration:none}
 </style>
 </head>
 <body>
+
+<!-- TOPBAR -->
+<div id="vw-topbar">
+  <div class="topbar-inner">
+    <a href="tel:0359591922" class="topbar-phone">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      03 5959 1922
+    </a>
+    <div class="topbar-sep"></div>
+    <button class="topbar-login" onclick="window.location.href='client-portal.html'">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Client login
+    </button>
+  </div>
+</div>
 
 <!-- NAV -->
 <nav id="vw-nav">
