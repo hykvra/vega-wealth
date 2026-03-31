@@ -9,11 +9,40 @@
 <link rel="stylesheet" href="shared.css"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
 <style>
-#hero{padding:72px 24px 0;text-align:center}
-#hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--navy);letter-spacing:-.03em;line-height:1.1;margin-bottom:16px}
-#hero h1 .gold{color:var(--gold)}
-#hero p{font-size:1rem;color:#64748b;font-weight:300;line-height:1.75;max-width:600px;margin:0 auto 8px}
-#calendly-section{padding:0 24px 72px;max-width:1000px;margin:0 auto}
+#booking-hero{
+  position:relative;
+  min-height:calc(100vh - 120px);
+  background-image:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2069&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:60px 24px;
+}
+#booking-hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(6,39,67,.45);
+}
+.calendly-wrapper{
+  position:relative;
+  z-index:10;
+  width:100%;
+  max-width:940px;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 32px 80px rgba(0,0,0,.4);
+}
+.calendly-wrapper .calendly-inline-widget{
+  min-width:320px;
+  height:700px;
+}
+@media(max-width:640px){
+  .calendly-wrapper .calendly-inline-widget{height:580px;}
+  #booking-hero{padding:32px 12px;}
+}
 </style>
 </head>
 <body>
@@ -75,18 +104,14 @@
   </div>
 </nav>
 
-<section id="hero">
-  <div class="gold-bar"></div>
-  <h1>Meet an <span class="gold">Adviser</span></h1>
-  <p>Book a free 15-minute call. We'll explore what matters most to you, your goals, and how Vega Wealth can help.</p>
+<section id="booking-hero">
+  <div class="calendly-wrapper">
+    <!-- Calendly inline widget begin -->
+    <div class="calendly-inline-widget" data-url="https://calendly.com/financial--adviser/connect-call?primary_color=fdbb3b"></div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <!-- Calendly inline widget end -->
+  </div>
 </section>
-
-<div id="calendly-section">
-  <!-- Calendly inline widget begin -->
-  <div class="calendly-inline-widget" data-url="https://calendly.com/financial--adviser/connect-call?primary_color=fdbb3b" style="min-width:320px;height:700px;"></div>
-  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-  <!-- Calendly inline widget end -->
-</div>
 
 <footer id="vw-footer">
   <div class="foot-inner">
