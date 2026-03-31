@@ -95,14 +95,19 @@ a{text-decoration:none}
 .svc-img-wrap:hover img{filter:grayscale(0)}
 
 /* ── CTA ── */
-#cta{padding:96px 24px;min-height:90vh;display:flex;align-items:center;justify-content:center;scroll-snap-align:start;background:#f8fafc;position:relative;overflow:hidden;border-top:1px solid #e2e8f0}
-#cta .cta-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.05;filter:grayscale(1);z-index:0}
-#cta .cta-inner{max-width:800px;margin:0 auto;position:relative;z-index:10;text-align:center}
-#cta h2{font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--navy);letter-spacing:-.03em;margin-bottom:24px}
-.cta-divider{width:64px;height:4px;background:var(--gold);margin:0 auto 32px}
-#cta p{font-size:1.15rem;color:#475569;line-height:1.8;font-weight:300;max-width:640px;margin:0 auto 40px}
-#cta .cta-btn{display:inline-flex;align-items:center;gap:12px;background:var(--gold);color:var(--navy);padding:20px 48px;border-radius:6px;font-weight:800;font-size:1.1rem;box-shadow:0 8px 30px rgba(253,187,59,.4);text-decoration:none;transition:all .3s}
+#cta{padding:48px 24px;min-height:90vh;display:flex;align-items:center;justify-content:center;scroll-snap-align:start;background:#f8fafc;position:relative;overflow:hidden;border-top:1px solid #e2e8f0}
+#cta .cta-wrap{max-width:1280px;width:100%;margin:0 auto}
+#cta .cta-card{position:relative;overflow:hidden;background:#fff;border:1px solid #e2e8f0;border-radius:24px;box-shadow:0 2px 12px rgba(0,0,0,.05);padding:48px 24px}
+#cta .cta-card .cta-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+#cta .cta-card .cta-bg img{width:100%;height:100%;object-fit:cover;opacity:.05;filter:grayscale(1)}
+#cta .cta-content{position:relative;z-index:10;max-width:800px;margin:0 auto;text-align:center}
+#cta h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:700;color:var(--navy);letter-spacing:-.03em;margin-bottom:12px}
+.cta-divider{width:64px;height:4px;background:var(--gold);margin:0 auto 16px}
+#cta p{font-size:1.15rem;color:#475569;line-height:1.8;font-weight:300;max-width:640px;margin:0 auto 20px}
+#cta .cta-btn{display:inline-flex;align-items:center;gap:12px;background:var(--gold);color:var(--navy);padding:20px 48px;border-radius:6px;font-weight:800;font-size:1.2rem;box-shadow:0 8px 30px rgba(253,187,59,.4);text-decoration:none;transition:all .3s}
 #cta .cta-btn:hover{background:var(--navy);color:#fff;transform:scale(1.05)}
+#cta .cta-btn svg{transition:transform .3s}
+#cta .cta-btn:hover svg{transform:rotate(12deg)}
 
 /* ── FOOTER ── */
 #vw-footer{background:#f8fafc;border-top:1px solid #e2e8f0;padding:80px 0 48px;color:var(--navy)}
@@ -233,15 +238,24 @@ a{text-decoration:none}
 
 <!-- CTA -->
 <section id="cta">
-  <div class="cta-bg"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=2074&auto=format&fit=crop" alt=""/></div>
-  <div class="cta-inner">
-    <h2>Let's Connect!</h2>
-    <div class="cta-divider"></div>
-    <p>During our 15-minute call, we'll explore what matters most to you, your personal and financial goals, and how Vega Wealth can help you get there.</p>
-    <a href="https://calendly.com/financial--adviser/connect-call" target="_blank" rel="noopener" class="cta-btn">
-      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      Book a Chat
-    </a>
+  <div class="cta-wrap">
+    <div class="cta-card">
+      <div class="cta-bg">
+        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=2074&auto=format&fit=crop" alt="Consultation"/>
+      </div>
+      <div class="cta-content">
+        <h2>Let's connect!</h2>
+        <div class="cta-divider"></div>
+        <p>
+          During our 15-minute call, we'll explore what matters most to you,<br/>your personal and financial goals, and how Vega Wealth can help you get there.
+        </p>
+        <p>We're looking forward to connecting. Choose a time that works best for you!</p>
+        <a href="meet-an-adviser.html" class="cta-btn">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book a chat
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
