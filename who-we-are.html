@@ -79,7 +79,8 @@ a{text-decoration:none}
 .hero-desc{font-size:.975rem;color:#64748b;line-height:1.9;font-weight:300;max-width:600px}
 .hero-logos-label{font-size:14px;font-weight:700;letter-spacing:.04em;color:rgba(6,39,67,.6);margin-bottom:8px}
 .hero-logos-divider{width:48px;height:2px;background:var(--gold);margin-bottom:20px}
-.hero-logos{display:flex;flex-wrap:wrap;align-items:center;gap:20px;opacity:.65;transition:opacity .3s}
+.hero-logos{display:flex;flex-direction:column;gap:16px;opacity:.65;transition:opacity .3s}
+.hero-logos-row{display:flex;flex-wrap:wrap;align-items:center;gap:20px}
 .hero-logos:hover{opacity:1}
 .hero-logos a{display:block;transition:all .3s;filter:grayscale(1)}
 .hero-logos a:hover{filter:grayscale(0);transform:scale(1.05)}
@@ -278,11 +279,15 @@ a{text-decoration:none}
         <p class="hero-logos-label">If you want to learn about me, catch me on</p>
         <div class="hero-logos-divider"></div>
         <div class="hero-logos">
-          <a href="https://vegawealth.com.au/" target="_blank" rel="noreferrer"><img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" style="height:40px"/></a>
-          <a href="https://www.linkedin.com/in/moiz-mandani/" target="_blank" rel="noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" style="height:38px"/></a>
-          <a href="https://moneysmart.gov.au/" target="_blank" rel="noreferrer"><img src="https://static.moneysmart.gov.au/nextgen/img/header-logo-color.svg" alt="Moneysmart" style="height:36px"/></a>
-          <a href="https://www.adviserratings.com.au/" target="_blank" rel="noreferrer"><img src="https://www.adviserratings.com.au/media/52106/rgb-ar_logo-horisontal-stack-large.jpg" alt="Adviser Ratings" style="height:42px;mix-blend-mode:multiply"/></a>
-          <a href="https://faaa.au/" target="_blank" rel="noreferrer"><img src="https://riskinfo.com.au/news/files/2023/04/FAAA-Colour.png" alt="FAAA" style="height:40px;mix-blend-mode:multiply"/></a>
+          <div class="hero-logos-row">
+            <a href="https://vegawealth.com.au/" target="_blank" rel="noreferrer"><img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" style="height:40px"/></a>
+            <a href="https://www.linkedin.com/in/moiz-mandani/" target="_blank" rel="noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" style="height:38px"/></a>
+            <a href="https://moneysmart.gov.au/" target="_blank" rel="noreferrer"><img src="https://static.moneysmart.gov.au/nextgen/img/header-logo-color.svg" alt="Moneysmart" style="height:36px"/></a>
+          </div>
+          <div class="hero-logos-row">
+            <a href="https://www.adviserratings.com.au/" target="_blank" rel="noreferrer"><img src="https://www.adviserratings.com.au/media/52106/rgb-ar_logo-horisontal-stack-large.jpg" alt="Adviser Ratings" style="height:42px;mix-blend-mode:multiply"/></a>
+            <a href="https://faaa.au/" target="_blank" rel="noreferrer"><img src="https://riskinfo.com.au/news/files/2023/04/FAAA-Colour.png" alt="FAAA" style="height:40px;mix-blend-mode:multiply"/></a>
+          </div>
         </div>
       </div>
     </div>
