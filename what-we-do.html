@@ -461,6 +461,10 @@ function vwToggleMenu() {
 const _sc=document.getElementById('scroll-container');
 _sc.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('visible',_sc.scrollTop>300);});
 document.getElementById('back-to-top').addEventListener('click',function(){_sc.scrollTo({top:0,behavior:'smooth'});});
+window.addEventListener('keydown',function(e){
+  if(e.key==='ArrowDown'||e.key==='PageDown'){e.preventDefault();_sc.scrollBy({top:window.innerHeight,behavior:'smooth'});}
+  else if(e.key==='ArrowUp'||e.key==='PageUp'){e.preventDefault();_sc.scrollBy({top:-window.innerHeight,behavior:'smooth'});}
+});
 </script>
 <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
   <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="20" height="20"><polyline points="18 15 12 9 6 15"/></svg>
