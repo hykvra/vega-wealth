@@ -73,7 +73,7 @@ a{text-decoration:none}
 #roadmap-nav .rn-card{max-width:1280px;margin:0 auto;background:#fff;border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,.05);padding:40px;border:1px solid #f1f5f9}
 #roadmap-nav .rn-label{text-align:center;font-size:28px;font-weight:700;letter-spacing:.04em;color:#94a3b8;margin-bottom:40px}
 #roadmap-nav .rn-steps{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;position:relative}
-@media(min-width:768px){#roadmap-nav .rn-steps::before{display:none}}
+@media(min-width:768px){#roadmap-nav .rn-steps::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:1px;background:#e2e8f0;z-index:0}}
 .rn-step{display:flex;flex-direction:column;align-items:center;gap:12px;cursor:pointer;transition:all .3s;border:none;background:none;padding:8px;position:relative;z-index:1;min-width:120px}
 .rn-step .step-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s;border:2px solid #e2e8f0;background:#fff;color:#94a3b8;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .rn-step .step-label{font-size:13px;font-weight:700;letter-spacing:.05em;color:#94a3b8;transition:color .3s;text-align:center;line-height:1.4;max-width:120px}
@@ -273,33 +273,26 @@ a{text-decoration:none}
 
       <button class="rn-step" data-idx="1" onclick="setStep(1)">
         <div class="step-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        </div>
-        <span class="step-label">90 Day Check-in</span>
-      </button>
-
-      <button class="rn-step" data-idx="2" onclick="setStep(2)">
-        <div class="step-icon">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
         </div>
         <span class="step-label">Engagement Meeting</span>
       </button>
 
-      <button class="rn-step" data-idx="3" onclick="setStep(3)">
+      <button class="rn-step" data-idx="2" onclick="setStep(2)">
         <div class="step-icon">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
         </div>
         <span class="step-label">Strategy Consultation</span>
       </button>
 
-      <button class="rn-step" data-idx="4" onclick="setStep(4)">
+      <button class="rn-step" data-idx="3" onclick="setStep(3)">
         <div class="step-icon">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         </div>
         <span class="step-label">Advice Blueprint</span>
       </button>
 
-      <button class="rn-step" data-idx="5" onclick="setStep(5)">
+      <button class="rn-step" data-idx="4" onclick="setStep(4)">
         <div class="step-icon">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
@@ -468,32 +461,26 @@ const STEPS = [
     icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>'
   },
   {
-    title: "90 Day Check-in",
-    phase: "Phase 02",
-    body: "The first 90 days are an important milestone. We check in to make sure everything is progressing as planned, walk you through progress to date, and address anything on your mind. It's our way of making sure you feel informed, supported, and confident as you settle into the early stages of your journey.",
-    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>'
-  },
-  {
     title: "Engagement Meeting",
-    phase: "Phase 03",
+    phase: "Phase 02",
     body: "This is where we get to know you. We take the time to understand your story, your unique circumstances, and the aspirations that drive you. By exploring what you want to achieve and what truly matters to you, we build a clear picture of your world — so we can begin crafting a strategy that's genuinely tailored to your life.",
     icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>'
   },
   {
     title: "Strategy Consultation",
-    phase: "Phase 04",
+    phase: "Phase 03",
     body: "This is where insight meets action. Together, we take a close look at your life and financial situation to uncover what truly matters to you and identify the practical steps to help you create your ideal life. Through financial modelling, we explore realistic pathways and potential outcomes. And by addressing red flags and engaging in strategic trade-off discussions, we ensure your strategy is built around the goals that matter most to you.",
     icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>'
   },
   {
     title: "Advice Blueprint",
-    phase: "Phase 05",
+    phase: "Phase 04",
     body: "This is where everything comes together. We present your personalised Advice Blueprint, a comprehensive roadmap tailored to your life, goals, and what matters most to you. We walk you through each recommendation clearly and transparently, so you feel fully informed and confident in every decision you make.",
     icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>'
   },
   {
     title: "Implement your Advice",
-    phase: "Phase 06",
+    phase: "Phase 05",
     body: "Your plan is ready, and now it's time to bring it to life. Once you're ready to move forward, we take care of every detail, ensuring everything is put in place smoothly and efficiently. From here, your wealth is working for you, and we're right here to make sure it stays that way.",
     icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>'
   }
@@ -511,13 +498,17 @@ function setStep(idx) {
   document.querySelectorAll('.rn-step').forEach((btn, i) => {
     btn.classList.toggle('active', i === idx);
   });
-  const nextIdx = (idx + 1) % STEPS.length;
-  document.getElementById('sd-next-label').textContent = STEPS[nextIdx].title;
+  const isLast = idx === STEPS.length - 1;
+  document.getElementById('sd-next-label').textContent = isLast ? 'Ongoing Partnership' : STEPS[idx + 1].title;
 }
 
 function nextStep() {
-  setStep((currentStep + 1) % STEPS.length);
-  document.getElementById('step-detail').scrollIntoView({behavior: 'smooth', block: 'center'});
+  if(currentStep === STEPS.length - 1){
+    document.getElementById('ongoing').scrollIntoView({behavior:'smooth',block:'start'});
+  } else {
+    setStep(currentStep + 1);
+    document.getElementById('step-detail').scrollIntoView({behavior:'smooth',block:'center'});
+  }
 }
 
 // Mobile menu
