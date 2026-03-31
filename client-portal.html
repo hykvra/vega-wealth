@@ -32,11 +32,11 @@ a{text-decoration:none}
 .vw-logo-btn img{height:48px;width:auto}
 #vw-desktopnav{display:none;align-items:center;gap:40px}
 @media(min-width:1024px){#vw-desktopnav{display:flex}}
-.vw-navlink{background:none;border:none;cursor:pointer;color:var(--navy);font-size:10px;font-weight:700;letter-spacing:.04em;transition:color .3s;padding:4px 0;position:relative}
+.vw-navlink{background:none;border:none;cursor:pointer;color:var(--navy);font-size:13px;font-weight:600;transition:color .3s;padding:4px 0;position:relative}
 .vw-navlink:hover,.vw-navlink.active{color:var(--gold)}
 .vw-navlink.active::after{content:'';position:absolute;bottom:-4px;left:0;width:100%;height:2px;background:var(--gold)}
 .vw-nav-actions{display:flex;gap:16px;padding-left:24px;border-left:1px solid #e2e8f0}
-.vw-btn-meet{background:var(--gold);color:var(--navy);padding:10px 24px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.04em;text-decoration:none;transition:all .3s;display:inline-block}
+.vw-btn-meet{background:var(--gold);color:var(--navy);padding:10px 24px;border-radius:2px;font-weight:700;font-size:13px;text-decoration:none;transition:all .3s;display:inline-block}
 .vw-btn-meet:hover{background:var(--navy);color:#fff}
 .vw-btn-portal{background:var(--navy);color:#fff;border:none;cursor:pointer;padding:10px 24px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.04em;transition:all .3s}
 .vw-btn-portal.active,.vw-btn-portal:hover{background:var(--gold);color:var(--navy)}
@@ -44,9 +44,9 @@ a{text-decoration:none}
 @media(min-width:1024px){.vw-hamburger{display:none}}
 #vw-mobile-menu{display:none;background:#fff;border-top:1px solid #f1f5f9;padding:40px 24px;flex-direction:column;gap:32px;box-shadow:0 20px 40px rgba(0,0,0,.1)}
 #vw-mobile-menu.open{display:flex}
-#vw-mobile-menu .vw-navlink{text-align:left;font-size:11px}
+#vw-mobile-menu .vw-navlink{text-align:left;font-size:13px}
 .mob-actions{display:flex;flex-direction:column;gap:16px;padding-top:24px;border-top:1px solid #f1f5f9}
-.mob-actions a,.mob-actions button{display:block;padding:16px;border-radius:2px;font-weight:700;font-size:11px;letter-spacing:.04em;text-align:center;transition:all .3s;width:100%}
+.mob-actions a,.mob-actions button{display:block;padding:16px;border-radius:2px;font-weight:700;font-size:14px;text-align:center;transition:all .3s;width:100%}
 .mob-actions a{background:var(--gold);color:var(--navy);text-decoration:none}
 .mob-actions button{background:var(--navy);color:#fff;border:none;cursor:pointer}
 /* ── DROPDOWN ── */
@@ -163,7 +163,7 @@ a{text-decoration:none}
 
 <nav id="vw-nav">
   <div class="vw-nav-inner">
-    <button class="vw-logo-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Vega Wealth Home">
+    <button class="vw-logo-btn" onclick="window.location.href='index.html'" aria-label="Vega Wealth Home">
       <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth"/>
     </button>
     <div id="vw-desktopnav">
