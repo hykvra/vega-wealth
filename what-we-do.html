@@ -72,9 +72,9 @@ a{text-decoration:none}
 .svc-section{padding:96px 24px;min-height:90vh;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #f1f5f9;scroll-snap-align:start;scroll-margin-top:0}
 .svc-section:nth-child(even){background:#f8fafc}
 .svc-section:nth-child(odd){background:#fff}
-.svc-inner{max-width:1280px;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr;gap:64px;align-items:center}
+.svc-inner{max-width:1280px;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr;gap:64px;align-items:stretch}
 @media(min-width:768px){.svc-inner{grid-template-columns:1fr 1fr}}
-.svc-text{}
+.svc-text{display:flex;flex-direction:column;justify-content:center}
 .svc-num{font-size:10px;font-weight:700;letter-spacing:.04em;color:#94a3b8;margin-bottom:16px}
 .svc-text h2{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:var(--navy);line-height:1.2;letter-spacing:-.03em;margin-bottom:8px}
 .svc-subline{font-size:1.1rem;font-weight:500;color:var(--gold);font-style:italic;margin-bottom:24px}
