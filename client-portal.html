@@ -141,9 +141,6 @@ a{text-decoration:none}
 #vw-footer .compliance-box{background:#fff;padding:24px 32px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.04);display:flex;flex-direction:column;gap:16px}
 #vw-footer .comp-abn{font-size:10px;font-weight:700;letter-spacing:.1em;color:#94a3b8}
 #vw-footer .comp-ack{font-size:10px;color:#94a3b8;font-style:normal;border-top:1px solid #f1f5f9;padding-top:16px;line-height:1.6}
-#back-to-top{position:fixed;bottom:32px;right:32px;z-index:9998;width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.2);opacity:0;transform:translateY(16px);transition:opacity .3s,transform .3s}
-#back-to-top.visible{opacity:1;transform:translateY(0)}
-#back-to-top:hover{background:var(--gold);color:var(--navy)}
 </style>
 </head>
 <body>
@@ -375,8 +372,9 @@ function vwToggleMenu(){
   document.getElementById('vw-iconMenu').style.display=open?'none':'block';
   document.getElementById('vw-iconClose').style.display=open?'block':'none';
 }
+window.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('visible',window.scrollY>300);});
 </script>
-<button id="back-to-top" onclick="window.location.href='index.html'" aria-label="Back to top">
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
   <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="20" height="20"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
 </body>
