@@ -461,9 +461,17 @@ function vwToggleMenu() {
 const _sc=document.getElementById('scroll-container');
 _sc.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('visible',_sc.scrollTop>300);});
 document.getElementById('back-to-top').addEventListener('click',function(){_sc.scrollTo({top:0,behavior:'smooth'});});
+function _snapSections(){return Array.from(_sc.querySelectorAll('#hero,.svc-section,#cta,#vw-footer'));}
 window.addEventListener('keydown',function(e){
-  if(e.key==='ArrowDown'||e.key==='PageDown'){e.preventDefault();_sc.scrollBy({top:window.innerHeight,behavior:'smooth'});}
-  else if(e.key==='ArrowUp'||e.key==='PageUp'){e.preventDefault();_sc.scrollBy({top:-window.innerHeight,behavior:'smooth'});}
+  if(e.key!=='ArrowDown'&&e.key!=='ArrowUp'&&e.key!=='PageDown'&&e.key!=='PageUp')return;
+  e.preventDefault();
+  var sections=_snapSections();
+  var st=_sc.scrollTop;
+  if(e.key==='ArrowDown'||e.key==='PageDown'){
+    for(var i=0;i<sections.length;i++){if(sections[i].offsetTop>st+10){_sc.scrollTo({top:sections[i].offsetTop,behavior:'smooth'});return;}}
+  } else {
+    for(var i=sections.length-1;i>=0;i--){if(sections[i].offsetTop<st-10){_sc.scrollTo({top:sections[i].offsetTop,behavior:'smooth'});return;}}
+  }
 });
 </script>
 <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
