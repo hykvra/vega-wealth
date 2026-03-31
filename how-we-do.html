@@ -52,20 +52,22 @@ a{text-decoration:none}
 #vw-mobile-menu .mob-actions button{background:var(--navy);color:#fff;border:none;cursor:pointer}
 
 /* ── HERO ── */
-#hero{padding:96px 24px;background:#fff;position:relative;overflow:hidden;border-bottom:1px solid #f1f5f9}
+#hero{padding:96px 24px;min-height:90vh;background:#faf9f7;position:relative;overflow:hidden;border-bottom:1px solid #f1f5f9;display:flex;align-items:center}
 #hero .hero-bg{position:absolute;inset:0;z-index:0}
-#hero .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.04}
-#hero .hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(253,187,59,.05),transparent)}
-#hero .hero-inner{max-width:1280px;margin:0 auto;position:relative;z-index:10;display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+#hero .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.06;filter:grayscale(1)}
+#hero .hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(253,187,59,.06),transparent)}
+#hero .hero-inner{max-width:1280px;width:100%;margin:0 auto;position:relative;z-index:10;display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
 @media(min-width:768px){#hero .hero-inner{grid-template-columns:1fr 1fr;gap:64px}}
-#hero .hero-text{}
 #hero .hero-visual{display:flex;justify-content:center;align-items:center}
 #hero .hero-visual svg{width:100%;max-width:420px;height:auto}
 #hero .eyebrow{font-size:.875rem;font-weight:600;letter-spacing:.04em;color:#475569;border-left:3px solid var(--gold);padding-left:16px;margin-bottom:32px}
-#hero h1{font-size:clamp(1.6rem,4vw,2.8rem);font-weight:700;color:var(--navy);line-height:1.2;letter-spacing:-.03em;margin-bottom:40px}
-#hero h1 em{color:#94a3b8;font-style:italic;font-weight:300}
-#hero .lead{font-size:clamp(1rem,2vw,1.15rem);color:var(--navy);font-weight:300;line-height:1.8;max-width:600px;margin-bottom:16px}
-#hero .lead strong{color:var(--navy);font-weight:500;display:block;margin-top:16px}
+#hero h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.03em;margin-bottom:8px}
+#hero h1 em{color:#94a3b8;font-style:italic;font-weight:300;display:block}
+#hero .lead{font-size:clamp(.95rem,1.8vw,1.1rem);color:#475569;font-weight:300;line-height:1.8;max-width:600px;margin-bottom:40px}
+.btn-start-journey{display:inline-flex;align-items:center;gap:12px;background:var(--gold);color:var(--navy);padding:18px 40px;border-radius:6px;font-weight:800;font-size:1rem;letter-spacing:.02em;text-decoration:none;transition:all .3s;box-shadow:0 8px 30px rgba(253,187,59,.35)}
+.btn-start-journey:hover{background:var(--navy);color:#fff;transform:translateY(-2px)}
+.btn-start-journey svg{transition:transform .3s}
+.btn-start-journey:hover svg{transform:translateX(4px)}
 
 /* ── ROADMAP NAV ── */
 #roadmap-nav{padding:48px 24px;background:#fff}
@@ -239,11 +241,14 @@ a{text-decoration:none}
   <div class="hero-inner">
     <div class="hero-text">
       <p class="eyebrow">Wealth. It's Personal.</p>
-      <h1>Your Advice Journey</h1>
+      <h1>Your Advice<br/><em>Journey</em></h1>
       <p class="lead">
         Your life choices are as unique as you are, and so is our approach to financial advice. Our tailored approach is centred on uncovering what truly matters to you, helping you build and preserve wealth while shaping the life experiences that hold the greatest meaning.
-        We guide you towards clear, confident decisions, giving you the freedom to create and enjoy the life you aspire to. And as your life evolves, we're right here with you — ensuring your strategy keeps pace so you always feel supported, informed, and on the right path.
       </p>
+      <a href="meet-an-adviser.html" class="btn-start-journey">
+        Start Your Journey
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
     </div>
     <div class="hero-visual">
       <svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
