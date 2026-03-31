@@ -12,6 +12,9 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Poppins',sans-serif;color:#062743;background:#fff;overflow-x:hidden;padding-top:120px}
+#scroll-container{height:calc(100vh - 120px);overflow-y:scroll;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+#vw-footer{scroll-snap-align:start}
+#cta-section{scroll-snap-align:start;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
 ::selection{background:#FDBB3B4d;color:#062743}
 a{text-decoration:none}
 :root{--gold:#FDBB3B;--navy:#062743;--green:#045234}
@@ -52,7 +55,7 @@ a{text-decoration:none}
 #vw-mobile-menu .mob-actions button{background:var(--navy);color:#fff;border:none;cursor:pointer}
 
 /* ── HERO ── */
-#hero{padding:96px 24px;min-height:90vh;background:#faf9f7;position:relative;overflow:hidden;border-bottom:1px solid #f1f5f9;display:flex;align-items:center}
+#hero{padding:96px 24px;min-height:100vh;background:#faf9f7;position:relative;overflow:hidden;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;scroll-snap-align:start}
 #hero .hero-bg{position:absolute;inset:0;z-index:0}
 #hero .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.06;filter:grayscale(1)}
 #hero .hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(253,187,59,.06),transparent)}
@@ -69,7 +72,7 @@ a{text-decoration:none}
 .btn-start-journey:hover svg{transform:translateX(4px)}
 
 /* ── ROADMAP NAV ── */
-#roadmap-nav{padding:48px 24px;background:#fff}
+#roadmap-nav{padding:48px 24px;background:#fff;scroll-snap-align:start;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
 #roadmap-nav .rn-card{max-width:1280px;margin:0 auto;background:#fff;border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,.05);padding:40px;border:1px solid #f1f5f9}
 #roadmap-nav .rn-label{text-align:center;font-size:28px;font-weight:700;letter-spacing:.04em;color:#94a3b8;margin-bottom:40px}
 #roadmap-nav .rn-steps{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;position:relative}
@@ -83,7 +86,7 @@ a{text-decoration:none}
 .rn-step:not(.active):hover .step-label{color:var(--navy)}
 
 /* ── STEP DETAIL ── */
-#step-detail{padding:64px 24px;background:#fff}
+#step-detail{padding:64px 24px;background:#fff;scroll-snap-align:start;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
 #step-detail .sd-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:64px;align-items:center;padding:0 100px}
 @media(min-width:768px){#step-detail .sd-inner{grid-template-columns:1fr 1fr}}
 #step-detail .sd-text{}
@@ -101,7 +104,7 @@ a{text-decoration:none}
 .sd-icon-box .icon-fg{color:var(--green);position:relative;z-index:1}
 
 /* ── ONGOING ── */
-#ongoing{padding:96px 24px;background:#f8fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0}
+#ongoing{padding:96px 24px;background:#f8fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;scroll-snap-align:start;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
 #ongoing .og-inner{max-width:1280px;margin:0 auto}
 #ongoing .og-header{text-align:center;margin-bottom:80px}
 #ongoing .og-header h2{font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--navy);letter-spacing:-.03em;margin-bottom:16px}
@@ -226,6 +229,7 @@ a{text-decoration:none}
   </div>
 </nav>
 
+<div id="scroll-container">
 <!-- HERO -->
 <section id="hero">
   <div class="hero-bg">
@@ -448,6 +452,7 @@ a{text-decoration:none}
     </div>
   </div>
 </footer>
+</div><!-- end #scroll-container -->
 
 <script>
 // ── STEPS DATA ───────────────────────────────────────────
@@ -536,9 +541,23 @@ document.querySelectorAll('.rn-step').forEach(function(btn){
     }, 5000);
   });
 });
-window.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('visible',window.scrollY>300);});
+const _sc=document.getElementById('scroll-container');
+_sc.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('visible',_sc.scrollTop>300);});
+document.getElementById('back-to-top').addEventListener('click',function(){_sc.scrollTo({top:0,behavior:'smooth'});});
+function _snapSections(){return Array.from(_sc.querySelectorAll('#hero,#roadmap-nav,#step-detail,#ongoing,#cta-section,#vw-footer'));}
+window.addEventListener('keydown',function(e){
+  if(e.key!=='ArrowDown'&&e.key!=='ArrowUp'&&e.key!=='PageDown'&&e.key!=='PageUp')return;
+  e.preventDefault();
+  var sections=_snapSections();
+  var st=_sc.scrollTop;
+  if(e.key==='ArrowDown'||e.key==='PageDown'){
+    for(var i=0;i<sections.length;i++){if(sections[i].offsetTop>st+10){_sc.scrollTo({top:sections[i].offsetTop,behavior:'smooth'});return;}}
+  } else {
+    for(var i=sections.length-1;i>=0;i--){if(sections[i].offsetTop<st-10){_sc.scrollTo({top:sections[i].offsetTop,behavior:'smooth'});return;}}
+  }
+});
 </script>
-<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+<button id="back-to-top" aria-label="Back to top">
   <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="20" height="20"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
 </body>
