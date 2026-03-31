@@ -25,7 +25,9 @@
       "Bash(python3:*)",
       "mcp__2c9e362c-1c24-4101-85ba-e8efe234aa3b__deploy_to_vercel",
       "mcp__2c9e362c-1c24-4101-85ba-e8efe234aa3b__list_projects",
-      "mcp__2c9e362c-1c24-4101-85ba-e8efe234aa3b__list_deployments"
+      "mcp__2c9e362c-1c24-4101-85ba-e8efe234aa3b__list_deployments",
+      "mcp__2c9e362c-1c24-4101-85ba-e8efe234aa3b__list_teams",
+      "mcp__43d844fe-94a4-48c2-b793-40e912564e45__list_organizations"
     ]
   }
 }
