@@ -521,6 +521,23 @@ function vwToggleMenu() {
 
 // Init
 setStep(0);
+
+// Auto-slide every 5 seconds
+let autoSlide = setInterval(function(){
+  const next = (currentStep + 1) % STEPS.length;
+  setStep(next);
+}, 5000);
+
+// Reset timer on manual click
+document.querySelectorAll('.rn-step').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    clearInterval(autoSlide);
+    autoSlide = setInterval(function(){
+      const next = (currentStep + 1) % STEPS.length;
+      setStep(next);
+    }, 5000);
+  });
+});
 window.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('visible',window.scrollY>300);});
 </script>
 <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
