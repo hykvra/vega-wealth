@@ -233,13 +233,6 @@ a.svc-card{text-decoration:none;color:inherit;cursor:pointer}
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(calc(-382px * 20))}}
 @media(max-width:768px){.rev-card{width:280px;margin:0 10px}@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(calc(-300px * 20))}}}
 
-/* ══════════════════════════════════════
-   SCROLL-SNAP FULL PAGE EFFECT
-══════════════════════════════════════ */
-#scroll-container{height:calc(100vh - 120px);overflow-y:scroll;scroll-snap-type:y mandatory;scroll-behavior:smooth}
-#hero,#terms,#services,#value,#wealth,#discovery,#reviews,#cta-section{scroll-snap-align:start;min-height:90vh}
-#vw-footer{scroll-snap-align:start}
-
 </style>
 </head>
 <body>
@@ -302,7 +295,6 @@ a.svc-card{text-decoration:none;color:inherit;cursor:pointer}
 </nav>
 
 
-<div id="scroll-container">
 <!-- ══ SECTION 1: HERO ══ -->
 <section id="hero">
   <div class="hero-inner">
@@ -682,7 +674,6 @@ a.svc-card{text-decoration:none;color:inherit;cursor:pointer}
     </div>
   </div>
 </footer>
-</div><!-- end scroll-container -->
 
 <script>
 // ── TAB SWITCHER ──
@@ -748,21 +739,7 @@ function vwToggleMenu(){
   document.getElementById('vw-iconClose').style.display=open?'block':'none';
 }
 
-const _sc=document.getElementById('scroll-container');
-_sc.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('visible',_sc.scrollTop>300);});
-document.getElementById('back-to-top').addEventListener('click',function(e){e.preventDefault();_sc.scrollTo({top:0,behavior:'smooth'});});
-function _snapSections(){return Array.from(_sc.querySelectorAll('#hero,#terms,#services,#value,#wealth,#discovery,#reviews,#cta-section,#vw-footer'));}
-window.addEventListener('keydown',function(e){
-  if(e.key!=='ArrowDown'&&e.key!=='ArrowUp'&&e.key!=='PageDown'&&e.key!=='PageUp')return;
-  e.preventDefault();
-  var sections=_snapSections();
-  var st=_sc.scrollTop;
-  if(e.key==='ArrowDown'||e.key==='PageDown'){
-    for(var i=0;i<sections.length;i++){if(sections[i].offsetTop>st+10){_sc.scrollTo({top:sections[i].offsetTop,behavior:'smooth'});return;}}
-  } else {
-    for(var i=sections.length-1;i>=0;i--){if(sections[i].offsetTop<st-10){_sc.scrollTo({top:sections[i].offsetTop,behavior:'smooth'});return;}}
-  }
-});
+window.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('visible',window.scrollY>300);});
 // ── Scroll-triggered animations ──────────────────────────────────
 (function(){
   const els = document.querySelectorAll('.animate-reveal,.anim-popup,.anim-right,.anim-scale');
@@ -774,12 +751,12 @@ window.addEventListener('keydown',function(e){
         obs.unobserve(e.target);
       }
     });
-  },{root:_sc,threshold:0.15});
+  },{threshold:0.15});
   els.forEach(function(el){ obs.observe(el); });
 })();
 
 </script>
-<button id="back-to-top" aria-label="Back to top">
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
   <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="20" height="20"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
 </body>
