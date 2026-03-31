@@ -72,7 +72,8 @@ a{text-decoration:none}
 .btn-start-journey:hover svg{transform:translateX(4px)}
 
 /* ── ROADMAP NAV ── */
-#roadmap-nav{padding:48px 24px;background:#fff;scroll-snap-align:start;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+#roadmap-wrap{scroll-snap-align:start;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+#roadmap-nav{padding:48px 24px;background:#fff}
 #roadmap-nav .rn-card{max-width:1280px;margin:0 auto;background:#fff;border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,.05);padding:40px;border:1px solid #f1f5f9}
 #roadmap-nav .rn-label{text-align:center;font-size:28px;font-weight:700;letter-spacing:.04em;color:#94a3b8;margin-bottom:40px}
 #roadmap-nav .rn-steps{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;position:relative}
@@ -86,7 +87,7 @@ a{text-decoration:none}
 .rn-step:not(.active):hover .step-label{color:var(--navy)}
 
 /* ── STEP DETAIL ── */
-#step-detail{padding:64px 24px;background:#fff;scroll-snap-align:start;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+#step-detail{padding:64px 24px;background:#fff}
 #step-detail .sd-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:64px;align-items:center;padding:0 100px}
 @media(min-width:768px){#step-detail .sd-inner{grid-template-columns:1fr 1fr}}
 #step-detail .sd-text{}
@@ -253,7 +254,8 @@ a{text-decoration:none}
   </div>
 </section>
 
-<!-- ROADMAP NAV -->
+<!-- ROADMAP (nav + detail as one snap section) -->
+<div id="roadmap-wrap">
 <section id="roadmap-nav">
   <div class="rn-card">
     <p class="rn-label">Our Advice Roadmap</p>
@@ -320,6 +322,7 @@ a{text-decoration:none}
     </div>
   </div>
 </section>
+</div><!-- end #roadmap-wrap -->
 
 <!-- ONGOING PARTNERSHIP -->
 <section id="ongoing">
@@ -544,7 +547,7 @@ document.querySelectorAll('.rn-step').forEach(function(btn){
 const _sc=document.getElementById('scroll-container');
 _sc.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('visible',_sc.scrollTop>300);});
 document.getElementById('back-to-top').addEventListener('click',function(){_sc.scrollTo({top:0,behavior:'smooth'});});
-function _snapSections(){return Array.from(_sc.querySelectorAll('#hero,#roadmap-nav,#step-detail,#ongoing,#cta-section,#vw-footer'));}
+function _snapSections(){return Array.from(_sc.querySelectorAll('#hero,#roadmap-wrap,#ongoing,#cta-section,#vw-footer'));}
 window.addEventListener('keydown',function(e){
   if(e.key!=='ArrowDown'&&e.key!=='ArrowUp'&&e.key!=='PageDown'&&e.key!=='PageUp')return;
   e.preventDefault();
