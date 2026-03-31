@@ -12,6 +12,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Poppins',sans-serif;color:#062743;background:#fff;overflow-x:hidden;padding-top:120px}
+#scroll-container{height:calc(100vh - 120px);overflow-y:scroll;scroll-snap-type:y mandatory;scroll-behavior:smooth}
 ::selection{background:#FDBB3B4d;color:#062743}
 a{text-decoration:none}
 :root{--gold:#FDBB3B;--navy:#062743;--green:#045234}
@@ -52,7 +53,7 @@ a{text-decoration:none}
 .mob-actions button{background:var(--navy);color:#fff;border:none;cursor:pointer}
 
 /* ── HERO ── */
-#hero{padding:96px 24px;min-height:90vh;display:flex;align-items:center;background:#fff;position:relative;overflow:hidden;border-bottom:1px solid #f1f5f9}
+#hero{padding:96px 24px;min-height:90vh;display:flex;align-items:center;background:#fff;position:relative;overflow:hidden;border-bottom:1px solid #f1f5f9;scroll-snap-align:start}
 #hero .hero-bg{position:absolute;inset:0;z-index:0}
 #hero .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.03}
 #hero .hero-bg-grad{position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(253,187,59,.05),transparent)}
@@ -68,7 +69,7 @@ a{text-decoration:none}
 
 
 /* ── SERVICES ── */
-.svc-section{padding:96px 24px;min-height:90vh;display:flex;align-items:center;border-bottom:1px solid #f1f5f9;scroll-margin-top:90px}
+.svc-section{padding:96px 24px;min-height:90vh;display:flex;align-items:center;border-bottom:1px solid #f1f5f9;scroll-snap-align:start;scroll-margin-top:0}
 .svc-section:nth-child(even){background:#f8fafc}
 .svc-section:nth-child(odd){background:#fff}
 .svc-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:64px;align-items:center}
@@ -207,6 +208,7 @@ a{text-decoration:none}
   </div>
 </nav>
 
+<div id="scroll-container">
 <!-- HERO -->
 <section id="hero">
   <div class="hero-bg">
@@ -313,6 +315,7 @@ a{text-decoration:none}
     </div>
   </div>
 </footer>
+</div><!-- end #scroll-container -->
 
 <script>
 // ── SERVICES DATA (from 03-Vega-What we do.docx) ──────────────────
@@ -440,9 +443,10 @@ SERVICES.forEach((svc, i) => {
 function scrollToService(idx) {
   const slug = SERVICES[idx].title.replace(/\s+/g,'-').toLowerCase().replace(/[&]/g,'and').replace(/[^a-z0-9-]/g,'');
   const el = document.getElementById(slug);
-  if (el) {
-    const y = el.getBoundingClientRect().top + window.scrollY - 130;
-    window.scrollTo({top: y, behavior: 'smooth'});
+  const sc = document.getElementById('scroll-container');
+  if (el && sc) {
+    const y = el.getBoundingClientRect().top + sc.scrollTop;
+    sc.scrollTo({top: y, behavior: 'smooth'});
   }
 }
 
@@ -453,7 +457,9 @@ function vwToggleMenu() {
   document.getElementById('vw-iconMenu').style.display = open ? 'none' : 'block';
   document.getElementById('vw-iconClose').style.display = open ? 'block' : 'none';
 }
-window.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('visible',window.scrollY>300);});
+const _sc=document.getElementById('scroll-container');
+_sc.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('visible',_sc.scrollTop>300);});
+document.getElementById('back-to-top').addEventListener('click',function(){_sc.scrollTo({top:0,behavior:'smooth'});});
 </script>
 <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
   <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="20" height="20"><polyline points="18 15 12 9 6 15"/></svg>
