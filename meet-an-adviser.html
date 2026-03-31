@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Meet an Adviser | Vega Wealth</title>
+<meta name="description" content="Book a free 15-minute call with Moiz Mandani at Vega Wealth. Let's explore your goals and how we can help."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="stylesheet" href="shared.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+<style>
+#hero{padding:72px 24px 0;text-align:center}
+#hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--navy);letter-spacing:-.03em;line-height:1.1;margin-bottom:16px}
+#hero h1 .gold{color:var(--gold)}
+#hero p{font-size:1rem;color:#64748b;font-weight:300;line-height:1.75;max-width:600px;margin:0 auto 8px}
+#calendly-section{padding:0 24px 72px;max-width:1000px;margin:0 auto}
+</style>
+</head>
+<body>
+
+<div id="vw-topbar">
+  <div class="topbar-inner">
+    <a href="tel:0359591922" class="topbar-phone">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      03 5959 1922
+    </a>
+    <div class="topbar-sep"></div>
+    <button class="topbar-login" onclick="window.location.href='client-portal.html'">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Client login
+    </button>
+  </div>
+</div>
+
+<nav id="vw-nav">
+  <div class="vw-nav-inner">
+    <button class="vw-logo-btn" onclick="window.location.href='index.html'" aria-label="Vega Wealth Home">
+      <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth"/>
+    </button>
+    <div id="vw-desktopnav">
+      <button class="vw-navlink" onclick="window.location.href='what-we-do.html'">What we do</button>
+      <button class="vw-navlink" onclick="window.location.href='how-we-do.html'">How we do</button>
+      <button class="vw-navlink" onclick="window.location.href='who-we-are.html'">Who we are</button>
+      <div class="vw-dropdown">
+        <button class="vw-navlink vw-dropdown-btn">Tools <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="vw-dropdown-menu">
+          <a href="https://moiz-o9tnljz7.scoreapp.com" target="_blank" rel="noopener">Wealth quiz &#8599;</a>
+          <a href="https://moiz-sqlq8z9y.scoreapp.com" target="_blank" rel="noopener">Insurance quiz &#8599;</a>
+        </div>
+      </div>
+      <div class="vw-nav-actions">
+        <a href="meet-an-adviser.html" class="vw-btn-meet">Meet an adviser</a>
+      </div>
+    </div>
+    <button class="vw-hamburger" id="vw-hamburgerBtn" onclick="vwToggleMenu()" aria-label="Menu">
+      <svg id="vw-iconMenu" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="vw-iconClose" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="vw-mobile-menu">
+    <button class="vw-navlink" onclick="window.location.href='what-we-do.html'">What we do</button>
+    <button class="vw-navlink" onclick="window.location.href='how-we-do.html'">How we do</button>
+    <button class="vw-navlink" onclick="window.location.href='who-we-are.html'">Who we are</button>
+    <div>
+      <button class="vw-navlink">Tools</button>
+      <div class="mob-quiz-links">
+        <a href="https://moiz-o9tnljz7.scoreapp.com" target="_blank" rel="noopener">Wealth quiz &#8599;</a>
+        <a href="https://moiz-sqlq8z9y.scoreapp.com" target="_blank" rel="noopener">Insurance quiz &#8599;</a>
+      </div>
+    </div>
+    <div class="mob-actions">
+      <a href="meet-an-adviser.html">Meet an adviser</a>
+      <button onclick="window.location.href='client-portal.html'">Client login</button>
+    </div>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="gold-bar"></div>
+  <h1>Meet an <span class="gold">Adviser</span></h1>
+  <p>Book a free 15-minute call. We'll explore what matters most to you, your goals, and how Vega Wealth can help.</p>
+</section>
+
+<div id="calendly-section">
+  <!-- Calendly inline widget begin -->
+  <div class="calendly-inline-widget" data-url="https://calendly.com/financial--adviser/connect-call?primary_color=fdbb3b" style="min-width:320px;height:700px;"></div>
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <!-- Calendly inline widget end -->
+</div>
+
+<footer id="vw-footer">
+  <div class="foot-inner">
+    <div class="foot-grid">
+      <div>
+        <a href="index.html"><img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" class="foot-logo"/></a>
+        <p style="font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--gold);margin-bottom:8px">Connect with us</p>
+        <div style="display:flex;align-items:center;gap:12px;font-size:.9rem;color:#475569;margin-bottom:16px">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          03 5959 1922
+        </div>
+        <ul class="foot-contact">
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>hello@vegawealth.com.au</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Suite 10, 1 Main Street,<br/>Box Hill, VIC 3128</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <ul class="foot-list">
+          <li><button onclick="window.location.href='index.html'">Home</button></li>
+          <li><button onclick="window.location.href='what-we-do.html'">What we do</button></li>
+          <li><button onclick="window.location.href='how-we-do.html'">How we do</button></li>
+          <li><button onclick="window.location.href='who-we-are.html'">Who we are</button></li>
+          <li><button onclick="window.location.href='index.html#discovery'">Tools</button></li>
+          <li><button onclick="window.location.href='client-portal.html'">Client Portal</button></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Our clients</h4>
+        <ul class="foot-list">
+          <li>Young professionals</li>
+          <li>Small business owners</li>
+          <li>Planning to retire</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul class="foot-list">
+          <li>Money Management</li><li>Strategy &amp; Financial Modelling</li><li>Retirement Planning</li>
+          <li>Investment Management</li><li>Investment Structures</li><li>Tax Planning</li>
+          <li>Superannuation</li><li>Planning for Your Children</li><li>Personal Insurance</li><li>Estate Planning</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <ul class="foot-list">
+          <li><button onclick="window.open('https://moiz-o9tnljz7.scoreapp.com/','_blank')">Wealth quiz &#8599;</button></li>
+          <li><button onclick="window.open('https://moiz-sqlq8z9y.scoreapp.com/','_blank')">Insurance quiz &#8599;</button></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Client portal</h4>
+        <button class="btn-portal-foot" onclick="window.location.href='client-portal.html'">Client Login</button>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-legal-row">
+        <p>&copy; 2026 Vega Wealth Advisers. All Rights Reserved.</p>
+        <div class="foot-policy-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="complaints.html">Complaints</a>
+          <a href="website-disclosure-information.html">Website Disclosure Information</a>
+        </div>
+      </div>
+      <div class="compliance-box">
+        <div class="comp-abn">Advice Evolution Pty Ltd &nbsp;|&nbsp; AFSL: 342880 &nbsp;|&nbsp; ABN: 66 137 858 023 &nbsp;|&nbsp; CAR: 001320118</div>
+        <div class="comp-ack">Vega Wealth Advisers acknowledges the Traditional Owners and Custodians of the lands on which we meet, live and work. We pay our respects to the people, the cultures and the Elders past and present.</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="20" height="20"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+function vwToggleMenu(){
+  const m=document.getElementById('vw-mobile-menu');
+  const open=m.classList.toggle('open');
+  document.getElementById('vw-iconMenu').style.display=open?'none':'block';
+  document.getElementById('vw-iconClose').style.display=open?'block':'none';
+}
+window.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('visible',window.scrollY>300);});
+</script>
+</body>
+</html>
