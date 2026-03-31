@@ -22,9 +22,9 @@ a{text-decoration:none}
 @keyframes popUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes scaleIn{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(calc(-382px * 20))}}
-.anim-right{animation:fadeInRight .8s ease-out forwards}
-.anim-popup{opacity:0;animation:popUp .8s cubic-bezier(.16,1,.3,1) forwards}
-.anim-scale{transform-origin:left;animation:scaleIn .6s ease-out forwards}
+.anim-right{opacity:0;transform:translateX(30px)}.anim-right.is-visible{animation:fadeInRight .8s ease-out forwards}
+.anim-popup{opacity:0;transform:translateY(20px)}.anim-popup.is-visible{animation:popUp .8s cubic-bezier(.16,1,.3,1) forwards}
+.anim-scale{transform:scaleX(0);transform-origin:left}.anim-scale.is-visible{animation:scaleIn .6s ease-out forwards}
 
 /* ── LAYOUT UTILS ── */
 .container{max-width:1280px;margin:0 auto;padding:0 24px}
@@ -94,7 +94,7 @@ a{text-decoration:none}
 #terms .e1,#terms .e2{font-size:clamp(1.25rem,2.5vw,1.875rem);font-weight:300;color:var(--navy);letter-spacing:-.025em}
 #terms .e3{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:900;color:var(--navy);letter-spacing:-.05em;font-style:italic}
 @keyframes reveal{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
-.animate-reveal{opacity:0;animation:reveal 1s cubic-bezier(.19,1,.22,1) forwards}
+.animate-reveal{opacity:0;transform:translateY(15px)}.animate-reveal.is-visible{animation:reveal 1s cubic-bezier(.19,1,.22,1) forwards}
 #terms .body-text{font-size:clamp(.9rem,1.5vw,1.125rem);color:#475569;line-height:1.625;max-width:896px;margin:0 auto 32px}
 #terms .body-text p{margin-bottom:16px}
 #terms .body-text .accent{font-weight:800;color:var(--gold);font-size:clamp(1rem,1.8vw,1.5rem);margin-bottom:0}
@@ -874,6 +874,21 @@ function vwToggleMenu(){
 }
 
 window.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('visible',window.scrollY>300);});
+// ── Scroll-triggered animations ──────────────────────────────────
+(function(){
+  const els = document.querySelectorAll('.animate-reveal,.anim-popup,.anim-right,.anim-scale');
+  if(!els.length) return;
+  const obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('is-visible');
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.15});
+  els.forEach(function(el){ obs.observe(el); });
+})();
+
 </script>
 <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
   <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="20" height="20"><polyline points="18 15 12 9 6 15"/></svg>
