@@ -379,6 +379,9 @@ a.svc-card{text-decoration:none;color:inherit;cursor:pointer}
 #vw-footer .comp-abn{font-size:10px;font-weight:700;letter-spacing:.1em;color:#94a3b8}
 #vw-footer .comp-ack{font-size:13px;color:#94a3b8;font-style:italic;border-top:1px solid #f1f5f9;padding-top:16px;line-height:1.6}
 
+#back-to-top{position:fixed;bottom:32px;right:32px;z-index:9998;width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.2);opacity:0;transform:translateY(16px);transition:opacity .3s,transform .3s}
+#back-to-top.visible{opacity:1;transform:translateY(0)}
+#back-to-top:hover{background:var(--gold);color:var(--navy)}
 </style>
 </head>
 <body>
@@ -403,7 +406,6 @@ a.svc-card{text-decoration:none;color:inherit;cursor:pointer}
       <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth"/>
     </button>
     <div id="vw-desktopnav">
-      <button class="vw-navlink" onclick="window.scrollTo({top:0,behavior:'smooth'})">Home</button>
       <button class="vw-navlink" onclick="window.location.href='what-we-do.html'">What we do</button>
       <button class="vw-navlink" onclick="window.location.href='how-we-do.html'">How we do</button>
       <button class="vw-navlink" onclick="window.location.href='who-we-are.html'">Who we are</button>
@@ -418,7 +420,6 @@ a.svc-card{text-decoration:none;color:inherit;cursor:pointer}
     </button>
   </div>
   <div id="vw-mobile-menu">
-    <button class="vw-navlink" onclick="window.scrollTo({top:0,behavior:'smooth'})">Home</button>
     <button class="vw-navlink" onclick="window.location.href='what-we-do.html'">What we do</button>
     <button class="vw-navlink" onclick="window.location.href='how-we-do.html'">How we do</button>
     <button class="vw-navlink" onclick="window.location.href='who-we-are.html'">Who we are</button>
@@ -761,11 +762,11 @@ a.svc-card{text-decoration:none;color:inherit;cursor:pointer}
       <div>
         <h4>Menu</h4>
         <ul class="foot-list">
-          <li><button onclick="window.scrollTo({top:0,behavior:'smooth'})">Home</button></li>
+          <li><button onclick="window.location.href='index.html'">Home</button></li>
           <li><button onclick="window.location.href='what-we-do.html'">What we do</button></li>
           <li><button onclick="window.location.href='how-we-do.html'">How we do</button></li>
           <li><button onclick="window.location.href='who-we-are.html'">Who we are</button></li>
-          <li><button onclick="window.location.href='#discovery'">Tools</button></li>
+          <li><button onclick="window.location.href='index.html#discovery'">Tools</button></li>
         </ul>
       </div>
       <div>
@@ -787,8 +788,8 @@ a.svc-card{text-decoration:none;color:inherit;cursor:pointer}
       <div>
         <h4>Tools</h4>
         <ul class="foot-list">
-          <li><button onclick="window.open('https://moiz-o9tnljz7.scoreapp.com/','_blank')">Wealth quiz ↗</button></li>
-          <li><button onclick="window.open('https://moiz-sqlq8z9y.scoreapp.com/','_blank')">Insurance quiz ↗</button></li>
+          <li><button onclick="window.open('https://moiz-o9tnljz7.scoreapp.com/','_blank')">Wealth quiz &#8599;</button></li>
+          <li><button onclick="window.open('https://moiz-sqlq8z9y.scoreapp.com/','_blank')">Insurance quiz &#8599;</button></li>
         </ul>
       </div>
       <div>
@@ -878,5 +879,8 @@ function vwToggleMenu(){
 }
 
 </script>
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="20" height="20"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
 </body>
 </html>

@@ -10,13 +10,22 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Poppins',sans-serif;color:#062743;background:#fff;overflow-x:hidden;padding-top:80px}
+body{font-family:'Poppins',sans-serif;color:#062743;background:#fff;overflow-x:hidden;padding-top:120px}
 ::selection{background:#FDBB3B4d;color:#062743}
 a{text-decoration:none}
 :root{--gold:#FDBB3B;--navy:#062743;--green:#045234}
 
 /* ── NAV ── */
-#vw-nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #f1f5f9;box-shadow:0 1px 8px rgba(0,0,0,.06)}
+#vw-topbar{position:fixed;top:0;left:0;right:0;z-index:10000;background:var(--navy);height:40px;display:flex;align-items:center}
+#vw-topbar .topbar-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:flex-end;align-items:center;gap:24px;width:100%}
+#vw-topbar .topbar-phone{display:flex;align-items:center;gap:8px;color:#fff;font-size:12px;font-weight:600;text-decoration:none;transition:color .2s}
+#vw-topbar .topbar-phone:hover{color:var(--gold)}
+#vw-topbar .topbar-phone svg{width:14px;height:14px;color:var(--gold);flex-shrink:0}
+#vw-topbar .topbar-sep{width:1px;height:16px;background:rgba(255,255,255,.25)}
+#vw-topbar .topbar-login{display:flex;align-items:center;gap:8px;color:#fff;font-size:12px;font-weight:600;text-decoration:none;cursor:pointer;background:none;border:none;transition:color .2s;padding:0}
+#vw-topbar .topbar-login:hover{color:var(--gold)}
+#vw-topbar .topbar-login svg{width:14px;height:14px;color:var(--gold);flex-shrink:0}
+#vw-nav{position:fixed;top:40px;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #f1f5f9;box-shadow:0 1px 8px rgba(0,0,0,.06)}
 #vw-nav .vw-nav-inner{max-width:1280px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
 .vw-logo-btn{background:none;border:none;cursor:pointer;padding:0;transition:transform .3s}
 .vw-logo-btn:hover{transform:scale(1.05)}
@@ -131,9 +140,26 @@ a{text-decoration:none}
 #vw-footer .compliance-box{background:#fff;padding:24px 32px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.04);display:flex;flex-direction:column;gap:16px}
 #vw-footer .comp-abn{font-size:10px;font-weight:700;letter-spacing:.1em;color:#94a3b8}
 #vw-footer .comp-ack{font-size:13px;color:#94a3b8;font-style:italic;border-top:1px solid #f1f5f9;padding-top:16px;line-height:1.6}
+#back-to-top{position:fixed;bottom:32px;right:32px;z-index:9998;width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.2);opacity:0;transform:translateY(16px);transition:opacity .3s,transform .3s}
+#back-to-top.visible{opacity:1;transform:translateY(0)}
+#back-to-top:hover{background:var(--gold);color:var(--navy)}
 </style>
 </head>
 <body>
+
+<div id="vw-topbar">
+  <div class="topbar-inner">
+    <a href="tel:0359591922" class="topbar-phone">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      03 5959 1922
+    </a>
+    <div class="topbar-sep"></div>
+    <button class="topbar-login" onclick="window.location.href='client-portal.html'">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Client login
+    </button>
+  </div>
+</div>
 
 <nav id="vw-nav">
   <div class="vw-nav-inner">
@@ -144,16 +170,9 @@ a{text-decoration:none}
       <button class="vw-navlink" onclick="window.location.href='what-we-do.html'">What we do</button>
       <button class="vw-navlink" onclick="window.location.href='how-we-do.html'">How we do</button>
       <button class="vw-navlink" onclick="window.location.href='who-we-are.html'">Who we are</button>
-      <div class="vw-dropdown">
-        <button class="vw-navlink vw-dropdown-btn">Tools <svg width="8" height="5" viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l3 3 3-3"/></svg></button>
-        <div class="vw-dropdown-menu">
-          <a href="https://moiz-o9tnljz7.scoreapp.com/" target="_blank" rel="noopener">Wealth quiz ↗</a>
-          <a href="https://moiz-sqlq8z9y.scoreapp.com/" target="_blank" rel="noopener">Insurance quiz ↗</a>
-        </div>
-      </div>
+      <button class="vw-navlink" onclick="window.location.href='index.html#discovery'">Tools</button>
       <div class="vw-nav-actions">
         <a href="https://calendly.com/financial--adviser/connect-call" target="_blank" rel="noopener" class="vw-btn-meet">Meet an adviser</a>
-        <button class="vw-btn-portal active" onclick="window.open('https://myprosperity.com.au:443/accounts/signin?cobrand=novawealthadvisers2','_blank')">Client login</button>
       </div>
     </div>
     <button class="vw-hamburger" id="vw-hamburgerBtn" onclick="vwToggleMenu()" aria-label="Menu">
@@ -165,16 +184,10 @@ a{text-decoration:none}
     <button class="vw-navlink" onclick="window.location.href='what-we-do.html'">What we do</button>
     <button class="vw-navlink" onclick="window.location.href='how-we-do.html'">How we do</button>
     <button class="vw-navlink" onclick="window.location.href='who-we-are.html'">Who we are</button>
-    <div>
-      <p class="vw-navlink" style="cursor:default;color:#94a3b8;margin-bottom:10px">Tools</p>
-      <div class="mob-quiz-links">
-        <a href="https://moiz-o9tnljz7.scoreapp.com/" target="_blank" rel="noopener">Wealth quiz ↗</a>
-        <a href="https://moiz-sqlq8z9y.scoreapp.com/" target="_blank" rel="noopener">Insurance quiz ↗</a>
-      </div>
-    </div>
+    <button class="vw-navlink" onclick="window.location.href='index.html#discovery'">Tools</button>
     <div class="mob-actions">
       <a href="https://calendly.com/financial--adviser/connect-call" target="_blank" rel="noopener">Meet an adviser</a>
-      <button onclick="window.open('https://myprosperity.com.au:443/accounts/signin?cobrand=novawealthadvisers2','_blank')">Client login</button>
+      <button onclick="window.location.href='client-portal.html'">Client login</button>
     </div>
   </div>
 </nav>
@@ -289,12 +302,12 @@ a{text-decoration:none}
       <div>
         <h4>Menu</h4>
         <ul class="foot-list">
-              <li><button onclick="window.location.href='index.html'">Home</button></li>
-              <li><button onclick="window.location.href='what-we-do.html'">What we do</button></li>
-              <li><button onclick="window.location.href='how-we-do.html'">How we do</button></li>
-              <li><button onclick="window.location.href='who-we-are.html'">Who we are</button></li>
-              <li><button onclick="window.location.href='index.html#discovery'">Tools</button></li>
-            </ul>
+          <li><button onclick="window.location.href='index.html'">Home</button></li>
+          <li><button onclick="window.location.href='what-we-do.html'">What we do</button></li>
+          <li><button onclick="window.location.href='how-we-do.html'">How we do</button></li>
+          <li><button onclick="window.location.href='who-we-are.html'">Who we are</button></li>
+          <li><button onclick="window.location.href='index.html#discovery'">Tools</button></li>
+        </ul>
       </div>
       <div>
         <h4>Our clients</h4>
@@ -315,8 +328,8 @@ a{text-decoration:none}
       <div>
         <h4>Tools</h4>
         <ul class="foot-list">
-          <li><button onclick="window.open('https://moiz-o9tnljz7.scoreapp.com/','_blank')">Wealth quiz ↗</button></li>
-          <li><button onclick="window.open('https://moiz-sqlq8z9y.scoreapp.com/','_blank')">Insurance quiz ↗</button></li>
+          <li><button onclick="window.open('https://moiz-o9tnljz7.scoreapp.com/','_blank')">Wealth quiz &#8599;</button></li>
+          <li><button onclick="window.open('https://moiz-sqlq8z9y.scoreapp.com/','_blank')">Insurance quiz &#8599;</button></li>
         </ul>
       </div>
       <div>
@@ -349,5 +362,8 @@ function vwToggleMenu(){
   document.getElementById('vw-iconClose').style.display=open?'block':'none';
 }
 </script>
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="20" height="20"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
 </body>
 </html>
