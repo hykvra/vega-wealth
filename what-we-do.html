@@ -416,7 +416,7 @@ function splitLabel(title) {
 (function buildWheel() {
   const svg = document.getElementById('wheel-svg');
   const VIEW = 400, cx = 200, cy = 200;
-  const innerR = 126, outerR = 152, labelR = 172, n = SERVICES.length, gap = 3;
+  const innerR = 128, outerR = 162, labelR = 182, n = SERVICES.length, gap = 3;
 
   svg.setAttribute('viewBox', `0 0 ${VIEW} ${VIEW}`);
 
@@ -435,7 +435,7 @@ function splitLabel(title) {
   SERVICES.forEach((svc, i) => {
     const sD = (i * 360/n) - 108, eD = ((i+1) * 360/n) - 108;
     const sA = (sD + gap) * Math.PI/180, eA = (eD - gap) * Math.PI/180;
-    const hitR = 185; // extended hit area radius (reaches into label zone)
+    const hitR = 198; // extended hit area radius (reaches into label zone)
 
     // Visible ring segment
     const x1=cx+Math.cos(sA)*innerR, y1=cy+Math.sin(sA)*innerR;
@@ -471,8 +471,8 @@ function splitLabel(title) {
 
   // Centre circle + logo
   const cg = document.createElementNS('http://www.w3.org/2000/svg','g');
-  cg.innerHTML = `<circle cx="${cx}" cy="${cy}" r="121" fill="white"/>
-    <image href="https://esam.in/vegawealth/square_hq.png" x="${cx-52}" y="${cy-52}" width="104" height="104" preserveAspectRatio="xMidYMid meet"/>`;
+  cg.innerHTML = `<circle cx="${cx}" cy="${cy}" r="123" fill="white"/>
+    <image href="https://esam.in/vegawealth/square_hq.png" x="${cx-62}" y="${cy-62}" width="124" height="124" preserveAspectRatio="xMidYMid meet"/>`;
   svg.appendChild(cg);
 
   // SVG text labels — tightly close to outer ring, radially aligned
@@ -540,7 +540,7 @@ SERVICES.forEach((svc, i) => {
   btn.textContent = svc.title;
   btn.onclick = () => scrollToService(i);
   li.appendChild(btn);
-  footerList.appendChild(li);
+  if (footerList) footerList.appendChild(li);
 
   // Section HTML
   const sec = document.createElement('section');
@@ -567,7 +567,10 @@ SERVICES.forEach((svc, i) => {
 function scrollToService(idx) {
   const slug = SERVICES[idx].title.replace(/\s+/g,'-').toLowerCase().replace(/[&]/g,'and').replace(/[^a-z0-9-]/g,'');
   const el = document.getElementById(slug);
-  if (el) el.scrollIntoView({behavior:'smooth',block:'start'});
+  if (el) {
+    const y = el.getBoundingClientRect().top + window.scrollY - 130;
+    window.scrollTo({top: y, behavior: 'smooth'});
+  }
 }
 
 // ── Mobile nav ────────────────────────────────────────────────────
