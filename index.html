@@ -528,37 +528,45 @@ a.svc-card{text-decoration:none;color:inherit;cursor:pointer}
         </div>
       </div>
       <div class="phone-wrap">
-        <div class="phone anim-right">
-          <div class="phone-bg">
-            <img src="https://images.unsplash.com/photo-1509059852496-f3822ae057bf?auto=format&fit=crop&q=80&w=600" alt="Family Security"/>
-          </div>
-          <div class="phone-content">
-            <div class="phone-header">
-              <div class="eyebrow">Secure Future</div>
-              <div class="title">Personal Report</div>
-              <div class="bar"></div>
+        <div class="phone anim-right" style="width:300px;height:620px;border-radius:48px;border:12px solid #1a1a1a;overflow:hidden;position:relative;box-shadow:0 25px 50px rgba(0,0,0,.3)">
+          <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:22px;background:#1a1a1a;border-bottom-left-radius:16px;border-bottom-right-radius:16px;z-index:10"></div>
+          <div style="overflow-y:auto;height:100%;padding:40px 20px 24px;scrollbar-width:none;background:#fff;display:flex;flex-direction:column;font-family:'Poppins',sans-serif">
+            <!-- Logo -->
+            <div style="padding-top:20px;margin-bottom:20px">
+              <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" style="height:32px;width:auto;object-fit:contain"/>
             </div>
-            <div class="phone-bottom">
-              <div class="score-card">
-                <div class="top-row">
-                  <span class="label">Protection Score</span>
-                  <span class="badge">Action Required</span>
-                </div>
-                <div style="display:flex;align-items:flex-end;justify-content:space-between">
-                  <div class="num">82<span style="font-size:.9rem;opacity:.5">%</span></div>
-                  <div class="sub">Based on your assessment.</div>
-                </div>
-                <div class="bar-bg"><div class="bar-fill"></div></div>
+            <!-- Heading -->
+            <div style="margin-bottom:12px">
+              <div style="width:36px;height:3px;background:#FDB833;margin-bottom:12px"></div>
+              <h2 style="font-weight:800;font-size:1.35rem;line-height:1.15;color:#0A1F30;margin:0 0 10px">
+                See where you stand in <span style="position:relative;display:inline-block;z-index:1">2 minutes.<span style="position:absolute;left:0;bottom:3px;width:100%;height:10px;background:#FDB833;z-index:-1;opacity:.8"></span></span>
+              </h2>
+              <p style="font-size:.72rem;color:#475569;line-height:1.6;margin:0">Your results are ready. At your upcoming session with a Vega Financial Adviser, we'll walk through them and map out your next steps.</p>
+            </div>
+            <!-- Legend -->
+            <div style="display:flex;justify-content:space-between;font-size:.6rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px">
+              <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:50%;background:#D93025;display:inline-block"></span>Low</span>
+              <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:50%;background:#F68D2E;display:inline-block"></span>OK</span>
+              <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:50%;background:#FFC107;display:inline-block"></span>Good</span>
+              <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:50%;background:#4CAF50;display:inline-block"></span>Great</span>
+            </div>
+            <!-- Donut Chart -->
+            <div style="position:relative;width:200px;height:200px;margin:8px auto 16px">
+              <svg style="transform:rotate(-90deg)" width="200" height="200" viewBox="0 0 42 42">
+                <circle cx="21" cy="21" r="15.915" fill="#fff"/>
+                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#f1f5f9" stroke-width="4"/>
+                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#D93025" stroke-width="4" stroke-dasharray="24 76" stroke-dashoffset="100"/>
+                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#F68D2E" stroke-width="4" stroke-dasharray="24 76" stroke-dashoffset="75"/>
+                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#FFC107" stroke-width="4" stroke-dasharray="24 76" stroke-dashoffset="50"/>
+                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#4CAF50" stroke-width="4" stroke-dasharray="24 76" stroke-dashoffset="25"/>
+              </svg>
+              <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center">
+                <div style="font-size:2.8rem;font-weight:800;color:#FDB833;line-height:1">69%</div>
               </div>
-              <div class="next-step">
-                <div>
-                  <div class="eyebrow">Next Step</div>
-                  <div class="label">Download Strategy Guide</div>
-                </div>
-                <div class="icon">
-                  <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-                </div>
-              </div>
+            </div>
+            <!-- Footer note -->
+            <div style="margin-top:auto;padding-top:12px">
+              <p style="text-align:center;font-size:.65rem;font-weight:600;color:#94a3b8;font-style:italic;margin:0">We've scored you across a range of aspects of your financial life.</p>
             </div>
           </div>
         </div>
