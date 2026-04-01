@@ -64,7 +64,7 @@ a{text-decoration:none}
 
 #hero .eyebrow{font-size:1.1rem;font-weight:600;letter-spacing:.04em;color:#475569;border-left:3px solid var(--gold);padding-left:16px;margin-bottom:32px}
 #hero h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.03em;margin-bottom:8px;white-space:nowrap}
-#hero h1 em{color:#94a3b8;font-style:italic;font-weight:300}
+#hero h1 em{color:#94a3b8;font-style:normal;font-weight:300}
 #hero .lead{font-size:clamp(.95rem,1.8vw,1.1rem);color:#475569;font-weight:300;line-height:1.8;margin-bottom:20px}
 .btn-start-journey{display:inline-flex;align-items:center;gap:12px;background:var(--gold);color:var(--navy);padding:18px 40px;border-radius:6px;font-weight:800;font-size:1rem;letter-spacing:.02em;text-decoration:none;transition:all .3s;box-shadow:0 8px 30px rgba(253,187,59,.35)}
 .btn-start-journey:hover{background:var(--navy);color:#fff;transform:translateY(-2px)}
@@ -80,7 +80,7 @@ a{text-decoration:none}
 @media(min-width:768px){#roadmap-nav .rn-steps::before{display:none}}
 .rn-step{display:flex;flex-direction:column;align-items:center;gap:12px;cursor:pointer;transition:all .3s;border:none;background:none;padding:8px;position:relative;z-index:1;min-width:120px}
 .rn-step .step-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s;border:2px solid #e2e8f0;background:#fff;color:#94a3b8;box-shadow:0 2px 8px rgba(0,0,0,.06);position:relative}
-.rn-step .step-label{font-size:13px;font-weight:700;letter-spacing:.05em;color:#94a3b8;transition:color .3s;text-align:center;line-height:1.4;max-width:120px}
+.rn-step .step-label{font-size:13px;font-weight:700;letter-spacing:.05em;color:#94a3b8;transition:color .3s;text-align:center;line-height:1.4;max-width:160px;white-space:nowrap}
 .rn-step.active .step-icon{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 10px 20px rgba(4,82,52,.25);transform:scale(1.1)}
 .rn-step.active .step-label{color:var(--navy)}
 .rn-step:not(.active):hover .step-icon{border-color:var(--gold);color:var(--gold)}
@@ -239,7 +239,7 @@ a{text-decoration:none}
   <div class="hero-inner">
     <div class="hero-text">
       <p class="eyebrow">Wealth. It's Personal.</p>
-      <h1>Your Advice <em>Journey</em></h1>
+      <h1><em>Your</em> Advice Journey</h1>
       <p class="lead">
         Your life choices are as unique as you are, and so is our approach to financial advice. Our tailored approach is centred on uncovering what truly matters to you, helping you build and preserve wealth while shaping the life experiences that hold the greatest meaning.
       </p>
@@ -312,12 +312,8 @@ a{text-decoration:none}
       </button>
     </div>
     <div class="sd-visual">
-      <div class="sd-icon-box">
-        <div class="back-ring"></div>
-        <div class="front">
-          <div class="icon-bg" style="transform:scale(3.5)" id="sd-icon-bg"></div>
-          <div class="icon-fg" style="transform:scale(2.5)" id="sd-icon-fg"></div>
-        </div>
+      <div class="sd-img-wrap">
+        <img id="sd-step-img" src="" alt="" style="width:100%;height:420px;object-fit:cover;border-radius:24px;box-shadow:0 30px 60px rgba(0,0,0,.15)"/>
       </div>
     </div>
   </div>
@@ -375,7 +371,7 @@ a{text-decoration:none}
           During our 15-minute call, we'll explore what matters most to you,<br/>your personal and financial goals, and how Vega Wealth can help you get there.
         </p>
         <p>We're looking forward to connecting. Choose a time that works best for you!</p>
-        <a href="https://calendly.com/financial--adviser/connect-call" target="_blank" rel="noopener" class="cta-btn">
+        <a href="consult.html" class="cta-btn">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           Book a chat
         </a>
@@ -471,31 +467,36 @@ const STEPS = [
     title: "Intro Call",
     phase: "Phase 01",
     body: "Your journey begins with a simple 15-minute conversation. We'll explore what matters most to you, including your goals, your priorities, and the areas you'd like to focus on. We'll also introduce you to Vega Wealth and walk you through our advice process, so you feel comfortable, informed, and confident from the very start.",
-    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>'
+    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>',
+    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=600"
   },
   {
     title: "Engagement Meeting",
     phase: "Phase 02",
     body: "This is where we get to know you. We take the time to understand your story, your unique circumstances, and the aspirations that drive you. By exploring what you want to achieve and what truly matters to you, we build a clear picture of your world — so we can begin crafting a strategy that's genuinely tailored to your life.",
-    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>'
+    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>',
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600"
   },
   {
     title: "Strategy Consultation",
     phase: "Phase 03",
     body: "This is where insight meets action. Together, we take a close look at your life and financial situation to uncover what truly matters to you and identify the practical steps to help you create your ideal life. Through financial modelling, we explore realistic pathways and potential outcomes. And by addressing red flags and engaging in strategic trade-off discussions, we ensure your strategy is built around the goals that matter most to you.",
-    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>'
+    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>',
+    image: "images/2528599069  - Strategy Consultation.jpg"
   },
   {
     title: "Advice Blueprint",
     phase: "Phase 04",
     body: "This is where everything comes together. We present your personalised Advice Blueprint, a comprehensive roadmap tailored to your life, goals, and what matters most to you. We walk you through each recommendation clearly and transparently, so you feel fully informed and confident in every decision you make.",
-    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>'
+    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>',
+    image: "images/2611384597  - Advice Blueprint.jpg"
   },
   {
     title: "Implement your Advice",
     phase: "Phase 05",
     body: "Your plan is ready, and now it's time to bring it to life. Once you're ready to move forward, we take care of every detail, ensuring everything is put in place smoothly and efficiently. From here, your wealth is working for you, and we're right here to make sure it stays that way.",
-    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>'
+    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>',
+    image: "images/548332585  - Implement Your Advice.jpg"
   }
 ];
 
@@ -506,8 +507,7 @@ function setStep(idx) {
   const s = STEPS[idx];
   document.getElementById('sd-title').textContent = s.title;
   document.getElementById('sd-body').textContent = s.body;
-  document.getElementById('sd-icon-bg').innerHTML = s.icon;
-  document.getElementById('sd-icon-fg').innerHTML = s.icon;
+  document.getElementById('sd-step-img').src = s.image;
   document.querySelectorAll('.rn-step').forEach((btn, i) => {
     btn.classList.toggle('active', i === idx);
   });
