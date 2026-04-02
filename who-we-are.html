@@ -101,11 +101,16 @@ a{text-decoration:none}
 .hero-logos-wrap{max-width:1280px;margin:40px auto 0;padding:32px 24px 0;border-top:1px solid #f1f5f9;text-align:center}
 .hero-logos-wrap .hero-logos-label{font-size:16px}
 .hero-logos-wrap .hero-logos-divider{margin:8px auto 24px}
-.hero-logos-single-row{justify-content:center;flex-wrap:wrap;gap:40px;opacity:.65;transition:opacity .3s}
-.hero-logos-single-row:hover{opacity:1}
-.hero-logos-single-row a{display:flex;align-items:center;transition:all .3s;filter:grayscale(1)}
-.hero-logos-single-row a:hover{filter:grayscale(0);transform:scale(1.05)}
-.hero-logos-single-row img{height:48px;width:auto;object-fit:contain;mix-blend-mode:multiply}
+.logo-strip-card{background:#fff;border-radius:24px;box-shadow:0 1px 4px rgba(0,0,0,.06);border:1px solid #f1f5f9;padding:24px 32px;overflow:hidden}
+.logo-strip{display:flex;flex-wrap:nowrap;align-items:center;gap:16px;overflow-x:auto;padding:4px 2px;scrollbar-width:none}
+.logo-strip::-webkit-scrollbar{display:none}
+.logo-box-item{display:flex;align-items:center;justify-content:center;width:140px;height:80px;padding:12px;background:#E9EBE8;border-radius:16px;transition:all .4s cubic-bezier(.175,.885,.32,1.275);filter:grayscale(1);opacity:.7;border:1px solid transparent;flex-shrink:0;text-decoration:none}
+.logo-box-item:hover{filter:grayscale(0);opacity:1;transform:translateY(-5px) scale(1.05);background:#fff;box-shadow:0 10px 25px -5px rgba(6,39,67,.1);border-color:rgba(253,187,59,.4)}
+.logo-box-item img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.logo-box-item.blend-multiply img{mix-blend-mode:multiply}
+.logo-box-item.square-logo img{max-height:70%;max-width:70%}
+.logo-box-item.wide{width:200px}
+@media(max-width:640px){.logo-box-item{width:115px;height:65px;padding:10px}.logo-box-item.wide{width:160px}}
 /* WHY */
 #why{padding:96px 24px;background:#f8fafc}
 .why-inner{max-width:1280px;margin:0 auto}
@@ -338,13 +343,27 @@ a.strat-item[href="consult.html"]:hover .strat-icon{background:rgba(255,255,255,
   <div class="hero-logos-wrap">
     <p class="hero-logos-label">If you want to learn about me, catch me on</p>
     <div class="hero-logos-divider"></div>
-    <div class="hero-logos-row hero-logos-single-row">
-      <a href="https://vegawealth.com.au/" target="_blank" rel="noreferrer"><img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth"/></a>
-      <a href="https://www.linkedin.com/in/moiz-mandani/" target="_blank" rel="noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn"/></a>
-      <a href="https://moneysmart.gov.au/" target="_blank" rel="noreferrer"><img src="https://static.moneysmart.gov.au/nextgen/img/header-logo-color.svg" alt="Moneysmart"/></a>
-      <a href="https://www.adviserratings.com.au/" target="_blank" rel="noreferrer"><img src="https://www.adviserratings.com.au/media/52106/rgb-ar_logo-horisontal-stack-large.jpg" alt="Adviser Ratings"/></a>
-      <a href="https://faaa.au/" target="_blank" rel="noreferrer"><img src="https://riskinfo.com.au/news/files/2023/04/FAAA-Colour.png" alt="FAAA"/></a>
-      <a href="https://www.smsfassociation.com/" target="_blank" rel="noreferrer"><img src="images/SMSF-Association-Advisors.png" alt="SMSF Association"/></a>
+    <div class="logo-strip-card">
+      <div class="logo-strip">
+        <a href="https://vegawealth.com.au/" target="_blank" rel="noreferrer" class="logo-box-item" title="Vega Wealth Website">
+          <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" onerror="this.src='https://esam.in/vegawealth/favicon_lq.png'"/>
+        </a>
+        <a href="https://www.linkedin.com/in/moiz-mandani/" target="_blank" rel="noreferrer" class="logo-box-item square-logo" title="LinkedIn Profile">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn"/>
+        </a>
+        <a href="https://moneysmart.gov.au/financial-advice/financial-advisers-register#!id=001244853" target="_blank" rel="noreferrer" class="logo-box-item wide" title="MoneySmart Register">
+          <img src="https://static.moneysmart.gov.au/nextgen/img/header-logo-color.svg" alt="Moneysmart"/>
+        </a>
+        <a href="https://www.adviserratings.com.au/adviser/1244853/Moiz-Mandani" target="_blank" rel="noreferrer" class="logo-box-item blend-multiply" title="Adviser Ratings Profile">
+          <img src="https://www.adviserratings.com.au/media/52106/rgb-ar_logo-horisontal-stack-large.jpg" alt="Adviser Ratings"/>
+        </a>
+        <a href="https://find-a-planner.faaa.au/vic/box-hill/moiz-mandani-cfp/36169" target="_blank" rel="noreferrer" class="logo-box-item blend-multiply" title="FAAA Member Profile">
+          <img src="https://riskinfo.com.au/news/files/2023/04/FAAA-Colour.png" alt="FAAA"/>
+        </a>
+        <a href="https://www.smsfassociation.com/specialist/moiz-mandani?at_context=50" target="_blank" rel="noreferrer" class="logo-box-item" title="SMSF Association Specialist">
+          <img src="https://v2.self-managedsuperfund.com.au/wp-content/uploads/2023/11/SMSF-Association-Advisors.png" alt="SMSF Association"/>
+        </a>
+      </div>
     </div>
   </div>
 </header>
