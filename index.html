@@ -24,15 +24,16 @@
 /* ══════════════════════════════════════
    SECTION 1 – HERO
 ══════════════════════════════════════ */
-#hero{position:relative;min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;background-image:url('images/1259972638-Headline Dream with confidence Live with clarity.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;overflow:hidden}
-#hero::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.6);z-index:1}
-#hero .hero-inner{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px}
-#hero h1{font-size:clamp(2.4rem,7vw,4.5rem);font-weight:900;color:var(--navy);line-height:1.1;margin-bottom:32px;letter-spacing:-.03em}
+#hero{position:relative;min-height:90vh;display:flex;align-items:center;justify-content:flex-end;background-image:url('images/1259972638-Headline Dream with confidence Live with clarity.jpg');background-size:cover;background-position:left center;background-repeat:no-repeat;overflow:hidden}
+#hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(255,255,255,0) 30%,rgba(255,255,255,.85) 55%,rgba(255,255,255,.97) 70%);z-index:1}
+#hero .hero-inner{position:relative;z-index:2;max-width:560px;margin:0 5% 0 0;padding:0 24px;text-align:center}
+#hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;color:var(--navy);line-height:1.15;margin-bottom:24px;letter-spacing:-.03em}
 #hero h1 .gold{color:var(--gold)}
-#hero p{font-size:1em;color:#64748b;font-weight:300;line-height:1.75;max-width:720px;margin:0 auto 40px}
+#hero p{font-size:1em;color:#64748b;font-weight:300;line-height:1.75;margin:0 0 20px}
 @media(max-width:640px){#hero p{font-size:.75rem;line-height:1.6}}
 #hero p strong{color:var(--navy);font-weight:700;display:block;margin-top:8px}
 #hero .hero-btns{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+@media(max-width:768px){#hero{justify-content:center}#hero::before{background:rgba(255,255,255,.75)}#hero .hero-inner{margin:0 auto;max-width:600px}}
 
 /* ══════════════════════════════════════
    SECTION 2 – TERMS
@@ -368,7 +369,7 @@ a.svc-card{text-decoration:none;color:inherit;cursor:pointer}
     <p>Financial advice is more than money. It's about making smart, confident decisions, enjoying peace of mind, and knowing you're on the right path to your ideal life.</p>
     <p style="margin-top:-20px"><strong>As your life evolves, we're right here with you.</strong></p>
     <div class="hero-btns">
-      <button class="btn btn-primary" onclick="window.location.href='consult.html'">Start your journey</button>
+      <a href="consult.html" class="btn btn-primary">Start your journey</a>
       <button class="btn btn-outline" onclick="document.getElementById('discovery').scrollIntoView({behavior:'smooth'})">Take the quiz ⚡</button>
     </div>
   </div>
