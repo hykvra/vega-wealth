@@ -83,7 +83,7 @@ a{text-decoration:none}
 .mob-actions button{background:var(--navy);color:#fff;border:none;cursor:pointer}
 
 /* ══════════ CTA SECTION ══════════ */
-#cta-section{padding:80px 24px;position:relative;overflow:hidden}
+#cta-section{padding:160px 48px;position:relative;overflow:hidden}
 #cta-section .cta-wrap{max-width:1280px;margin:0 auto}
 #cta-section .cta-card{position:relative;background:transparent;border:none;box-shadow:none;padding:0}
 #cta-section .cta-card .cta-bg{position:fixed;display:none}
