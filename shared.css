@@ -88,13 +88,14 @@ a{text-decoration:none}
 #cta-section .cta-card{position:relative;background:transparent;border:none;box-shadow:none;padding:0}
 #cta-section .cta-card .cta-bg{position:fixed;display:none}
 #cta-section .cta-card .cta-bg img{display:none}
-#cta-section::before{content:'';position:absolute;inset:0;background:url('../images/Call to Action.jpg') center/cover no-repeat;opacity:.35;z-index:0}
+#cta-section::before{content:'';position:absolute;inset:0;background:url('../images/Call to Action.jpg') center/cover no-repeat;z-index:0}
+#cta-section::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.55);z-index:1}
 #cta-section .cta-content{position:relative;z-index:10;max-width:800px;margin:0 auto;text-align:center}
-#cta-section h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:700;color:var(--navy);letter-spacing:-.03em;margin-bottom:12px}
+#cta-section h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:700;color:#fff;letter-spacing:-.03em;margin-bottom:12px}
 #cta-section .cta-divider{width:64px;height:4px;background:var(--gold);margin:0 auto 16px}
-#cta-section p{font-size:1.15rem;color:#475569;line-height:1.8;font-weight:300;margin:0 auto 20px}
+#cta-section p{font-size:1.15rem;color:rgba(255,255,255,.85);line-height:1.8;font-weight:300;margin:0 auto 20px}
 #cta-section p strong{font-size:1rem;white-space:nowrap}
-#cta-section p strong{color:var(--navy);font-weight:400;display:block;margin-top:16px}
+#cta-section p strong{color:#fff;font-weight:400;display:block;margin-top:16px}
 #cta-section .cta-btn{display:inline-flex;align-items:center;gap:12px;background:var(--gold);color:var(--navy);padding:20px 48px;border-radius:6px;font-weight:800;font-size:1.2rem;box-shadow:0 8px 30px rgba(253,187,59,.4);text-decoration:none;transition:all .3s}
 #cta-section .cta-btn:hover{background:var(--navy);color:#fff;transform:scale(1.05)}
 #cta-section .cta-btn svg{transition:transform .3s}
