@@ -98,6 +98,12 @@ a{text-decoration:none}
 .hero-logos a:hover{filter:grayscale(0);transform:scale(1.05)}
 .hero-logos img{height:40px;width:auto;object-fit:contain;mix-blend-mode:multiply}
 .hero-logos-row:last-child img{height:56px}
+.hero-logos-wrap{max-width:1280px;margin:40px auto 0;padding:32px 24px 0;border-top:1px solid #f1f5f9;text-align:center}
+.hero-logos-single-row{justify-content:center;flex-wrap:wrap;gap:40px;opacity:.65;transition:opacity .3s}
+.hero-logos-single-row:hover{opacity:1}
+.hero-logos-single-row a{display:flex;align-items:center;transition:all .3s;filter:grayscale(1)}
+.hero-logos-single-row a:hover{filter:grayscale(0);transform:scale(1.05)}
+.hero-logos-single-row img{height:48px;width:auto;object-fit:contain;mix-blend-mode:multiply}
 /* WHY */
 #why{padding:96px 24px;background:#f8fafc}
 .why-inner{max-width:1280px;margin:0 auto}
@@ -325,22 +331,18 @@ a.strat-item[href="consult.html"]:hover .strat-icon{background:rgba(255,255,255,
       </div>
       <p class="hero-quote">I've helped Australians build wealth with confidence and create the life they've always imagined.</p>
       <p class="hero-desc">As a Founder and Senior Financial Adviser at Vega Wealth Advisers, I turn financial goals into clear, actionable plans.<br><br>My philosophy is simple: your life is unique, and your financial advice should be too. I take time to understand what truly matters to you, then build strategies that empower you to grow wealth while creating meaningful life experiences.</p>
-      <div>
-        <p class="hero-logos-label">If you want to learn about me, catch me on</p>
-        <div class="hero-logos-divider"></div>
-        <div class="hero-logos">
-          <div class="hero-logos-row">
-            <a href="https://vegawealth.com.au/" target="_blank" rel="noreferrer"><img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth"/></a>
-            <a href="https://www.linkedin.com/in/moiz-mandani/" target="_blank" rel="noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn"/></a>
-            <a href="https://moneysmart.gov.au/" target="_blank" rel="noreferrer"><img src="https://static.moneysmart.gov.au/nextgen/img/header-logo-color.svg" alt="Moneysmart"/></a>
-          </div>
-          <div class="hero-logos-row">
-            <a href="https://www.adviserratings.com.au/" target="_blank" rel="noreferrer"><img src="https://www.adviserratings.com.au/media/52106/rgb-ar_logo-horisontal-stack-large.jpg" alt="Adviser Ratings"/></a>
-            <a href="https://faaa.au/" target="_blank" rel="noreferrer"><img src="https://riskinfo.com.au/news/files/2023/04/FAAA-Colour.png" alt="FAAA"/></a>
-            <a href="https://www.smsfassociation.com/" target="_blank" rel="noreferrer"><img src="images/SMSF-Association-Advisors.png" alt="SMSF Association"/></a>
-          </div>
-        </div>
-      </div>
+    </div>
+  </div>
+  <div class="hero-logos-wrap">
+    <p class="hero-logos-label">If you want to learn about me, catch me on</p>
+    <div class="hero-logos-divider"></div>
+    <div class="hero-logos-row hero-logos-single-row">
+      <a href="https://vegawealth.com.au/" target="_blank" rel="noreferrer"><img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth"/></a>
+      <a href="https://www.linkedin.com/in/moiz-mandani/" target="_blank" rel="noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn"/></a>
+      <a href="https://moneysmart.gov.au/" target="_blank" rel="noreferrer"><img src="https://static.moneysmart.gov.au/nextgen/img/header-logo-color.svg" alt="Moneysmart"/></a>
+      <a href="https://www.adviserratings.com.au/" target="_blank" rel="noreferrer"><img src="https://www.adviserratings.com.au/media/52106/rgb-ar_logo-horisontal-stack-large.jpg" alt="Adviser Ratings"/></a>
+      <a href="https://faaa.au/" target="_blank" rel="noreferrer"><img src="https://riskinfo.com.au/news/files/2023/04/FAAA-Colour.png" alt="FAAA"/></a>
+      <a href="https://www.smsfassociation.com/" target="_blank" rel="noreferrer"><img src="images/SMSF-Association-Advisors.png" alt="SMSF Association"/></a>
     </div>
   </div>
 </header>
