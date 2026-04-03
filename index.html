@@ -260,6 +260,12 @@ a.svc-card{text-decoration:none;color:inherit;cursor:pointer}
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(calc(-382px * 20))}}
 @media(max-width:768px){.rev-card{width:280px;margin:0 10px}@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(calc(-300px * 20))}}}
 
+/* ── TRANSPARENT NAV (homepage only) ── */
+body{padding-top:40px}
+#hero{margin-top:0}
+#vw-nav{background:transparent!important;border-bottom-color:transparent!important;box-shadow:none!important;backdrop-filter:none!important;transition:background .35s,border-color .35s,box-shadow .35s,backdrop-filter .35s}
+#vw-nav.nav-scrolled{background:rgba(255,255,255,.97)!important;border-bottom-color:#f1f5f9!important;box-shadow:0 1px 8px rgba(0,0,0,.06)!important;backdrop-filter:blur(12px)!important}
+
 </style>
 <script type="application/ld+json">
 {
@@ -856,7 +862,10 @@ function vwToggleMenu(){
   document.getElementById('vw-iconClose').style.display=open?'block':'none';
 }
 
-window.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('visible',window.scrollY>300);});
+window.addEventListener('scroll',function(){
+  document.getElementById('back-to-top').classList.toggle('visible',window.scrollY>300);
+  document.getElementById('vw-nav').classList.toggle('nav-scrolled',window.scrollY>80);
+});
 // ── Scroll-triggered animations ──────────────────────────────────
 (function(){
   const els = document.querySelectorAll('.animate-reveal,.anim-popup,.anim-right,.anim-scale');
