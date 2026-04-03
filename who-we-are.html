@@ -191,6 +191,20 @@ a.strat-item[href="consult.html"]:hover .strat-icon{background:rgba(255,255,255,
 .rev-card .avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.75rem;flex-shrink:0}
 .rev-card .name{font-size:.875rem;font-weight:700;color:var(--navy)}
 .rev-card .loc{font-size:10px;color:#9ca3af;font-weight:700;letter-spacing:.1em}
+.rev-see-more{display:inline-block;margin-top:6px;font-size:.75rem;font-weight:700;color:var(--gold);background:none;border:none;cursor:pointer;padding:0;letter-spacing:.02em;flex-shrink:0}
+.rev-see-more:hover{text-decoration:underline}
+#rev-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .25s}
+#rev-modal.open{opacity:1;pointer-events:all}
+#rev-modal .modal-box{background:#fff;border-radius:20px;padding:40px;max-width:560px;width:90%;max-height:80vh;overflow-y:auto;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.25);transform:translateY(16px);transition:transform .25s}
+#rev-modal.open .modal-box{transform:translateY(0)}
+#rev-modal .modal-close{position:absolute;top:14px;right:18px;background:none;border:none;cursor:pointer;font-size:1.6rem;color:#9ca3af;line-height:1}
+#rev-modal .modal-close:hover{color:var(--navy)}
+#rev-modal .modal-stars{display:flex;gap:2px;margin-bottom:16px}
+#rev-modal blockquote{font-size:.95rem;color:#374151;font-style:italic;line-height:1.8;font-weight:300}
+#rev-modal .modal-author{display:flex;align-items:center;gap:12px;margin-top:24px;padding-top:20px;border-top:1px solid #f1f5f9}
+#rev-modal .modal-author .avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.8rem;flex-shrink:0}
+#rev-modal .modal-author .name{font-size:.9rem;font-weight:700;color:var(--navy)}
+#rev-modal .modal-author .loc{font-size:.7rem;color:#9ca3af;font-weight:700;letter-spacing:.1em}
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(calc(-382px * 20))}}
 @media(max-width:768px){.rev-card{width:280px;margin:0 10px}@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(calc(-300px * 20))}}}
 /* FOOTER */
@@ -638,13 +652,17 @@ const reviews=[
 const starSVG=`<svg viewBox="0 0 24 24" fill="#fbbf24" width="14" height="14"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>`;
 const arRatings=`<a href="https://www.adviserratings.com.au/adviser/1244853/Moiz-Mandani" target="_blank" rel="noopener"><img src="https://www.adviserratings.com.au/widget/1244853/profilelink/Button_160x40.png" alt="Adviser Ratings" style="height:32px;width:auto;object-fit:contain"/></a>`;
 
+const REVIEW_LIMIT=200;
 function buildCard(r){
+  const long=r.t.length>REVIEW_LIMIT;
+  const safe=r.t.replace(/"/g,'&quot;').replace(/'/g,'&#39;');
   return `<div class="rev-card">
     <div class="top">
       <div class="stars">${starSVG.repeat(5)}</div>
       ${arRatings}
     </div>
     <blockquote>"${r.t}"</blockquote>
+    ${long?`<button class="rev-see-more" data-name="${r.n}" data-loc="${r.l}" data-bg="${r.bg}" data-c="${r.c}" data-text="${safe}">See more</button>`:''}
     <div class="author">
       <div class="avatar" style="background:${r.bg}">${r.c}</div>
       <div><div class="name">${r.n}</div><div class="loc">${r.l}</div></div>
@@ -655,8 +673,30 @@ function buildCard(r){
 const track=document.getElementById('carousel');
 const doubled=[...reviews,...reviews];
 track.innerHTML=doubled.map(buildCard).join('');
+
+// ── REVIEW MODAL ──
+const revModal=document.getElementById('rev-modal');
+document.getElementById('rev-modal-close').addEventListener('click',()=>revModal.classList.remove('open'));
+revModal.addEventListener('click',e=>{if(e.target===revModal)revModal.classList.remove('open');});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')revModal.classList.remove('open');});
+track.addEventListener('click',function(e){
+  const btn=e.target.closest('.rev-see-more');
+  if(!btn)return;
+  document.getElementById('rev-modal-stars').innerHTML=starSVG.repeat(5);
+  document.getElementById('rev-modal-text').innerHTML='"'+btn.dataset.text+'"';
+  document.getElementById('rev-modal-author').innerHTML=`<div class="avatar" style="background:${btn.dataset.bg}">${btn.dataset.c}</div><div><div class="name">${btn.dataset.name}</div><div class="loc">${btn.dataset.loc}</div></div>`;
+  revModal.classList.add('open');
+});
 window.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('visible',window.scrollY>300);});
 </script>
+<div id="rev-modal" role="dialog" aria-modal="true" aria-labelledby="rev-modal-text">
+  <div class="modal-box">
+    <button class="modal-close" id="rev-modal-close" aria-label="Close">&#215;</button>
+    <div class="modal-stars" id="rev-modal-stars"></div>
+    <blockquote id="rev-modal-text"></blockquote>
+    <div class="modal-author" id="rev-modal-author"></div>
+  </div>
+</div>
 <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
   <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="20" height="20"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
