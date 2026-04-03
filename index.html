@@ -762,6 +762,15 @@ a.svc-card{text-decoration:none;color:inherit;cursor:pointer}
   </div>
 </footer>
 
+<div id="rev-modal" role="dialog" aria-modal="true" aria-labelledby="rev-modal-text">
+  <div class="modal-box">
+    <button class="modal-close" id="rev-modal-close" aria-label="Close">&#215;</button>
+    <div class="modal-stars" id="rev-modal-stars"></div>
+    <blockquote id="rev-modal-text"></blockquote>
+    <div class="modal-author" id="rev-modal-author"></div>
+  </div>
+</div>
+
 <script>
 // ── TAB SWITCHER ──
 function setTab(idx){
@@ -864,14 +873,6 @@ window.addEventListener('scroll',function(){document.getElementById('back-to-top
 })();
 
 </script>
-<div id="rev-modal" role="dialog" aria-modal="true" aria-labelledby="rev-modal-text">
-  <div class="modal-box">
-    <button class="modal-close" id="rev-modal-close" aria-label="Close">&#215;</button>
-    <div class="modal-stars" id="rev-modal-stars"></div>
-    <blockquote id="rev-modal-text"></blockquote>
-    <div class="modal-author" id="rev-modal-author"></div>
-  </div>
-</div>
 <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
   <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="20" height="20"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
