@@ -24,16 +24,16 @@
 /* ══════════════════════════════════════
    SECTION 1 – HERO
 ══════════════════════════════════════ */
-#hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:flex-start;background-image:url('images/homehero.jpg');background-size:cover;background-position:center bottom;background-repeat:no-repeat;overflow:hidden}
-#hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(255,255,255,.88) 40%,rgba(255,255,255,.3) 65%,transparent 100%);z-index:1}
-#hero .hero-inner{position:relative;z-index:2;width:48%;max-width:680px;margin:0 0 0 5%;padding:0 2%;text-align:left}
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:flex-end;background-image:url('images/homehero.jpg');background-size:cover;background-position:left bottom;background-repeat:no-repeat;overflow:hidden}
+#hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to left,rgba(255,255,255,.75) 40%,transparent 75%);z-index:1}
+#hero .hero-inner{position:relative;z-index:2;width:65%;max-width:860px;margin:0 5% 0 0;padding:0 2%;text-align:center}
 #hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;color:var(--navy);line-height:1.15;margin-bottom:24px;letter-spacing:-.03em}
 #hero h1 .gold{color:var(--gold)}
-#hero p{font-size:1em;color:#64748b;font-weight:300;line-height:1.75;margin:0 0 20px;max-width:600px;text-align:left}
+#hero p{font-size:1em;color:#64748b;font-weight:300;line-height:1.75;margin:0 auto 20px;max-width:750px;text-align:center}
 @media(max-width:640px){#hero p{font-size:.75rem;line-height:1.6}}
 #hero p strong{color:var(--navy);font-weight:700;display:block;margin-top:8px}
-#hero .hero-btns{display:flex;flex-wrap:wrap;gap:16px;justify-content:flex-start}
-@media(max-width:768px){#hero{justify-content:center}#hero::before{background:rgba(255,255,255,.85)}#hero .hero-inner{width:90%;max-width:600px;margin:0 auto;padding:40px 24px;text-align:center}#hero p{text-align:center;max-width:100%}#hero .hero-btns{justify-content:center}}
+#hero .hero-btns{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+@media(max-width:768px){#hero{justify-content:center}#hero::before{background:rgba(255,255,255,.75)}#hero .hero-inner{margin:0 auto;max-width:600px}}
 
 /* ══════════════════════════════════════
    SECTION 2 – TERMS
