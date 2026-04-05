@@ -153,6 +153,10 @@ a{text-decoration:none}
    MOBILE OPTIMISATION  360px – 430px
    (6.1"–6.9" phone screens)
 ══════════════════════════════════════ */
+/* Nav — white background when mobile menu is open */
+#vw-nav:has(#vw-mobile-menu.open){background:rgba(255,255,255,.97)!important;border-bottom-color:#f1f5f9!important;box-shadow:0 1px 8px rgba(0,0,0,.06)!important;backdrop-filter:blur(12px)!important}
+#vw-nav:has(#vw-mobile-menu.open) .vw-hamburger{color:var(--navy)!important}
+
 @media(max-width:430px){
   /* Topbar — icons only, tighter height */
   #vw-topbar{height:36px}
