@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<link rel="icon" type="image/png" href="images/favicon_hq.png"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Client Portal | Secure Login | Vega Wealth Advisers</title>
+<meta name="description" content="Access your Vega Wealth client portal. Secure login to your personal wealth dashboard — track your finances, manage documents, and connect with your adviser."/>
+<link rel="canonical" href="https://vegawealth.com.au/client-portal.html"/>
+<meta name="robots" content="noindex, follow"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Vega Wealth"/>
+<meta property="og:title" content="Client Portal | Secure Login | Vega Wealth Advisers"/>
+<meta property="og:description" content="Access your Vega Wealth client portal. Secure login to your personal wealth dashboard — track your finances, manage documents, and connect with your adviser."/>
+<meta property="og:url" content="https://vegawealth.com.au/client-portal.html"/>
+<meta property="og:image" content="https://vegawealth.com.au/images/og-cover.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Client Portal | Secure Login | Vega Wealth Advisers"/>
+<meta name="twitter:description" content="Access your Vega Wealth client portal. Secure login to your personal wealth dashboard — track your finances, manage documents, and connect with your adviser."/>
+<meta name="twitter:image" content="https://vegawealth.com.au/images/og-cover.jpg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="stylesheet" href="shared.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:#062743;background:#fff;overflow-x:hidden;padding-top:120px}
+::selection{background:#FDBB3B4d;color:#062743}
+a{text-decoration:none}
+:root{--gold:#FDBB3B;--navy:#062743;--green:#045234}
+
+/* ── NAV ── */
+#vw-topbar{position:fixed;top:0;left:0;right:0;z-index:10000;background:var(--navy);height:40px;display:flex;align-items:center}
+#vw-topbar .topbar-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:flex-end;align-items:center;gap:24px;width:100%}
+#vw-topbar .topbar-phone{display:flex;align-items:center;gap:8px;color:#fff;font-size:12px;font-weight:600;text-decoration:none;transition:color .2s}
+#vw-topbar .topbar-phone:hover{color:var(--gold)}
+#vw-topbar .topbar-phone svg{width:14px;height:14px;color:var(--gold);flex-shrink:0}
+#vw-topbar .topbar-sep{width:1px;height:16px;background:rgba(255,255,255,.25)}
+#vw-topbar .topbar-login{display:flex;align-items:center;gap:8px;color:#fff;font-size:12px;font-weight:600;text-decoration:none;cursor:pointer;background:none;border:none;transition:color .2s;padding:0}
+#vw-topbar .topbar-login:hover{color:var(--gold)}
+#vw-topbar .topbar-login svg{width:14px;height:14px;color:var(--gold);flex-shrink:0}
+#vw-nav{position:fixed;top:40px;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #f1f5f9;box-shadow:0 1px 8px rgba(0,0,0,.06)}
+#vw-nav .vw-nav-inner{max-width:1280px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+.vw-logo-btn{background:none;border:none;cursor:pointer;padding:0;transition:transform .3s}
+.vw-logo-btn:hover{transform:scale(1.05)}
+.vw-logo-btn img{height:48px;width:auto}
+#vw-desktopnav{display:none;align-items:center;gap:40px}
+@media(min-width:1024px){#vw-desktopnav{display:flex}}
+.vw-navlink{background:none;border:none;cursor:pointer;color:var(--navy);font-size:13px;font-weight:600;transition:color .3s;padding:4px 0;position:relative}
+.vw-navlink:hover,.vw-navlink.active{color:var(--gold)}
+.vw-navlink.active::after{content:'';position:absolute;bottom:-4px;left:0;width:100%;height:2px;background:var(--gold)}
+.vw-nav-actions{display:flex;gap:16px;padding-left:24px;border-left:1px solid #e2e8f0}
+.vw-btn-meet{background:var(--gold);color:var(--navy);padding:10px 24px;border-radius:2px;font-weight:700;font-size:13px;text-decoration:none;transition:all .3s;display:inline-block}
+.vw-btn-meet:hover{background:var(--navy);color:#fff}
+.vw-btn-portal{background:var(--navy);color:#fff;border:none;cursor:pointer;padding:10px 24px;border-radius:2px;font-weight:700;font-size:10px;letter-spacing:.04em;transition:all .3s}
+.vw-btn-portal.active,.vw-btn-portal:hover{background:var(--gold);color:var(--navy)}
+.vw-hamburger{display:flex;background:none;border:none;cursor:pointer;color:var(--navy);padding:8px}
+@media(min-width:1024px){.vw-hamburger{display:none}}
+#vw-mobile-menu{display:none;background:#fff;border-top:1px solid #f1f5f9;padding:40px 24px;flex-direction:column;gap:32px;box-shadow:0 20px 40px rgba(0,0,0,.1)}
+#vw-mobile-menu.open{display:flex}
+#vw-mobile-menu .vw-navlink{text-align:left;font-size:13px}
+.mob-actions{display:flex;flex-direction:column;gap:16px;padding-top:24px;border-top:1px solid #f1f5f9}
+.mob-actions a,.mob-actions button{display:block;padding:16px;border-radius:2px;font-weight:700;font-size:14px;text-align:center;transition:all .3s;width:100%}
+.mob-actions a{background:var(--gold);color:var(--navy);text-decoration:none}
+.mob-actions button{background:var(--navy);color:#fff;border:none;cursor:pointer}
+/* ── DROPDOWN ── */
+.vw-dropdown{position:relative}
+.vw-dropdown::after{content:'';position:absolute;top:100%;left:-8px;right:-8px;height:16px}
+.vw-dropdown-btn{display:flex!important;align-items:center;gap:5px}
+.vw-dropdown-menu{display:none;position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px;min-width:180px;box-shadow:0 8px 24px rgba(0,0,0,.12);z-index:200;white-space:nowrap}
+.vw-dropdown:hover .vw-dropdown-menu{display:block}
+.vw-dropdown-menu a{display:block;padding:10px 16px;font-size:10px;font-weight:700;letter-spacing:.04em;color:var(--navy);border-radius:4px;transition:background .2s;text-decoration:none}
+.vw-dropdown-menu a:hover{background:var(--gold)}
+.vw-dropdown-menu::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #e2e8f0}
+.vw-dropdown-menu::after{content:'';position:absolute;top:-5px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #fff}
+.mob-quiz-links{display:flex;flex-direction:column;gap:8px;padding-left:16px;border-left:2px solid var(--gold)}
+.mob-quiz-links a{font-size:10px;font-weight:700;letter-spacing:.04em;color:#475569;text-decoration:none;transition:color .2s}
+.mob-quiz-links a:hover{color:var(--gold)}
+
+/* ── HERO ── */
+#hero{padding:80px 24px 96px;background:#fff;position:relative}
+#hero .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+@media(min-width:900px){#hero .hero-inner{grid-template-columns:1fr 1fr;gap:64px}}
+#hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.04em;margin-bottom:20px}
+#hero h1 span{color:var(--gold)}
+#hero .hero-sub{font-size:1.05rem;color:#475569;font-weight:300;line-height:1.9;max-width:520px}
+
+/* Video block */
+.video-block{display:flex;flex-direction:column;gap:24px}
+.video-wrapper{position:relative;padding-bottom:75%;height:0;overflow:hidden;border-radius:16px;box-shadow:0 20px 60px rgba(6,39,67,.12);border:1px solid #f1f5f9}
+.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+
+/* Login / Register buttons under video */
+.portal-cta-row{display:flex;gap:16px;flex-wrap:wrap}
+.btn-login{background:var(--gold);color:var(--navy);padding:12px 0;border-radius:2px;font-weight:700;font-size:1.15rem;letter-spacing:.04em;text-decoration:none;transition:all .3s;display:block;text-align:center;flex:1}
+.btn-login:hover{background:var(--navy);color:#fff}
+.btn-register{background:transparent;border:2px solid var(--navy);color:var(--navy);padding:12px 0;border-radius:2px;font-weight:700;font-size:1.15rem;letter-spacing:.04em;text-decoration:none;transition:all .3s;display:block;text-align:center;flex:1}
+.btn-register:hover{background:var(--navy);color:#fff}
+
+/* ── APP SECTION ── */
+#app-section{padding:100px 24px;background:#f8fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0}
+#app-section .app-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:80px;align-items:center}
+@media(min-width:1024px){#app-section .app-inner{grid-template-columns:1fr 1.6fr}}
+.sec-section-header{text-align:center;margin-bottom:64px}
+.sec-section-header h2{font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--navy);letter-spacing:-.04em;margin-bottom:12px}
+.sec-gold-bar{width:64px;height:4px;background:var(--gold);margin:0 auto}
+.phone-mockup{display:flex;flex-direction:column;align-items:center;gap:32px}
+.phone-frame{width:260px;border-radius:36px;border:6px solid #1a3a52;box-shadow:0 32px 80px rgba(6,39,67,.2);overflow:hidden;position:relative}
+.phone-frame::after{content:'';position:absolute;top:0;left:0;right:0;height:28px;background:#fff;z-index:2}
+.download-badges{display:flex;flex-direction:column;gap:12px;align-items:center}
+.download-badges a{transition:opacity .2s;opacity:.9}
+.download-badges a:hover{opacity:1}
+.download-badges img{height:40px;width:auto}
+.security-right .eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.04em;color:var(--gold);margin-bottom:16px;display:block}
+.security-right h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.04em;margin-bottom:12px}
+.security-right .gold-bar{width:48px;height:4px;background:var(--gold);display:block;margin-bottom:40px}
+.security-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:640px){.security-grid{grid-template-columns:1fr}}
+.sec-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:28px;transition:border-color .3s,transform .3s,box-shadow .3s}
+.sec-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08);background:#fff}
+.sec-card .sec-icon{width:44px;height:44px;background:#e8f5f0;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--green)}
+.sec-card h3{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.sec-card p{font-size:.825rem;color:#475569;line-height:1.75;font-weight:300}
+
+/* ── FOOTER ── */
+#vw-footer{background:#f8fafc;border-top:1px solid #e2e8f0;padding:80px 0 48px;color:var(--navy)}
+#vw-footer .foot-inner{max-width:1280px;margin:0 auto;padding:0 24px}
+#vw-footer .foot-grid{display:grid;grid-template-columns:1fr;gap:24px;padding-bottom:64px;border-bottom:1px solid #e2e8f0}
+@media(min-width:768px){#vw-footer .foot-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){#vw-footer .foot-grid{grid-template-columns:1.4fr 0.6fr 1fr 1.3fr 0.7fr 1fr}}
+#vw-footer .foot-logo{height:64px;width:auto;margin-bottom:24px}
+#vw-footer .foot-contact{list-style:none;display:flex;flex-direction:column;gap:16px;margin-bottom:24px;padding:0}
+#vw-footer .foot-contact li{display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#475569}
+#vw-footer .foot-contact li svg{width:20px;height:20px;color:var(--gold);flex-shrink:0;margin-top:2px}
+#vw-footer .socials{display:flex;gap:12px}
+#vw-footer .socials a{width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #e2e8f0;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06);transition:background .3s}
+#vw-footer .socials a:hover{background:var(--gold)}
+#vw-footer .socials a svg{width:16px;height:16px;color:var(--navy)}
+#vw-footer h4{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--gold);padding-bottom:12px;border-bottom:1px solid #f1f5f9;margin-bottom:16px}
+#vw-footer ul.foot-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
+#vw-footer ul.foot-list li,#vw-footer ul.foot-list button{font-size:.875rem;color:#475569;font-weight:500;background:none;border:none;cursor:pointer;text-align:left;padding:0;transition:color .3s;line-height:1.6}
+#vw-footer ul.foot-list li:hover,#vw-footer ul.foot-list button:hover{color:var(--gold)}
+#vw-footer .btn-portal-foot{width:100%;background:var(--navy);color:#fff;border:none;cursor:pointer;padding:12px 24px;border-radius:2px;font-weight:700;font-size:13px;transition:all .3s}
+#vw-footer .btn-portal-foot:hover{background:var(--gold);color:var(--navy)}
+#vw-footer .foot-bottom{padding-top:48px;display:flex;flex-direction:column;gap:32px}
+#vw-footer .foot-legal-row{display:flex;flex-direction:column;gap:16px;font-size:10px;font-weight:700;letter-spacing:.1em;color:#94a3b8}
+@media(min-width:768px){#vw-footer .foot-legal-row{flex-direction:row;align-items:center;justify-content:space-between}}
+#vw-footer .foot-legal-row a{color:#94a3b8;text-decoration:underline;text-decoration-color:#e2e8f0;text-underline-offset:4px;transition:color .3s}
+#vw-footer .foot-legal-row a:hover{color:var(--gold)}
+#vw-footer .foot-policy-links{display:flex;gap:32px;flex-wrap:wrap}
+#vw-footer .compliance-box{background:#fff;padding:24px 32px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.04);display:flex;flex-direction:column;gap:16px}
+#vw-footer .comp-abn{font-size:10px;font-weight:700;letter-spacing:.1em;color:#94a3b8}
+#vw-footer .comp-ack{font-size:10px;color:#94a3b8;font-style:normal;border-top:1px solid #f1f5f9;padding-top:16px;line-height:1.6}
+@media(max-width:430px){body{padding-top:108px}#vw-topbar{height:36px}#vw-nav{top:36px}#vw-nav .vw-nav-inner{padding:12px 16px}.vw-logo-btn img{height:40px}.container,.container-md{padding:0 16px}}
+@media(min-width:1440px){.container{max-width:1400px}.container-md{max-width:1280px}}
+</style>
+</head>
+<body>
+
+<div id="vw-topbar">
+  <div class="topbar-inner">
+    <a href="tel:0359591922" class="topbar-phone">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      03 5959 1922
+    </a>
+    <div class="topbar-sep"></div>
+    <button class="topbar-login" onclick="window.location.href='client-portal'">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Client login
+    </button>
+  </div>
+</div>
+
+<nav id="vw-nav">
+  <div class="vw-nav-inner">
+    <button class="vw-logo-btn" onclick="window.location.href='index'" aria-label="Vega Wealth Home">
+      <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth"/>
+    </button>
+    <div id="vw-desktopnav">
+      <button class="vw-navlink" onclick="window.location.href='what-we-do'">What we do</button>
+      <button class="vw-navlink" onclick="window.location.href='how-we-do'">How we do</button>
+      <button class="vw-navlink" onclick="window.location.href='who-we-are'">Who we are</button>
+      <div class="vw-dropdown">
+        <button class="vw-navlink vw-dropdown-btn">Tools <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="vw-dropdown-menu">
+          <a href="https://score.vegawealth.com.au/passive-income" target="_blank" rel="noopener">Wealth quiz &#8599;</a>
+          <a href="https://score.vegawealth.com.au/personal-insurance" target="_blank" rel="noopener">Insurance quiz &#8599;</a>
+        </div>
+      </div>
+      <div class="vw-nav-actions">
+        <a href="consult" class="vw-btn-meet">Meet an adviser</a>
+      </div>
+    </div>
+    <button class="vw-hamburger" id="vw-hamburgerBtn" onclick="vwToggleMenu()" aria-label="Menu">
+      <svg id="vw-iconMenu" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="vw-iconClose" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="vw-mobile-menu">
+    <button class="vw-navlink" onclick="window.location.href='what-we-do'">What we do</button>
+    <button class="vw-navlink" onclick="window.location.href='how-we-do'">How we do</button>
+    <button class="vw-navlink" onclick="window.location.href='who-we-are'">Who we are</button>
+    <div>
+      <button class="vw-navlink">Tools</button>
+      <div class="mob-quiz-links">
+        <a href="https://score.vegawealth.com.au/passive-income" target="_blank" rel="noopener">Wealth quiz &#8599;</a>
+        <a href="https://score.vegawealth.com.au/personal-insurance" target="_blank" rel="noopener">Insurance quiz &#8599;</a>
+      </div>
+    </div>
+    <div class="mob-actions">
+      <a href="consult">Meet an adviser</a>
+      <button onclick="window.location.href='client-portal'">Client login</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO: two-column, text left / video+buttons right -->
+<section id="hero">
+  <div class="hero-inner">
+    <!-- Text left -->
+    <div>
+      <h1>Vega Wealth<br/><span>Client Portal</span></h1>
+      <p class="hero-sub">Welcome to your personal wealth portal. Our secure portal provides a single view of your entire financial world, allowing you to track your wealth, manage documents, and collaborate with our team in real-time.</p>
+    </div>
+    <!-- Video + buttons right -->
+    <div class="video-block">
+      <div class="video-wrapper">
+        <iframe src="https://player.vimeo.com/video/1163829622?h=927947ab5c&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=143476" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" title="Vega Wealth Advisers - Portal"></iframe>
+      </div>
+      <div class="portal-cta-row">
+        <a href="https://myprosperity.com.au:443/accounts/signin?cobrand=novawealthadvisers2" target="_blank" rel="noopener" class="btn-login">Login</a>
+        <a href="https://myprosperity.com.au:443/accounts/account/register?cobrand=novawealthadvisers2" target="_blank" rel="noopener" class="btn-register">Register</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST + SECURITY -->
+<section id="app-section">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px 64px">
+    <div class="sec-section-header">
+      <h2>Trust &amp; Security</h2>
+      <div class="sec-gold-bar"></div>
+    </div>
+  </div>
+  <div class="app-inner">
+
+    <!-- Left: Phone mockup + download badges -->
+    <div class="phone-mockup">
+      <div class="phone-frame">
+        <img src="images/my-prosperity.png" alt="My Prosperity App" style="width:100%;height:100%;object-fit:cover;border-radius:30px;display:block"/>
+      </div>
+      <div class="download-badges">
+        <a href="https://apps.apple.com/au/app/myprosperity/id1191695588" target="_blank" rel="noopener" aria-label="Download on the App Store">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store"/>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=au.com.zangarmobile.myprosperity" target="_blank" rel="noopener" aria-label="Get it on Google Play">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"/>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Security cards -->
+    <div class="security-right">
+      <div class="security-grid">
+
+        <div class="sec-card">
+          <div class="sec-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3>Bank level security</h3>
+          <p>Our portal uses the same 256-bit encryption that banks use to protect private details. Like banks, it has a layered security infrastructure with 'checkpoints' throughout to minimise risk.</p>
+        </div>
+
+        <div class="sec-card">
+          <div class="sec-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+          <h3>Your information is private</h3>
+          <p>Any information you provide is for internal use only. No other third parties or businesses will have access to your information without your consent.</p>
+        </div>
+
+        <div class="sec-card">
+          <div class="sec-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+          </div>
+          <h3>Industry leading providers</h3>
+          <p>From document management to live data, our portal features services from industry leading platforms such as Amazon Web Services, Yodlee and OneSpan for a robust, reliable and secure experience.</p>
+        </div>
+
+        <div class="sec-card">
+          <div class="sec-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3>Your money is untouchable</h3>
+          <p>As a read-only service designed to help you organise and analyse your finances, our wealth portal cannot be used to move or modify funds.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA SECTION ══ -->
+<section id="cta-section">
+  <div class="cta-wrap">
+    <div class="cta-card">
+      <div class="cta-bg">
+        <img src="images/call-to-action.jpg" alt="Consultation"/>
+      </div>
+      <div class="cta-content">
+        <h2>Let's connect!</h2>
+        <div class="cta-divider"></div>
+        <p>
+          During our 15-minute call, we'll explore what matters most to you,<br/>your personal and financial goals, and how Vega Wealth can help you get there.
+        </p>
+        <p>We're looking forward to connecting. Choose a time that works best for you!</p>
+        <a href="consult" class="cta-btn">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book a chat
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer id="vw-footer">
+  <div class="foot-inner">
+    <div class="foot-grid">
+      <div>
+        <a href="index"><img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" class="foot-logo"/></a>
+        <p style="font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--gold);margin-bottom:8px">Connect with us</p>
+        <div style="display:flex;align-items:center;gap:12px;font-size:.9rem;color:#475569;margin-bottom:16px">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          03 5959 1922
+        </div>
+        <ul class="foot-contact">
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>hello@vegawealth.com.au</li>
+          <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Suite 10, 1 Main Street,<br/>Box Hill, VIC 3128</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <ul class="foot-list">
+          <li><button onclick="window.location.href='index'">Home</button></li>
+          <li><button onclick="window.location.href='what-we-do'">What we do</button></li>
+          <li><button onclick="window.location.href='how-we-do'">How we do</button></li>
+          <li><button onclick="window.location.href='who-we-are'">Who we are</button></li>
+          <li><button onclick="window.location.href='index#discovery'">Tools</button></li>
+          <li><button onclick="window.location.href='client-portal'">Client Portal</button></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Our clients</h4>
+        <ul class="foot-list">
+          <li><button onclick="window.location.href='index#wealth'">Young professionals</button></li>
+          <li><button onclick="window.location.href='index#wealth'">Small business owners</button></li>
+          <li><button onclick="window.location.href='index#wealth'">Planning to retire</button></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul class="foot-list">
+          <li><button onclick="window.location.href='what-we-do#money-management'">Money Management</button></li>
+          <li><button onclick="window.location.href='what-we-do#strategy-and-financial-modelling'">Strategy &amp; Financial Modelling</button></li>
+          <li><button onclick="window.location.href='what-we-do#retirement-planning'">Retirement Planning</button></li>
+          <li><button onclick="window.location.href='what-we-do#investment-management'">Investment Management</button></li>
+          <li><button onclick="window.location.href='what-we-do#investment-structures'">Investment Structures</button></li>
+          <li><button onclick="window.location.href='what-we-do#tax-planning'">Tax Planning</button></li>
+          <li><button onclick="window.location.href='what-we-do#superannuation'">Superannuation</button></li>
+          <li><button onclick="window.location.href='what-we-do#planning-for-your-children'">Planning for Your Children</button></li>
+          <li><button onclick="window.location.href='what-we-do#personal-insurance'">Personal Insurance</button></li>
+          <li><button onclick="window.location.href='what-we-do#estate-planning'">Estate Planning</button></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <ul class="foot-list">
+          <li><button onclick="window.open('https://score.vegawealth.com.au/passive-income/','_blank')">Wealth quiz &#8599;</button></li>
+          <li><button onclick="window.open('https://score.vegawealth.com.au/personal-insurance/','_blank')">Insurance quiz &#8599;</button></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Client portal</h4>
+        <button class="btn-portal-foot" onclick="window.location.href='client-portal'">Client Login</button>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-legal-row">
+        <p>&copy; 2026 Vega Wealth Advisers. All Rights Reserved.</p>
+        <div class="foot-policy-links">
+          <a href="privacy-policy">Privacy Policy</a>
+          <a href="complaints">Complaints</a>
+          <a href="website-disclosure-information">Website Disclosure Information</a>
+        </div>
+      </div>
+      <div class="compliance-box">
+        <div class="comp-abn">Advice Evolution Pty Ltd &nbsp;|&nbsp; AFSL: 342880 &nbsp;|&nbsp; ABN: 66 137 858 023 &nbsp;|&nbsp; CAR: 001320118</div>
+        <div class="comp-ack">Vega Wealth Advisers acknowledges the Traditional Owners and Custodians of the lands on which we meet, live and work. We pay our respects to the people, the cultures and the Elders past and present.</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function vwToggleMenu(){
+  const m=document.getElementById('vw-mobile-menu');
+  const open=m.classList.toggle('open');
+  document.getElementById('vw-iconMenu').style.display=open?'none':'block';
+  document.getElementById('vw-iconClose').style.display=open?'block':'none';
+}
+window.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('visible',window.scrollY>300);});
+</script>
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="20" height="20"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+</body>
+</html>
