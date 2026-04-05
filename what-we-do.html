@@ -111,7 +111,7 @@ a{text-decoration:none}
 #cta-section{scroll-snap-align:start;min-height:90vh;display:flex;flex-direction:column;justify-content:center}
 
 /* ── FOOTER ── */
-#vw-footer{background:#f8fafc;border-top:1px solid #e2e8f0;padding:80px 0 48px;color:var(--navy)}
+#vw-footer{background:#f8fafc;border-top:1px solid #e2e8f0;padding:80px 0 48px;color:var(--navy);min-height:calc(100vh - 120px)}
 #vw-footer .foot-inner{max-width:1280px;margin:0 auto;padding:0 24px}
 #vw-footer .foot-grid{display:grid;grid-template-columns:1fr;gap:24px;padding-bottom:64px;border-bottom:1px solid #e2e8f0}
 @media(min-width:768px){#vw-footer .foot-grid{grid-template-columns:1fr 1fr}}
@@ -213,6 +213,9 @@ a{text-decoration:none}
 
   /* CTA */
   #cta-section{min-height:auto;padding:72px 16px}
+
+  /* Footer */
+  #vw-footer{min-height:auto}
 }
 
 /* ══════════════════════════════════════
