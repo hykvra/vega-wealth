@@ -19,8 +19,9 @@
 <meta name="twitter:description" content="Access your Vega Wealth client portal. Secure login to your personal wealth dashboard — track your finances, manage documents, and connect with your adviser."/>
 <meta name="twitter:image" content="https://vegawealth.com.au/images/og-cover.jpg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="shared.css"/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/><noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -143,14 +144,14 @@ a{text-decoration:none}
 #vw-footer .btn-portal-foot{width:100%;background:var(--navy);color:#fff;border:none;cursor:pointer;padding:12px 24px;border-radius:2px;font-weight:700;font-size:13px;transition:all .3s}
 #vw-footer .btn-portal-foot:hover{background:var(--gold);color:var(--navy)}
 #vw-footer .foot-bottom{padding-top:48px;display:flex;flex-direction:column;gap:32px}
-#vw-footer .foot-legal-row{display:flex;flex-direction:column;gap:16px;font-size:10px;font-weight:700;letter-spacing:.1em;color:#94a3b8}
+#vw-footer .foot-legal-row{display:flex;flex-direction:column;gap:16px;font-size:10px;font-weight:700;letter-spacing:.1em;color:#6b7280}
 @media(min-width:768px){#vw-footer .foot-legal-row{flex-direction:row;align-items:center;justify-content:space-between}}
-#vw-footer .foot-legal-row a{color:#94a3b8;text-decoration:underline;text-decoration-color:#e2e8f0;text-underline-offset:4px;transition:color .3s}
+#vw-footer .foot-legal-row a{color:#6b7280;text-decoration:underline;text-decoration-color:#e2e8f0;text-underline-offset:4px;transition:color .3s}
 #vw-footer .foot-legal-row a:hover{color:var(--gold)}
 #vw-footer .foot-policy-links{display:flex;gap:32px;flex-wrap:wrap}
 #vw-footer .compliance-box{background:#fff;padding:24px 32px;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.04);display:flex;flex-direction:column;gap:16px}
-#vw-footer .comp-abn{font-size:10px;font-weight:700;letter-spacing:.1em;color:#94a3b8}
-#vw-footer .comp-ack{font-size:10px;color:#94a3b8;font-style:normal;border-top:1px solid #f1f5f9;padding-top:16px;line-height:1.6}
+#vw-footer .comp-abn{font-size:10px;font-weight:700;letter-spacing:.1em;color:#6b7280}
+#vw-footer .comp-ack{font-size:10px;color:#6b7280;font-style:normal;border-top:1px solid #f1f5f9;padding-top:16px;line-height:1.6}
 @media(max-width:430px){body{padding-top:108px}#vw-topbar{height:36px}#vw-nav{top:36px}#vw-nav .vw-nav-inner{padding:12px 16px}.vw-logo-btn img{height:40px}.container,.container-md{padding:0 16px}}
 @media(min-width:1440px){.container{max-width:1400px}.container-md{max-width:1280px}}
 </style>
@@ -174,7 +175,7 @@ a{text-decoration:none}
 <nav id="vw-nav">
   <div class="vw-nav-inner">
     <button class="vw-logo-btn" onclick="window.location.href='index'" aria-label="Vega Wealth Home">
-      <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth"/>
+      <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" width="150" height="48"/>
     </button>
     <div id="vw-desktopnav">
       <button class="vw-navlink" onclick="window.location.href='what-we-do'">What we do</button>
@@ -214,6 +215,7 @@ a{text-decoration:none}
   </div>
 </nav>
 
+<main>
 <!-- HERO: two-column, text left / video+buttons right -->
 <section id="hero">
   <div class="hero-inner">
@@ -248,14 +250,14 @@ a{text-decoration:none}
     <!-- Left: Phone mockup + download badges -->
     <div class="phone-mockup">
       <div class="phone-frame">
-        <img src="images/my-prosperity.png" alt="My Prosperity App" style="width:100%;height:100%;object-fit:cover;border-radius:30px;display:block"/>
+        <img src="images/my-prosperity.png" alt="My Prosperity App" loading="lazy" width="600" height="600" style="width:100%;height:100%;object-fit:cover;border-radius:30px;display:block"/>
       </div>
       <div class="download-badges">
         <a href="https://apps.apple.com/au/app/myprosperity/id1191695588" target="_blank" rel="noopener" aria-label="Download on the App Store">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store"/>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" loading="lazy" width="135" height="40"/>
         </a>
         <a href="https://play.google.com/store/apps/details?id=au.com.zangarmobile.myprosperity" target="_blank" rel="noopener" aria-label="Get it on Google Play">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"/>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" loading="lazy" width="135" height="40"/>
         </a>
       </div>
     </div>
@@ -306,7 +308,7 @@ a{text-decoration:none}
   <div class="cta-wrap">
     <div class="cta-card">
       <div class="cta-bg">
-        <img src="images/call-to-action.jpg" alt="Consultation"/>
+        <img src="images/call-to-action.jpg" alt="Consultation" loading="lazy" width="1280" height="720"/>
       </div>
       <div class="cta-content">
         <h2>Let's connect!</h2>
@@ -323,13 +325,14 @@ a{text-decoration:none}
     </div>
   </div>
 </section>
+</main>
 
 <!-- ══ FOOTER ══ -->
 <footer id="vw-footer">
   <div class="foot-inner">
     <div class="foot-grid">
       <div>
-        <a href="index"><img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" class="foot-logo"/></a>
+        <a href="index"><img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" class="foot-logo" width="150" height="48"/></a>
         <p style="font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--gold);margin-bottom:8px">Connect with us</p>
         <div style="display:flex;align-items:center;gap:12px;font-size:.9rem;color:#475569;margin-bottom:16px">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
