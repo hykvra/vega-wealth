@@ -188,7 +188,8 @@ a{text-decoration:none}
 ══════════════════════════════════════ */
 @media(max-width:430px){
   body{padding-top:0}
-  #scroll-container{height:100svh;scroll-padding-top:100px}
+  #scroll-container{height:100svh;scroll-snap-type:none;overflow-y:auto}
+  #hero,#roadmap-wrap,#ongoing,#cta-section,#vw-footer{scroll-snap-align:none}
   #vw-topbar{height:36px}
   #vw-nav{top:36px;background:transparent!important;border-bottom-color:transparent!important;box-shadow:none!important;backdrop-filter:none!important;transition:background .35s,border-color .35s,box-shadow .35s}
   #vw-nav.nav-scrolled{background:rgba(255,255,255,.97)!important;border-bottom-color:#f1f5f9!important;box-shadow:0 1px 8px rgba(0,0,0,.06)!important;backdrop-filter:blur(12px)!important}
@@ -232,7 +233,7 @@ a{text-decoration:none}
 
   /* Roadmap nav */
   #roadmap-nav .rn-card{padding:24px 16px}
-  #roadmap-nav .rn-label{display:none}
+  #roadmap-nav .rn-label{font-size:18px;margin-bottom:24px}
   #roadmap-nav .rn-steps{display:grid;grid-template-columns:1fr 1fr;gap:24px 16px;justify-items:center}
   #roadmap-nav .rn-steps .rn-step:last-child{grid-column:1 / -1}
   .rn-step .step-icon{width:44px;height:44px}
