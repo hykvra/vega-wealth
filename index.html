@@ -359,7 +359,7 @@ body{padding-top:120px}
 ══════════════════════════════════════ */
 @media(min-width:1440px){
   /* Hero */
-  #hero .hero-inner{width:60%}
+  #hero .hero-inner{width:60%;max-width:1150px}
   #hero h1{font-size:clamp(3rem,4.5vw,5rem)}
 
   /* Services */
@@ -379,6 +379,7 @@ body{padding-top:120px}
   @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(calc(-440px * 20))}}
 }
 @media(min-width:1728px){
+  #hero .hero-inner{max-width:1300px}
   #hero h1{font-size:clamp(3.5rem,4vw,5.5rem)}
   .svc-card,.svc-card-gold{padding:96px 72px}
 }
