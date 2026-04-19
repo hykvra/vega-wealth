@@ -234,7 +234,8 @@ a{text-decoration:none}
   /* Roadmap nav */
   #roadmap-nav{padding:24px 16px 0}
   #roadmap-nav .rn-card{padding:0;border-radius:0;box-shadow:none;border:none;background:transparent}
-  #roadmap-nav .rn-label{font-size:20px;margin-bottom:24px;text-align:left;color:var(--navy);font-weight:700;letter-spacing:normal}
+  #roadmap-nav .rn-label{font-size:20px;margin-bottom:0;text-align:center;color:var(--navy);font-weight:700;letter-spacing:normal}
+  #roadmap-nav .rn-label::after{content:'';display:block;width:64px;height:4px;background:var(--gold);margin:16px auto 28px;border-radius:2px}
   #roadmap-nav .rn-steps{display:grid;grid-template-columns:1fr 1fr;gap:24px 16px;justify-items:center}
   #roadmap-nav .rn-steps .rn-step:last-child{grid-column:1 / -1}
   .rn-step .step-icon{width:44px;height:44px}
