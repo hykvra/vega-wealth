@@ -252,6 +252,7 @@ function vwToggleMenu(){
   document.getElementById('vw-iconClose').style.display=open?'block':'none';
 }
 window.addEventListener('scroll',function(){document.getElementById('back-to-top').classList.toggle('visible',window.scrollY>300);});
+window.addEventListener("scroll",function(){document.getElementById("vw-nav").classList.toggle("nav-scrolled",window.scrollY>80);});
 </script>
 </body>
 </html>

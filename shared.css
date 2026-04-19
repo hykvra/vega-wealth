@@ -57,7 +57,8 @@ a{text-decoration:none}
 #vw-topbar .topbar-login svg{width:14px;height:14px;color:var(--gold);flex-shrink:0}
 
 /* ── NAV ── */
-#vw-nav{position:fixed;top:40px;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #f1f5f9;box-shadow:0 1px 8px rgba(0,0,0,.06)}
+#vw-nav{position:fixed;top:40px;left:0;right:0;z-index:9999;background:transparent;backdrop-filter:none;border-bottom:1px solid transparent;box-shadow:none;transition:background .35s,border-color .35s,box-shadow .35s,backdrop-filter .35s}
+#vw-nav.nav-scrolled{background:rgba(255,255,255,.97);border-bottom-color:#f1f5f9;box-shadow:0 1px 8px rgba(0,0,0,.06);backdrop-filter:blur(12px)}
 #vw-nav .vw-nav-inner{max-width:1280px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
 .vw-logo-btn{background:none;border:none;cursor:pointer;padding:0;transition:transform .3s}
 .vw-logo-btn:hover{transform:scale(1.05)}
