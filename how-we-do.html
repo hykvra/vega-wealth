@@ -13,11 +13,11 @@
 <meta property="og:title" content="Our Financial Advice Process | How We Work | Vega Wealth"/>
 <meta property="og:description" content="Our tailored advice process — from the first conversation to ongoing partnership. Discover how Vega Wealth guides you to clear, confident financial decisions."/>
 <meta property="og:url" content="https://vegawealth.com.au/how-we-do.html"/>
-<meta property="og:image" content="https://vegawealth.com.au/images/og-cover.jpg"/>
+<meta property="og:image" content="https://vegawealth.com.au/images/social-card.jpeg"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Our Financial Advice Process | How We Work | Vega Wealth"/>
 <meta name="twitter:description" content="Our tailored advice process — from the first conversation to ongoing partnership. Discover how Vega Wealth guides you to clear, confident financial decisions."/>
-<meta name="twitter:image" content="https://vegawealth.com.au/images/og-cover.jpg"/>
+<meta name="twitter:image" content="https://vegawealth.com.au/images/social-card.jpeg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="shared.css"/>
@@ -25,8 +25,8 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Poppins',sans-serif;color:#062743;background:#fff;overflow-x:hidden;padding-top:120px}
-#scroll-container{height:calc(100vh - 120px);overflow-y:scroll;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:#062743;background:#fff;overflow-x:hidden;padding-top:0}
+#scroll-container{height:100vh;overflow-y:scroll;scroll-snap-type:y mandatory;scroll-behavior:smooth}
 #vw-footer{scroll-snap-align:start}
 #cta-section{scroll-snap-align:start;min-height:90vh;display:flex;flex-direction:column;justify-content:center}
 ::selection{background:#FDBB3B4d;color:#062743}
@@ -69,8 +69,8 @@ a{text-decoration:none}
 #vw-mobile-menu .mob-actions button{background:var(--navy);color:#fff;border:none;cursor:pointer}
 
 /* ── HERO ── */
-#hero::before{content:'';position:absolute;inset:0;background:url('images/how-we-do-financial-advice.jpg') top center/cover no-repeat;opacity:.3;z-index:0}
-#hero{padding:96px 24px;min-height:90vh;background:#ffffff;position:relative;overflow:hidden;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;scroll-snap-align:start}
+#hero::before{content:'';position:absolute;inset:0;background:url('images/how-we-do-financial-advice.jpg') 35% center/cover no-repeat;opacity:.3;z-index:0}
+#hero{padding:160px 24px 96px;min-height:100vh;background:#ffffff;position:relative;overflow:hidden;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;scroll-snap-align:start}
 #hero .hero-bg{position:absolute;inset:0;z-index:0}
 #hero .hero-bg img{display:none}
 #hero .hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(253,187,59,.06),transparent)}
@@ -91,13 +91,14 @@ a{text-decoration:none}
 #roadmap-nav{padding:24px 24px 0;background:#fff}
 #roadmap-nav .rn-card{max-width:1280px;margin:0 auto;background:#fff;border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,.05);padding:40px;border:1px solid #f1f5f9}
 #roadmap-nav .rn-label{text-align:center;font-size:28px;font-weight:700;letter-spacing:.04em;color:#6b7280;margin-bottom:40px}
-#roadmap-nav .rn-steps{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;position:relative}
-@media(min-width:768px){#roadmap-nav .rn-steps::before{display:none}}
-.rn-step{display:flex;flex-direction:column;align-items:center;gap:12px;cursor:pointer;transition:all .3s;border:none;background:none;padding:8px;position:relative;z-index:1}
-.rn-step .step-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s;border:2px solid #e2e8f0;background:#fff;color:#6b7280;box-shadow:0 2px 8px rgba(0,0,0,.06);position:relative}
-.rn-step .step-label{font-size:13px;font-weight:700;letter-spacing:.05em;color:#6b7280;transition:color .3s;text-align:center;line-height:1.4;white-space:nowrap}
-.rn-step.active .step-icon{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 10px 20px rgba(4,82,52,.25);transform:scale(1.1)}
+#roadmap-nav .rn-steps{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:500px;margin:0 auto}
+.rn-step{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;cursor:pointer;transition:all .3s;border:none;background:#f1f5f9;padding:24px 16px;border-radius:16px;width:100%;position:relative;z-index:1}
+.rn-step .step-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s;border:2px solid #e2e8f0;background:#fff;color:#6b7280;box-shadow:0 2px 8px rgba(0,0,0,.06);flex-shrink:0}
+.rn-step .step-label{font-size:13px;font-weight:700;letter-spacing:.04em;color:#6b7280;transition:color .3s;text-align:center;line-height:1.4}
+.rn-step.active{background:#e8f2ed}
+.rn-step.active .step-icon{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 8px 16px rgba(4,82,52,.2)}
 .rn-step.active .step-label{color:var(--navy)}
+.rn-step:not(.active):hover{background:#e9edf2}
 .rn-step:not(.active):hover .step-icon{border-color:var(--gold);color:var(--gold)}
 .rn-step:not(.active):hover .step-label{color:var(--navy)}
 
@@ -208,7 +209,7 @@ a{text-decoration:none}
     background:#062743;
     display:flex;
   }
-  #hero::before{opacity:1;background-position:top center}
+  #hero::before{opacity:1;background-position:35% center}
   #hero::after{
     content:'';
     position:absolute;
@@ -237,7 +238,7 @@ a{text-decoration:none}
   #roadmap-nav .rn-label{font-size:20px;margin-bottom:0;text-align:center;color:var(--navy);font-weight:700;letter-spacing:normal}
   #roadmap-nav .rn-label::after{content:'';display:block;width:64px;height:4px;background:var(--gold);margin:16px auto 28px;border-radius:2px}
   #roadmap-nav .rn-steps{display:grid;grid-template-columns:1fr 1fr;gap:24px 16px;justify-items:center}
-  #roadmap-nav .rn-steps .rn-step:last-child{grid-column:1 / -1}
+  #roadmap-nav .rn-steps .rn-step:last-child:nth-child(odd){grid-column:1 / -1}
   .rn-step .step-icon{width:44px;height:44px}
   .rn-step .step-label{font-size:11px}
 
@@ -317,7 +318,7 @@ a{text-decoration:none}
 <nav id="vw-nav">
   <div class="vw-nav-inner">
     <button class="vw-logo-btn" onclick="window.location.href='/'" aria-label="Vega Wealth Home">
-      <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" width="150" height="48"/>
+      <img src="images/vegawealth_logo_lq.png" alt="Vega Wealth" width="150" height="48"/>
     </button>
     <div id="vw-desktopnav">
       <button class="vw-navlink" onclick="window.location.href='what-we-do'">What we do</button>
@@ -424,6 +425,13 @@ a{text-decoration:none}
         <span class="step-label">Implement your Advice</span>
       </button>
 
+      <button class="rn-step" data-idx="5" onclick="setStep(5)">
+        <div class="step-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+        </div>
+        <span class="step-label">Ongoing Partnership</span>
+      </button>
+
     </div>
   </div>
 </section>
@@ -514,7 +522,7 @@ a{text-decoration:none}
   <div class="foot-inner">
     <div class="foot-grid">
       <div>
-        <a href="/"><img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" class="foot-logo" width="150" height="48"/></a>
+        <a href="/"><img src="images/vegawealth_logo_lq.png" alt="Vega Wealth" class="foot-logo" width="150" height="48"/></a>
         <p style="font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--gold);margin-bottom:8px">Connect with us</p>
         <div style="display:flex;align-items:center;gap:12px;font-size:.9rem;color:#475569;margin-bottom:16px">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -626,6 +634,13 @@ const STEPS = [
     body: "Your plan is ready, and now it's time to bring it to life. Once you're ready to move forward, we take care of every detail, ensuring everything is put in place smoothly and efficiently. From here, your wealth is working for you, and we're right here to make sure it stays that way.",
     icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>',
     image: "images/implement-your-advice.jpg"
+  },
+  {
+    title: "Ongoing Partnership",
+    phase: "Phase 06",
+    body: "Your plan doesn't stop once it's in place — it grows and evolves with you. Through regular 90-day check-ins, mid-year portfolio reviews, and annual strategy meetings, we proactively monitor your progress and adapt your advice as your life changes. We're not just your adviser for today; we're your long-term partner, committed to keeping you on track for every milestone ahead.",
+    icon: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>',
+    image: "images/call-to-action.jpg"
   }
 ];
 
@@ -641,12 +656,12 @@ function setStep(idx) {
     btn.classList.toggle('active', i === idx);
   });
   const isLast = idx === STEPS.length - 1;
-  document.getElementById('sd-next-label').textContent = isLast ? 'Ongoing Partnership' : STEPS[idx + 1].title;
+  document.getElementById('sd-next-label').textContent = isLast ? 'Book a Consult' : STEPS[idx + 1].title;
 }
 
 function nextStep() {
   if(currentStep === STEPS.length - 1){
-    document.getElementById('ongoing').scrollIntoView({behavior:'smooth',block:'start'});
+    document.getElementById('cta-section').scrollIntoView({behavior:'smooth',block:'start'});
   } else {
     setStep(currentStep + 1);
     document.getElementById('step-detail').scrollIntoView({behavior:'smooth',block:'center'});
@@ -683,7 +698,11 @@ document.querySelectorAll('.rn-step').forEach(function(btn){
 const _sc=document.getElementById('scroll-container');
 _sc.addEventListener('scroll',function(){
   document.getElementById('back-to-top').classList.toggle('visible',_sc.scrollTop>300);
-  document.getElementById('vw-nav').classList.toggle('nav-scrolled',_sc.scrollTop>80);
+  var st=_sc.scrollTop;
+  var sections=_snapSections();
+  var base=sections[0].offsetTop;
+  var atSnap=sections.some(function(s){return Math.abs((s.offsetTop-base)-st)<60;});
+  document.getElementById('vw-nav').classList.toggle('nav-scrolled',!atSnap);
 });
 document.getElementById('back-to-top').addEventListener('click',function(){_sc.scrollTo({top:0,behavior:'smooth'});});
 function _snapSections(){return Array.from(_sc.querySelectorAll('#hero,#roadmap-wrap,#ongoing,#cta-section,#vw-footer'));}
