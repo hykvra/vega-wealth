@@ -13,11 +13,11 @@
 <meta property="og:title" content="Vega Wealth | Dream with Confidence. Live with Clarity."/>
 <meta property="og:description" content="Vega Wealth provides personalised financial advice to help you build passive income, retire with confidence, and live life on your terms. Based in Melbourne, serving all of Australia."/>
 <meta property="og:url" content="https://vegawealth.com.au/"/>
-<meta property="og:image" content="https://vegawealth.com.au/images/og-cover.jpg"/>
+<meta property="og:image" content="https://vegawealth.com.au/images/social-card.jpeg"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Vega Wealth | Dream with Confidence. Live with Clarity."/>
 <meta name="twitter:description" content="Vega Wealth provides personalised financial advice to help you build passive income, retire with confidence, and live life on your terms. Based in Melbourne, serving all of Australia."/>
-<meta name="twitter:image" content="https://vegawealth.com.au/images/og-cover.jpg"/>
+<meta name="twitter:image" content="https://vegawealth.com.au/images/social-card.jpeg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="shared.css"/>
@@ -31,8 +31,7 @@
 #hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:flex-end;background-image:url('images/vega-wealth-financial-advisers-hero.jpg');background-size:cover;background-position:left bottom;background-repeat:no-repeat;overflow:hidden}
 #hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to left,rgba(255,255,255,.75) 40%,transparent 75%);z-index:1}
 #hero .hero-inner{position:relative;z-index:2;width:65%;max-width:860px;margin:0 5% 0 0;padding:0 2%;text-align:center}
-#hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;color:var(--navy);line-height:1.15;margin-bottom:24px;letter-spacing:-.03em}
-#hero h1 br{display:none}
+#hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;color:var(--navy);line-height:1.15;margin-bottom:24px;letter-spacing:-.03em;white-space:nowrap}
 #hero h1 .gold{color:var(--gold)}
 #hero p{font-size:1em;color:#475569;font-weight:300;line-height:1.75;margin:0 auto 20px;max-width:750px;text-align:center}
 @media(max-width:640px){#hero p{font-size:.75rem;line-height:1.6}}
@@ -266,8 +265,8 @@ a.svc-card{text-decoration:none;color:inherit;cursor:pointer}
 @media(max-width:768px){.rev-card{width:280px;margin:0 10px}@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(calc(-300px * 20))}}}
 
 /* ── TRANSPARENT NAV (homepage only) ── */
-body{padding-top:120px}
-#hero{margin-top:0;min-height:calc(100vh - 120px)}
+body{padding-top:0}
+#hero{min-height:100vh;padding-top:120px}
 @media(max-width:430px){body{padding-top:0}#hero{padding-top:0}}
 #vw-nav{background:transparent!important;border-bottom-color:transparent!important;box-shadow:none!important;backdrop-filter:none!important;transition:background .35s,border-color .35s,box-shadow .35s,backdrop-filter .35s}
 #vw-nav.nav-scrolled{background:rgba(255,255,255,.97)!important;border-bottom-color:#f1f5f9!important;box-shadow:0 1px 8px rgba(0,0,0,.06)!important;backdrop-filter:blur(12px)!important}
@@ -299,7 +298,7 @@ body{padding-top:120px}
     padding:0 20px 40px;
     text-align:left;
   }
-  #hero h1{font-size:clamp(1.9rem,7.5vw,2.6rem);text-align:left;color:#fff}
+  #hero h1{font-size:clamp(1rem,6.5vw,2.4rem);text-align:left;color:#fff;white-space:nowrap}
   #hero h1 .gold{color:var(--gold)}
   #hero .hd-wrap{display:inline}
   #hero .hd-wrap svg{display:none}
@@ -394,7 +393,7 @@ body{padding-top:120px}
       "@id": "https://vegawealth.com.au/#business",
       "name": "Vega Wealth",
       "url": "https://vegawealth.com.au/",
-      "logo": "https://esam.in/vegawealth/logo_lq.png",
+      "logo": "images/vegawealth_logo_lq.png",
       "description": "Financial advice that helps you build passive income, retire with confidence, and live life on your terms.",
       "telephone": "03 5959 1922",
       "address": {
@@ -450,7 +449,7 @@ body{padding-top:120px}
 <nav id="vw-nav">
   <div class="vw-nav-inner">
     <button class="vw-logo-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Vega Wealth Home">
-      <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth"/>
+      <img src="images/vegawealth_logo_lq.png" alt="Vega Wealth"/>
     </button>
     <div id="vw-desktopnav">
       <button class="vw-navlink" onclick="window.location.href='what-we-do'">What we do</button>
@@ -730,7 +729,7 @@ body{padding-top:120px}
           <div style="overflow-y:auto;height:100%;padding:40px 20px 24px;scrollbar-width:none;background:#fff;display:flex;flex-direction:column;font-family:'Poppins',sans-serif">
             <!-- Logo -->
             <div style="padding-top:20px;margin-bottom:20px">
-              <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" style="height:32px;width:auto;object-fit:contain"/>
+              <img src="images/vegawealth_logo_lq.png" alt="Vega Wealth" style="height:32px;width:auto;object-fit:contain"/>
             </div>
             <!-- Heading -->
             <div style="margin-bottom:12px">
@@ -815,7 +814,7 @@ body{padding-top:120px}
   <div class="foot-inner">
     <div class="foot-grid">
       <div>
-        <a href="/"><img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" class="foot-logo"/></a>
+        <a href="/"><img src="images/vegawealth_logo_lq.png" alt="Vega Wealth" class="foot-logo"/></a>
         <p style="font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--gold);margin-bottom:8px">Connect with us</p>
         <div style="display:flex;align-items:center;gap:12px;font-size:.9rem;color:#475569;margin-bottom:16px">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>

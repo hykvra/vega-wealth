@@ -13,11 +13,11 @@
 <meta property="og:title" content="Financial Planning Services in Melbourne | Vega Wealth"/>
 <meta property="og:description" content="Explore Vega Wealth's full suite of financial planning services — from wealth creation and retirement planning to investment management, SMSF, tax planning, and personal insurance."/>
 <meta property="og:url" content="https://vegawealth.com.au/what-we-do.html"/>
-<meta property="og:image" content="https://vegawealth.com.au/images/og-cover.jpg"/>
+<meta property="og:image" content="https://vegawealth.com.au/images/social-card.jpeg"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Financial Planning Services in Melbourne | Vega Wealth"/>
 <meta name="twitter:description" content="Explore Vega Wealth's full suite of financial planning services — from wealth creation and retirement planning to investment management, SMSF, tax planning, and personal insurance."/>
-<meta name="twitter:image" content="https://vegawealth.com.au/images/og-cover.jpg"/>
+<meta name="twitter:image" content="https://vegawealth.com.au/images/social-card.jpeg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="shared.css"/>
@@ -25,8 +25,8 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Poppins',sans-serif;color:#062743;background:#fff;overflow-x:hidden;padding-top:120px}
-#scroll-container{height:calc(100vh - 120px);overflow-y:scroll;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:#062743;background:#fff;overflow-x:hidden;padding-top:0}
+#scroll-container{height:100vh;overflow-y:scroll;scroll-snap-type:y mandatory;scroll-behavior:smooth;scroll-padding-top:120px}
 #vw-footer{scroll-snap-align:start}
 ::selection{background:#FDBB3B4d;color:#062743}
 a{text-decoration:none}
@@ -68,7 +68,7 @@ a{text-decoration:none}
 .mob-actions button{background:var(--navy);color:#fff;border:none;cursor:pointer}
 
 /* ── HERO ── */
-#hero{padding:96px 24px;min-height:90vh;display:flex;align-items:center;background:#fff;position:relative;overflow:hidden;border-bottom:1px solid #f1f5f9;scroll-snap-align:start}
+#hero{padding:160px 24px 96px;min-height:100vh;display:flex;align-items:center;background:#fff;position:relative;overflow:hidden;border-bottom:1px solid #f1f5f9;scroll-snap-align:start}
 #hero .hero-bg{position:absolute;inset:0;z-index:0}
 #hero .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.6}
 #hero .hero-bg-grad{position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(253,187,59,.05),transparent)}
@@ -84,7 +84,7 @@ a{text-decoration:none}
 
 
 /* ── SERVICES ── */
-.svc-section{padding:96px 24px;min-height:90vh;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #f1f5f9;scroll-snap-align:start;scroll-margin-top:0}
+.svc-section{padding:96px 24px;min-height:90vh;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #f1f5f9;scroll-snap-align:start}
 .svc-section:nth-child(even){background:#f8fafc}
 .svc-section:nth-child(odd){background:#fff}
 .svc-inner{max-width:1280px;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr;gap:64px;align-items:stretch}
@@ -283,7 +283,7 @@ a{text-decoration:none}
 <nav id="vw-nav">
   <div class="vw-nav-inner">
     <button class="vw-logo-btn" onclick="window.location.href='/'" aria-label="Vega Wealth Home">
-      <img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" width="150" height="48"/>
+      <img src="images/vegawealth_logo_lq.png" alt="Vega Wealth" width="150" height="48"/>
     </button>
     <div id="vw-desktopnav">
       <button class="vw-navlink" onclick="window.location.href='what-we-do'">What we do</button>
@@ -375,7 +375,7 @@ a{text-decoration:none}
   <div class="foot-inner">
     <div class="foot-grid">
       <div>
-        <a href="/"><img src="https://esam.in/vegawealth/logo_lq.png" alt="Vega Wealth" class="foot-logo" width="150" height="48"/></a>
+        <a href="/"><img src="images/vegawealth_logo_lq.png" alt="Vega Wealth" class="foot-logo" width="150" height="48"/></a>
         <p style="font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--gold);margin-bottom:8px">Connect with us</p>
         <div style="display:flex;align-items:center;gap:12px;font-size:.9rem;color:#475569;margin-bottom:16px">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -566,10 +566,21 @@ SERVICES.forEach((svc, i) => {
 function scrollToService(idx) {
   const slug = SERVICES[idx].title.replace(/\s+/g,'-').toLowerCase().replace(/[&]/g,'and').replace(/[^a-z0-9-]/g,'');
   const el = document.getElementById(slug);
-  const sc = document.getElementById('scroll-container');
-  if (el && sc) {
-    const y = el.getBoundingClientRect().top + sc.scrollTop;
-    sc.scrollTo({top: y, behavior: 'smooth'});
+  if (el) el.scrollIntoView({block:'start',behavior:'smooth'});
+}
+
+// ── Handle hash links (sections are built dynamically) ────────────
+// Grab and clear the hash immediately so the browser's native hash
+// scroll doesn't race with our manual scroll into the inner container.
+if (window.location.hash) {
+  var _hashId = window.location.hash.slice(1);
+  history.replaceState(null, '', window.location.pathname + window.location.search);
+  var _hashTarget = document.getElementById(_hashId);
+  var _scH = document.getElementById('scroll-container');
+  if (_hashTarget && _scH) {
+    var _navH = (document.getElementById('vw-topbar').offsetHeight || 0) +
+                (document.getElementById('vw-nav').offsetHeight || 0);
+    _scH.scrollTo({top: _hashTarget.offsetTop - _navH, behavior: 'instant'});
   }
 }
 
